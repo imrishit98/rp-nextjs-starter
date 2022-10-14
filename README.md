@@ -1,6 +1,31 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Rishit Patel's Default Next.js Starter
 
-## Getting Started
+This is a starter template for Next.js projects. It includes the following:
+- [Tailwind CSS](https://tailwindcss.com/)
+- [React GTM Module](https://www.npmjs.com/package/react-gtm-module)
+
+Table of Contents:
+  - [⚡️ Quick Start](#️-quick-start)
+  - [🚀 Getting Started](#-getting-started)
+  - [📦 Deployment](#-deployment)
+  - [📝 License](#-license)
+  - [📧 Contact](#-contact)
+  - [📚 Resources](#-resources)
+
+
+## ⚡️ Quick Start
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https%3A%2F%2Fgithub.com%2Fimrishit98%2Frp-nextjs-starter) [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fimrishit98%2Frp-nextjs-starter)
+
+How to use:
+
+```bash
+yarn create next-app -e https://github.com/imrishit98/rp-nextjs-starter
+# or
+npx create-next-app -e https://github.com/imrishit98/rp-nextjs-starter
+```
+
+## 🚀 Getting Started
 
 First, run the development server:
 
@@ -14,21 +39,23 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## 📦 Deployment
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new) from the creators of Next.js.
 
-## Learn More
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-To learn more about Next.js, take a look at the following resources:
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 📧 Contact
+
+If you want to contact me you can reach me at [rishitpatel.com/contact](https://rishitpatel.com/contact).
+
+## 📚 Resources
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs) - learn about Tailwind CSS features and API.
+- [React GTM Module Documentation](https://www.npmjs.com/package/react-gtm-module) - learn about React GTM Module features and API.
