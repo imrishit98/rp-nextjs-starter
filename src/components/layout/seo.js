@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { siteConfig } from '../../../site-config';
+import siteConfig from '../../../site-config';
 
 const SEO = ({
   title = siteConfig.title,
