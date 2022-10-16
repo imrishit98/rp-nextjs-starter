@@ -1,3 +1,4 @@
+import { ThemeProvider } from 'next-themes';
 import { useEffect } from 'react';
 import TagManager from 'react-gtm-module';
 import '../styles/main.scss';
@@ -9,7 +10,11 @@ const MyApp = ({ Component, pageProps }) => {
     }
   }, []);
 
-  return <Component {...pageProps} />;
+  return (
+    <ThemeProvider attribute='class'>
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
 };
 
 export default MyApp;
