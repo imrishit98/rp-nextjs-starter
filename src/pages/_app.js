@@ -6,7 +6,7 @@ import '../styles/main.scss';
 const MyApp = ({ Component, pageProps }) => {
   useEffect(() => {
     if (process.env.NODE_ENV === 'production') {
-      TagManager.initialize({ gtmId: 'GTM-XXXXXXX' });
+      TagManager.initialize({ gtmId: process.env.NEXT_PUBLIC_GTM_ID });
     }
   }, []);
 
