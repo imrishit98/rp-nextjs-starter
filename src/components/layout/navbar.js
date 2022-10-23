@@ -1,9 +1,15 @@
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import { Container } from '../ui/containers';
 
 const Navbar = () => {
   const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <nav className='py-4 border-b-2'>
@@ -31,12 +37,14 @@ const Navbar = () => {
               About
             </a>
           </Link>
-          <button
-            className='p-2 text-sm font-bold hover:font-bold'
-            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-          >
-            {theme === 'dark' ? '🔆' : '🌙'}
-          </button>
+          {mounted && (
+            <button
+              className='p-2 text-sm font-bold hover:font-bold'
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            >
+              {theme === 'dark' ? '🔆' : '🌙'}
+            </button>
+          )}
         </div>
       </Container>
     </nav>
