@@ -11,7 +11,7 @@ const MyApp = ({ Component, pageProps }) => {
   }, []);
 
   return (
-    <ThemeProvider attribute='class'>
+    <ThemeProvider attribute='class' defaultTheme='system' enableSystem='true'>
       <Component {...pageProps} />
     </ThemeProvider>
   );
