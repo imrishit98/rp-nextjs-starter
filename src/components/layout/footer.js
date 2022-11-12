@@ -6,10 +6,10 @@ const Footer = () => {
     <footer className='py-2 border-t-2'>
       <Container className='flex justify-center items-center text-sm font-medium'>
         © {new Date().getFullYear()}&nbsp;
-        <Link href={'/'}>
-          <a target='_blank' rel='noopener noreferrer'>
+        <Link href={'/'} target='_blank' rel='noopener noreferrer'>
+          
             Rishit Patel
-          </a>
+          
         </Link>
         . All Rights Reserved.
       </Container>
