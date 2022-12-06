@@ -448,10 +448,10 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
-"@next/codemod@^13.0.5":
-  version "13.0.5"
-  resolved "https://registry.yarnpkg.com/@next/codemod/-/codemod-13.0.5.tgz#e8d2b6226737d0ef14813a7e1403730637ef6df1"
-  integrity sha512-KD8KiwgHG9u00lW45VWMeFF+IrRUW8VIiUuZV6pwl8jfN7QAqMda+I7DLSEKIZywwxvzWiBS4yONJY4X17CFmg==
+"@next/codemod@^13.0.6":
+  version "13.0.6"
+  resolved "https://registry.yarnpkg.com/@next/codemod/-/codemod-13.0.6.tgz#37d8aa14807cca0464ca5ff6bb8b53075972c8ad"
+  integrity sha512-vhvBI8gAyJrPqA43H9P3wGxh0Hc0grlLG5SoK30pPSUvD1bLiUvF2XlJoVorMvH/2z4ZH0w9+LC72fNMV0m9Cg==
   dependencies:
     chalk "4.1.0"
     cheerio "1.0.0-rc.9"
