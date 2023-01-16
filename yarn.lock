@@ -448,10 +448,10 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
-"@next/codemod@^13.1.1":
-  version "13.1.1"
-  resolved "https://registry.yarnpkg.com/@next/codemod/-/codemod-13.1.1.tgz#eb3c69da7b5891ccf425fcc5a9f727d8a306cfd0"
-  integrity sha512-/PqKsJSdz83v+QRNRtAIdgB+qeD9L/mzn26o8R3MyvEDwfiwI7WCNZFabTxpaypY57U/lD4R+3BeiYp7y3owOA==
+"@next/codemod@^13.1.2":
+  version "13.1.2"
+  resolved "https://registry.yarnpkg.com/@next/codemod/-/codemod-13.1.2.tgz#6e6a8f1f5fdbf0586215997698396372f6cedca3"
+  integrity sha512-IjFPRwD2bOm4IjvHMjuY/32507O7tiGKPA9gidSrV/xYDZTZq4fHcWYwIk09cU1oKOW1fwO7VjL4+5ju2mLdtg==
   dependencies:
     chalk "4.1.0"
     cheerio "1.0.0-rc.9"
@@ -2891,11 +2891,6 @@ next-sitemap@^3.1.44:
   dependencies:
     "@corex/deepmerge" "^4.0.29"
     minimist "^1.2.7"
-
-next-themes@^0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/next-themes/-/next-themes-0.2.1.tgz#0c9f128e847979daf6c67f70b38e6b6567856e45"
-  integrity sha512-B+AKNfYNIzh0vqQQKqQItTS8evEouKD7H5Hj3kmuPERwddR2TxvDSFZuTj6T7Jfn1oyeUyJMydPl1Bkxkh0W7A==
 
 next@^13.1.1:
   version "13.1.1"
