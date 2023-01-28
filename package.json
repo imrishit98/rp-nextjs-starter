@@ -10,7 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/codemod": "^13.1.1",
+    "@next/codemod": "^13.1.6",
     "next": "^13.1.6",
     "next-sitemap": "^3.1.44",
     "react": "^18.2.0",
