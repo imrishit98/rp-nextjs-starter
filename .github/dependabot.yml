@@ -1,11 +1,21 @@
-# To get started with Dependabot version updates, you'll need to specify which
-# package ecosystems to update and where the package manifests are located.
-# Please see the documentation for all configuration options:
-# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+# This dependabot config will check for minor and major updates, 
+# once per month. It ignores patch updates and updates for subdependencies.
+# Security updates are not affected by this file, and will be opened as soon
+# as dependabot has identified the vulnerability.
 
 version: 2
 updates:
-  - package-ecosystem: "npm" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  - package-ecosystem: "npm"
+    directory: "/"
     schedule:
+      # We only check once per month, but security vulnerability fixes 
+      # are not affected by this, and will be opened when discovered.
       interval: "monthly"
+    allow:
+      # Allow only updates for direct dependencies in the production group.
+      # We do not check for updates in subdependencies.
+      - dependency-type: "direct"
+    ignore:
+      # Ignore all patch updates. We only care about minor and major updates.
+      - dependency-name: "*"
+        update-types: ["version-update:semver-patch"]
