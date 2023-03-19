@@ -5,4 +5,13 @@ module.exports = {
   siteUrl: siteConfig.url,
   generateRobotsTxt: true, // (optional)
   // ...other options
+  autoLastmod: false,
+  robotsTxtOptions: {
+    policies: [
+      {
+        userAgent: '*',
+        allow: '/',
+      },
+    ],
+  },
 };
