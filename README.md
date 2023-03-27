@@ -16,14 +16,14 @@ Table of Contents:
 
 ## ⚡️ Quick Start
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https%3A%2F%2Fgithub.com%2Fimrishit98%2Frp-nextjs-starter) [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fimrishit98%2Frp-nextjs-starter)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https%3A%2F%2Fgithub.com%2Fion8%2Fnextjs-starter) [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fion8%2Fnextjs-starter)
 
 How to use:
 
 ```bash
-yarn create next-app -e https://github.com/imrishit98/rp-nextjs-starter
+yarn create next-app -e https://github.com/ion8/nextjs-starter
 # or
-npx create-next-app -e https://github.com/imrishit98/rp-nextjs-starter
+npx create-next-app -e https://github.com/ion8/nextjs-starter
 ```
 
 ## 🚀 Getting Started
