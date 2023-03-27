@@ -1,17 +1,18 @@
-# Rishit Patel's Default Next.js Starter
+# ion8's Default Next.js Starter
 
 This is a starter template for Next.js projects. It includes the following:
+
 - [Tailwind CSS](https://tailwindcss.com/)
 - [React GTM Module](https://www.npmjs.com/package/react-gtm-module)
 
 Table of Contents:
-  - [⚡️ Quick Start](#️-quick-start)
-  - [🚀 Getting Started](#-getting-started)
-  - [📦 Deployment](#-deployment)
-  - [📝 License](#-license)
-  - [📧 Contact](#-contact)
-  - [📚 Resources](#-resources)
 
+- [⚡️ Quick Start](#️-quick-start)
+- [🚀 Getting Started](#-getting-started)
+- [📦 Deployment](#-deployment)
+- [📝 License](#-license)
+- [📧 Contact](#-contact)
+- [📚 Resources](#-resources)
 
 ## ⚡️ Quick Start
 
