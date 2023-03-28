@@ -57,7 +57,7 @@ export const Subtext = ({ className, children, ...props }) => {
   );
 };
 
-export const Paragraph = ({ className, children, ...props }) => {
+export const P = ({ className, children, ...props }) => {
   return (
     <p className={'text-[16px] leading-[24px]' + ' ' + className} {...props}>
       {children}
@@ -65,7 +65,7 @@ export const Paragraph = ({ className, children, ...props }) => {
   );
 };
 
-export const Small = ({ className, children, ...props }) => {
+export const SmText = ({ className, children, ...props }) => {
   return (
     <p className={'text-[14px] leading-[24px]' + ' ' + className} {...props}>
       {children}
@@ -73,7 +73,7 @@ export const Small = ({ className, children, ...props }) => {
   );
 };
 
-export const ExtraSmall = ({ className, children, ...props }) => {
+export const XSText = ({ className, children, ...props }) => {
   return (
     <p className={'text-[12px] leading-[18px]' + ' ' + className} {...props}>
       {children}
