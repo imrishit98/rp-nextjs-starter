@@ -1,4 +1,4 @@
-export const H1 = ({ className, children }) => {
+export const H1 = ({ className, children, ...props }) => {
   return (
     <h1
       className={
@@ -6,13 +6,14 @@ export const H1 = ({ className, children }) => {
         ' ' +
         className
       }
+      {...props}
     >
       {children}
     </h1>
   );
 };
 
-export const H2 = ({ className, children }) => {
+export const H2 = ({ className, children, ...props }) => {
   return (
     <h2
       className={
@@ -20,47 +21,62 @@ export const H2 = ({ className, children }) => {
         ' ' +
         className
       }
+      {...props}
     >
       {children}
     </h2>
   );
 };
-export const H3 = ({ className, children }) => {
+export const H3 = ({ className, children, ...props }) => {
   return (
-    <h3 className={'text-[25px] leading-[38px] font-bold' + ' ' + className}>
+    <h3
+      className={'text-[25px] leading-[38px] font-bold' + ' ' + className}
+      {...props}
+    >
       {children}
     </h3>
   );
 };
 
-export const H4 = ({ className, children }) => {
+export const H4 = ({ className, children, ...props }) => {
   return (
-    <h4 className={'text-[25px] leading-[30px] font-bold' + ' ' + className}>
+    <h4
+      className={'text-[25px] leading-[30px] font-bold' + ' ' + className}
+      {...props}
+    >
       {children}
     </h4>
   );
 };
 
-export const Subtext = ({ className, children }) => {
+export const Subtext = ({ className, children, ...props }) => {
   return (
-    <p className={'text-[18px] leading-[27px]' + ' ' + className}>{children}</p>
+    <p className={'text-[18px] leading-[27px]' + ' ' + className} {...props}>
+      {children}
+    </p>
   );
 };
 
-export const Paragraph = ({ className, children }) => {
+export const Paragraph = ({ className, children, ...props }) => {
   return (
-    <p className={'text-[16px] leading-[24px]' + ' ' + className}>{children}</p>
+    <p className={'text-[16px] leading-[24px]' + ' ' + className} {...props}>
+      {children}
+    </p>
   );
 };
 
-export const Small = ({ className, children }) => {
+export const Small = ({ className, children, ...props }) => {
   return (
-    <p className={'text-[14px] leading-[24px]' + ' ' + className}>{children}</p>
+    <p className={'text-[14px] leading-[24px]' + ' ' + className} {...props}>
+      {children}
+    </p>
   );
 };
 
-export const ExtraSmall = ({ className, children }) => {
+export const ExtraSmall = ({ className, children, ...props }) => {
   return (
-    <p className={'text-[12px] leading-[18px]' + ' ' + className}>{children}</p>
+    <p className={'text-[12px] leading-[18px]' + ' ' + className} {...props}>
+      {children}
+    </p>
   );
 };

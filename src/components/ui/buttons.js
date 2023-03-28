@@ -7,6 +7,7 @@ export const PrimaryButton = ({
   className,
   iconOnTheRight,
   children,
+  ...props
 }) => {
   return (
     <Link
@@ -16,6 +17,7 @@ export const PrimaryButton = ({
         'flex py-4 justify-center items-senter rounded-[5px] text-white bg-cobalt px-5 focus:outline-none focus:ring-none hover:bg-cyan font-bold ' +
         className
       }
+      {...props}
     >
       <span
         className={` ${
@@ -36,6 +38,7 @@ export const SecondaryButton = ({
   className,
   iconOnTheRight,
   children,
+  ...props
 }) => {
   return (
     <Link
@@ -45,6 +48,7 @@ export const SecondaryButton = ({
         'flex justify-center items-senter py-4 rounded-[5px] text-white bg-cyan px-5 focus:outline-none focus:ring-none hover:bg-cobalt font-bold ' +
         className
       }
+      {...props}
     >
       <span
         className={` ${
