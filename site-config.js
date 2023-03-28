@@ -1,11 +1,11 @@
 const siteConfig = {
-  title: "Rishit's Default Next.js Starter",
+  title: "ion8's NextJS Starter Template",
   tagline:
     'This is a starter template for Next.js projects with Tailwind CSS, SEO, and more.',
-  url: 'https://nextjs-starter.rishit.dev',
+  url: 'https://github.com/ion8/nextjs-starter',
   baseUrl: '/',
-  projectName: 'rp-nextjs-starter',
-  organizationName: 'rishitpatel.com',
+  projectName: 'ion8-nextjs-starter',
+  organizationName: 'ion8.net',
 };
 
 module.exports = siteConfig;

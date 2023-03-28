@@ -7,9 +7,7 @@ const Footer = () => {
       <Container className='flex justify-center items-center text-sm font-medium'>
         © {new Date().getFullYear()}&nbsp;
         <Link href={'/'} target='_blank' rel='noopener noreferrer'>
-          
-            Rishit Patel
-          
+          NextJS Starter Template
         </Link>
         . All Rights Reserved.
       </Container>

@@ -6,7 +6,14 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'deep-blue': '#00455F',
+        cobalt: '#115C89',
+        teal: '#00EBF4',
+        cyan: '#00AEEF',
+      },
+    },
   },
   plugins: [],
 };
