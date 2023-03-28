@@ -10,7 +10,7 @@ const Navbar = () => {
             href='/'
             className='text-2xl font-bold text-gray-800 hover:text-gray-700 dark:text-white dark:hover:text-gray-300 lg:text-3xl'
           >
-            RP
+            ion8
           </Link>
         </div>
         <div className='flex'>
