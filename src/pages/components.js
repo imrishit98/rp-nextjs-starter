@@ -13,7 +13,7 @@ const Components = () => {
           Template
         </H1>
       </Container>
-      <Container>
+      <Container className='flex justify-center items-center'>
         <div className='grid grid-cols-4 gap-4'>
           <div>
             <PrimaryButton link='#' label='Primary Button' />
