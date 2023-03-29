@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export const H1 = ({ className, children, ...props }) => {
   return (
     <h1
@@ -49,7 +51,7 @@ export const H4 = ({ className, children, ...props }) => {
   );
 };
 
-export const Subtext = ({ className, children, ...props }) => {
+export const SubText = ({ className, children, ...props }) => {
   return (
     <p className={'text-[18px] leading-[27px]' + ' ' + className} {...props}>
       {children}
@@ -78,5 +80,18 @@ export const XSText = ({ className, children, ...props }) => {
     <p className={'text-[12px] leading-[18px]' + ' ' + className} {...props}>
       {children}
     </p>
+  );
+};
+
+export const NavbarLink = ({ link, label, ...props }) => {
+  return (
+    <Link
+      href={link}
+      className='block py-3 md:inline-block md:px-4 xl:px-7 focus:outline-none focus:ring-0'
+    >
+      <SubText className='text-deep-blue hover:text-cobalt font-medium'>
+        {label}
+      </SubText>
+    </Link>
   );
 };

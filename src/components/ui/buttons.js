@@ -5,6 +5,7 @@ export const PrimaryButton = ({
   link,
   label,
   className,
+  hasIcon,
   iconOnTheRight,
   children,
   ...props
@@ -22,7 +23,8 @@ export const PrimaryButton = ({
       <span
         className={` ${
           iconOnTheRight ? 'order-last ml-[10px] mr-0' : 'mr-[10px] ml-0'
-        }`}
+        }
+       ${!hasIcon ? 'hidden' : ''}`}
       >
         {children}
       </span>
@@ -36,6 +38,7 @@ export const SecondaryButton = ({
   link,
   label,
   className,
+  hasIcon,
   iconOnTheRight,
   children,
   ...props
@@ -53,7 +56,7 @@ export const SecondaryButton = ({
       <span
         className={` ${
           iconOnTheRight ? 'order-last ml-[10px] mr-0' : ' mr-[10px] ml-0'
-        }`}
+        } ${!hasIcon ? 'hidden' : ''}`}
       >
         {children}
       </span>
