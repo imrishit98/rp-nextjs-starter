@@ -67,34 +67,46 @@ const Navbar = () => {
 
         {/* Desktop/tablet menu */}
         <div className='relative hidden md:justify-between md:flex'>
-          {navigation.map((item) => (
-            <NavbarLink key={item.name} link={item.href}>
-              {/* main menu item */}
-              <LgText
-                className={`py-5 ${
-                  item.subItem ? 'nav-subitem' : ''
-                } font-medium text-deep-blue hover:text-cobalt`}
-              >
-                {item.name}
-              </LgText>
-              {/* subItem menu */}
-              <ul className='absolute top-[60px] z-10 w-[240px] nav-subitem-content'>
-                {item.subItem
-                  ? item.subItem.map((subItem) => (
-                      <li className='px-4 py-4 bg-slate-50 hover:bg-slate-100'>
-                        <NavbarLink
-                          key={subItem.name}
-                          link={subItem.href}
-                          className='text-left'
-                        >
-                          {subItem.name}
-                        </NavbarLink>
-                      </li>
-                    ))
-                  : null}
-              </ul>
-            </NavbarLink>
-          ))}
+          {navigation.map((item) =>
+            item.subItem ? (
+              <div>
+                {/* main menu item */}
+                <LgText
+                  className={`p-5 ${
+                    item.subItem ? 'nav-subitem' : ''
+                  } font-bold text-deep-blue hover:text-cobalt`}
+                >
+                  {item.name}
+                </LgText>
+                {/* subItem menu */}
+                <ul className='absolute top-[60px] z-10 w-[240px] nav-subitem-content'>
+                  {item.subItem
+                    ? item.subItem.map((subItem) => (
+                        <li className='px-4 py-4 bg-slate-50 hover:bg-slate-100'>
+                          <NavbarLink
+                            key={subItem.name}
+                            link={subItem.href}
+                            className='text-left'
+                          >
+                            {subItem.name}
+                          </NavbarLink>
+                        </li>
+                      ))
+                    : null}
+                </ul>
+              </div>
+            ) : (
+              <NavbarLink key={item.name} link={item.href} className=''>
+                <LgText
+                  className={`p-5 ${
+                    item.subItem ? 'nav-subitem' : ''
+                  } font-bold text-deep-blue hover:text-cobalt`}
+                >
+                  {item.name}
+                </LgText>
+              </NavbarLink>
+            )
+          )}
         </div>
         <div className='hidden md:block'>
           <PrimaryButton link='/' label='Contact Us' />
@@ -137,7 +149,7 @@ const Navbar = () => {
                 item.subItem ? (
                   <>
                     <li onClick={() => toggleSubItems(itemIndex)}>
-                      <LgText className='font-bold text-deep-blue'>
+                      <LgText className='py-3 font-bold text-deep-blue'>
                         {item.name}
                       </LgText>
                       {/* maps submenu items */}{' '}
@@ -157,7 +169,7 @@ const Navbar = () => {
                     </li>
                   </>
                 ) : (
-                  <li>
+                  <li className='py-2'>
                     {/* Main menuItem with no subItems will have a link */}
                     <NavbarLink key={item.name} link={item.href}>
                       <LgText className='font-bold text-deep-blue'>
