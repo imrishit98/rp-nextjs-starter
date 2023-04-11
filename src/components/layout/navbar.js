@@ -118,7 +118,7 @@ const Navbar = () => {
             />
             <CloseIcon
               className={('w-6 h-6 ', isOpen ? 'block' : 'hidden')}
-              // onClick={() => toggleSubItems(itemIndex)}
+              onClick={() => setIsSubMenuOpen([])}
             />
           </button>
         </div>
