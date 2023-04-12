@@ -2,19 +2,27 @@ import Layout from '../components/layout';
 import { SecondaryButton, PrimaryButton } from '../components/ui/buttons';
 import { Container } from '../components/ui/containers';
 import { SubmitIcon } from '../components/ui/icons';
-import { H1 } from '../components/ui/typography';
+import { H1, LgText } from '../components/ui/typography';
+
+const title = 'Components Page';
 
 const Components = () => {
   return (
-    <Layout>
-      <Container className=' text-center h-[40vh]'>
-        <H1>
-          ion8&apos;s <span className='text-cobalt'>Next.js</span> Starter
-          Template
-        </H1>
+    <Layout seoTitle={title} seoDesc=''>
+      <Container className='text-center h-[50vh] flex'>
+        <div>
+          <H1 className='mb-4'>
+            ion8&apos;s <span className='text-cobalt'>Next.js</span> Starter
+            Template
+          </H1>
+          <LgText className='md:px-20 lg:px-40'>
+            A boilerplate with all the necessary and common styles and
+            components for your needs.
+          </LgText>
+        </div>
       </Container>
-      <Container className=''>
-        <div className='grid grid-cols-4 gap-4'>
+      <Container className='items-center'>
+        <div className='grid grid-cols-1 gap-4 md:grid-cols-3'>
           <div>
             {/* Primary Button without icon */}
             <PrimaryButton link='#' label='Primary Button' />

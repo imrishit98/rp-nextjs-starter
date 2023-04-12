@@ -32,7 +32,7 @@ export const H2 = ({ className, children, ...props }) => {
 export const H3 = ({ className, children, ...props }) => {
   return (
     <h3
-      className={'text-[25px] leading-[38px] font-bold' + ' ' + className}
+      className={'text-[30px] leading-[38px] font-bold' + ' ' + className}
       {...props}
     >
       {children}
@@ -51,7 +51,7 @@ export const H4 = ({ className, children, ...props }) => {
   );
 };
 
-export const SubText = ({ className, children, ...props }) => {
+export const LgText = ({ className, children, ...props }) => {
   return (
     <p className={'text-[18px] leading-[27px]' + ' ' + className} {...props}>
       {children}
@@ -83,15 +83,15 @@ export const XSText = ({ className, children, ...props }) => {
   );
 };
 
-export const NavbarLink = ({ link, label, ...props }) => {
+export const NavbarLink = ({ link, children, ...props }) => {
   return (
     <Link
       href={link}
-      className='block py-3 md:inline-block md:px-4 xl:px-7 focus:outline-none focus:ring-0'
+      className='block md:inline-block md:px-4 xl:px-7 focus:outline-none focus:ring-0'
+      {...props}
     >
-      <SubText className='text-deep-blue hover:text-cobalt font-medium'>
-        {label}
-      </SubText>
+      {/* dropdown menu items */}
+      {children}
     </Link>
   );
 };
