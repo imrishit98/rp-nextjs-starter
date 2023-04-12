@@ -44,9 +44,6 @@ const Navbar = () => {
       ],
     },
   ];
-  // useEffect(() => {
-  //   console.log(isSubMenuOpen);
-  // }, [isSubMenuOpen]);
 
   function toggleSubItems(itemIndex) {
     isSubMenuOpen.includes(itemIndex)
