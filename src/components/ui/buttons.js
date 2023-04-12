@@ -1,4 +1,32 @@
 import Link from 'next/link';
+import React from 'react';
+import { useState } from 'react';
+
+export const SubmitButton = ({
+  hasIcon,
+  iconOnTheRight,
+  children,
+  ...props
+}) => {
+  const [loading, setLoading] = useState(false);
+
+  return (
+    <button
+      className='block px-6 py-3 text-center text-white rounded-lg bg-cobalt md:inline-block hover:bg-cyan focus:outline-none focus:ring'
+      type='submit'
+    >
+      <span
+        className={` ${
+          iconOnTheRight ? 'order-last ml-[10px] mr-0' : 'mr-[10px] ml-0'
+        }
+       ${!hasIcon ? 'hidden' : ''}`}
+      >
+        {children}
+      </span>
+      <span> {loading ? 'Submitting...' : 'Submit'}</span>
+    </button>
+  );
+};
 
 export const PrimaryButton = ({
   id,
