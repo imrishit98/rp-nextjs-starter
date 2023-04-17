@@ -1,34 +1,24 @@
-import Layout from '../layout';
-import { SecondaryButton, PrimaryButton, SubmitButton } from './buttons';
-import { Container } from './containers';
-import { H1, H4 } from './typography';
-
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import { SubmitIcon } from './icons';
+import { DropdownArrowIcon, SubmitIcon } from './icons';
+import { SubmitButton } from './buttons';
+import { H4, XSText } from './typography';
 
 export const Form = ({ pageTitle }) => {
   const router = useRouter();
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  {
-    /* form validation */
-  }
   const validationSchema = Yup.object().shape({
-    inputField: Yup.string().required('Please enter your first name'),
-    business: Yup.string(),
+    firstName: Yup.string().required('Please enter your first name'),
+    dropdownField: Yup.string(),
   });
 
-  {
-    /* end of form validation */
-  }
   const formOptions = { resolver: yupResolver(validationSchema) };
-
-  // get functions to build form with useForm() hook
   const { register, formState, handleSubmit } = useForm(formOptions);
   const { errors } = formState;
 
@@ -38,9 +28,9 @@ export const Form = ({ pageTitle }) => {
 
     if (data) {
       const webhookData = {
-        inputField: data.inputField,
-
-        conversionPageUrl: 'website URL' + router.pathname,
+        firstName: data.firstName,
+        dropdown: data.dropdownField,
+        conversionPageUrl: 'website-url.com' + router.pathname,
         conversionPageTitle: pageTitle,
       };
 
@@ -59,33 +49,64 @@ export const Form = ({ pageTitle }) => {
   return (
     <div className='justify-center py-20 lg:text-left'>
       <div className='mb-6'>
+        <hr class='h-px my-8 bg-gray-200 border-0 dark:bg-gray-700' />
+
         <H4>Form Elements with Validation</H4>
+        <hr class='h-px my-8 bg-gray-200 border-0 dark:bg-gray-700' />
       </div>
       <form id='form' className='' onSubmit={handleSubmit(onSubmit)}>
-        <div className='grid grid-cols-1 gap-5'>
+        <div className='grid grid-cols-1 gap-5 lg:grid-cols-2'>
+          {/* Input Field - Required */}
           <div>
-            <label htmlFor='inputField' className='block mb-1'>
-              Input Field <span className='text-red'>*</span>
+            <label htmlFor='firstName' className='block mb-1'>
+              First Name
+              <span className='inline text-red'>*</span>
             </label>
             <input
-              className={`px-4 py-3 rounded-md border border-solid border-cobalt w-full focus:border-cyan focus:outline-none ${
-                errors.inputField ? 'invalid' : ''
+              className={`px-4 py-3 rounded-md border border-solid border-light-blue w-full focus:border-cyan focus:outline-none ${
+                errors.firstName ? 'invalid' : ''
               }`}
-              name='inputField'
+              name='firstName'
               type='text'
-              {...register('inputField')}
+              {...register('firstName')}
             />
-
-            <p className='inline font-semibold text-extra-small text-red'>
-              {errors.inputField?.message}
-            </p>
+            <XSText className='inline text-red'>
+              {errors.firstName?.message}
+            </XSText>
           </div>
-        </div>
 
-        <div className='flex mt-5 md:justify-end'>
-          <SubmitButton hasIcon>
-            <SubmitIcon />
-          </SubmitButton>
+          {/* Dropdown Field - Optional */}
+
+          <div className='relative'>
+            <label htmlFor='dropdownField' className='block mb-1'>
+              Dropdown Label
+            </label>
+            <select
+              name='dropdownField'
+              className='w-full px-4 py-3 border border-solid rounded-md border-light-blue focus:border-cyan focus:outline-none'
+              {...register('dropdownField', {
+                required: false,
+              })}
+            >
+              <option value='' selected>
+                Select
+              </option>
+              <option value='option-1'>Option 1</option>
+              <option value='option-2'>Option 2</option>
+            </select>
+            <DropdownArrowIcon className='stroke-light-blue' />
+          </div>
+
+          {/* Submit Button */}
+          <div className='flex mt-5 lg:col-span-2 md:justify-end'>
+            <SubmitButton
+              className
+              label={loading ? 'Submitting...' : 'Submit'}
+              hasIcon
+            >
+              <SubmitIcon />
+            </SubmitButton>
+          </div>
         </div>
       </form>
     </div>
