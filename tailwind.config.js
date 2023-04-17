@@ -12,6 +12,8 @@ module.exports = {
         cobalt: '#115C89',
         teal: '#00EBF4',
         cyan: '#00AEEF',
+        'light-blue': '#D6EBF4',
+        'cool-grey': '#EBF3F9',
       },
     },
   },

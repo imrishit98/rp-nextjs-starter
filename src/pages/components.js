@@ -1,6 +1,7 @@
 import Layout from '../components/layout';
 import { SecondaryButton, PrimaryButton } from '../components/ui/buttons';
 import { Container } from '../components/ui/containers';
+import { Form } from '../components/ui/form';
 import { SubmitIcon } from '../components/ui/icons';
 import { H1, LgText } from '../components/ui/typography';
 
@@ -40,6 +41,10 @@ const Components = () => {
             </PrimaryButton>
           </div>
         </div>
+      </Container>
+
+      <Container>
+        <Form />
       </Container>
     </Layout>
   );
