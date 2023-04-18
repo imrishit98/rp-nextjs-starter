@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { DropdownArrowIcon, SubmitIcon } from './icons';
 import { SubmitButton } from './buttons';
-import { H4, XSText } from './typography';
+import { XSText } from './typography';
 
 export const Form = ({ pageTitle }) => {
   const router = useRouter();
@@ -48,12 +48,6 @@ export const Form = ({ pageTitle }) => {
   };
   return (
     <div className='justify-center py-20 lg:text-left'>
-      <div className='mb-6'>
-        <hr class='h-px my-8 bg-gray-200 border-0 dark:bg-gray-700' />
-
-        <H4>Form Elements with Validation</H4>
-        <hr class='h-px my-8 bg-gray-200 border-0 dark:bg-gray-700' />
-      </div>
       <form id='form' className='' onSubmit={handleSubmit(onSubmit)}>
         <div className='grid grid-cols-1 gap-5 lg:grid-cols-2'>
           {/* Input Field - Required */}
