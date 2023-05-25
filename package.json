@@ -29,5 +29,8 @@
     "eslint-config-next": "^13.2.3",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.2.6"
+  },
+  "engines": {
+    "node": ">=18.x.x"
   }
 }
