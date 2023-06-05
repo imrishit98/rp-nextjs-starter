@@ -1,0 +1,33 @@
+name: Run the tests
+
+on:
+  pull_request:
+    branches: ['main', 'feature/**']
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js 18.x with yarn cache
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: 'yarn'
+
+      - name: Install yarn
+        run: yarn install --frozen-lockfile
+
+      - name: Start the server
+        run: |
+          yarn build
+          yarn start &
+
+      - name: Run the tests
+        run: yarn run codeceptjs:headless
+
+        env:
+          CI: false
