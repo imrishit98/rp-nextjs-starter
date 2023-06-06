@@ -1,36 +1,47 @@
 {
-  "name": "ion8-nextjs-starter",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "postbuild": "next-sitemap",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@hookform/resolvers": "^3.0.1",
-    "@next/codemod": "^13.2.3",
-    "axios": "^1.3.5",
-    "next": "^13.2.3",
-    "next-sitemap": "^3.1.52",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-gtm-module": "^2.0.11",
-    "react-hook-form": "^7.43.9",
-    "sass": "^1.58.0",
-    "swiper": "^9.2.3",
-    "yup": "^1.0.2"
-  },
-  "devDependencies": {
-    "autoprefixer": "^10.4.13",
-    "eslint": "8.35.0",
-    "eslint-config-next": "^13.2.3",
-    "postcss": "^8.4.21",
-    "tailwindcss": "^3.2.6"
-  },
-  "engines": {
-    "node": ">=18.x.x"
-  }
+    "name": "ion8-nextjs-starter",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "postbuild": "next-sitemap",
+        "start": "next start",
+        "lint": "next lint",
+        "codeceptjs": "codeceptjs run --steps",
+        "codeceptjs:headless": "HEADLESS=true codeceptjs run --steps",
+        "codeceptjs:ui": "codecept-ui --app",
+        "codeceptjs:demo": "codeceptjs run --steps -c node_modules/@codeceptjs/examples",
+        "codeceptjs:demo:headless": "HEADLESS=true codeceptjs run --steps -c node_modules/@codeceptjs/examples",
+        "codeceptjs:demo:ui": "codecept-ui --app  -c node_modules/@codeceptjs/examples"
+    },
+    "dependencies": {
+        "@hookform/resolvers": "^3.0.1",
+        "@next/codemod": "^13.2.3",
+        "axios": "^1.3.5",
+        "next": "^13.2.3",
+        "next-sitemap": "^3.1.52",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-gtm-module": "^2.0.11",
+        "react-hook-form": "^7.43.9",
+        "sass": "^1.58.0",
+        "swiper": "^9.2.3",
+        "yup": "^1.0.2"
+    },
+    "devDependencies": {
+        "@codeceptjs/configure": "^0.10.0",
+        "@codeceptjs/examples": "^1.2.1",
+        "@codeceptjs/ui": "^0.5.0",
+        "autoprefixer": "^10.4.13",
+        "codeceptjs": "^3.4.1",
+        "eslint": "8.35.0",
+        "eslint-config-next": "^13.2.3",
+        "playwright": "^1.34.3",
+        "postcss": "^8.4.21",
+        "tailwindcss": "^3.2.6"
+    },
+    "engines": {
+        "node": ">=18.x.x"
+    }
 }
