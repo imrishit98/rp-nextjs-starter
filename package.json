@@ -16,7 +16,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-gtm-module": "^2.0.11",
-    "sass": "^1.62.1"
+    "sass": "^1.63.6"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
