@@ -475,10 +475,10 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
-"@next/codemod@^13.2.3":
-  version "13.2.3"
-  resolved "https://registry.yarnpkg.com/@next/codemod/-/codemod-13.2.3.tgz#f08f73aef7cfab40ebf75b13bbab231f69893b8d"
-  integrity sha512-x8RCvsEJt4sjV7LPg+1ToIn8Q7V1o7Mxf7hMlInHUOKNhxsIYp4gDKGydNqO6oz+qSJ6DVX1uPO5JKLriL0LGQ==
+"@next/codemod@^13.4.7":
+  version "13.4.7"
+  resolved "https://registry.yarnpkg.com/@next/codemod/-/codemod-13.4.7.tgz#4e10b6c6696d2d8fff04adb3d4dfef56c83f23fd"
+  integrity sha512-NVsRgwhHwB5OkuGKZejb0KSrTZ6sgQmHjTrShkLclNL8foUjtfn0/lwyO9i/K1BxqCTLDCMAADOFvjf2Cnnqpw==
   dependencies:
     chalk "4.1.0"
     cheerio "1.0.0-rc.9"
@@ -3567,10 +3567,10 @@ safe-regex@^1.1.0:
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
-sass@^1.62.1:
-  version "1.62.1"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.62.1.tgz#caa8d6bf098935bc92fc73fa169fb3790cacd029"
-  integrity sha512-NHpxIzN29MXvWiuswfc1W3I0N8SXBd8UR26WntmDlRYf0bSADnwnOjsyMZ3lMezSlArD33Vs3YFhp7dWvL770A==
+sass@^1.63.6:
+  version "1.63.6"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.63.6.tgz#481610e612902e0c31c46b46cf2dad66943283ea"
+  integrity sha512-MJuxGMHzaOW7ipp+1KdELtqKbfAWbH7OLIdoSMnVe3EXPMTmxTmlaZDCTsgIpPCs3w99lLo9/zDKkOrJuT5byw==
   dependencies:
     chokidar ">=3.0.0 <4.0.0"
     immutable "^4.0.0"
