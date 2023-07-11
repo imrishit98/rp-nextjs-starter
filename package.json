@@ -17,7 +17,7 @@
     },
     "dependencies": {
         "@hookform/resolvers": "^3.0.1",
-        "@next/codemod": "^13.2.3",
+        "@next/codemod": "^13.4.9",
         "axios": "^1.3.5",
         "next": "^13.2.3",
         "next-sitemap": "^3.1.52",
