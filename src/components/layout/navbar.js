@@ -64,40 +64,37 @@ const Navbar = () => {
 
         {/* Desktop/tablet menu */}
         <div className='relative hidden md:justify-between md:flex'>
-          {navigation.map((item) =>
+          {navigation.map((item, index) =>
             item.subItem ? (
-              <div>
+              <div key={index}>
                 {/* main menu item */}
                 <LgText
-                  className={`p-5 ${
-                    item.subItem ? 'nav-subitem' : ''
-                  } font-bold text-deep-blue hover:text-cobalt`}
+                  className={`p-5 ${item.subItem ? 'nav-subitem' : ''
+                    } font-bold text-deep-blue hover:text-cobalt`}
                 >
                   {item.name}
                 </LgText>
                 {/* subItem menu */}
                 <ul className='absolute top-[60px] z-10 w-[240px] nav-subitem-content'>
                   {item.subItem
-                    ? item.subItem.map((subItem) => (
-                        <li className='px-4 py-4 bg-slate-50 hover:bg-slate-100'>
-                          <NavbarLink
-                            key={subItem.name}
-                            link={subItem.href}
-                            className='text-left'
-                          >
-                            {subItem.name}
-                          </NavbarLink>
-                        </li>
-                      ))
+                    ? item.subItem.map((subItem, subIndex) => (
+                      <li className='px-4 py-4 bg-slate-50 hover:bg-slate-100' key={subIndex}>
+                        <NavbarLink
+                          link={subItem.href}
+                          className='text-left'
+                        >
+                          {subItem.name}
+                        </NavbarLink>
+                      </li>
+                    ))
                     : null}
                 </ul>
               </div>
             ) : (
-              <NavbarLink key={item.name} link={item.href} className=''>
+              <NavbarLink key={index} link={item.href} className=''>
                 <LgText
-                  className={`p-5 ${
-                    item.subItem ? 'nav-subitem' : ''
-                  } font-bold text-deep-blue hover:text-cobalt`}
+                  className={`p-5 ${item.subItem ? 'nav-subitem' : ''
+                    } font-bold text-deep-blue hover:text-cobalt`}
                 >
                   {item.name}
                 </LgText>
@@ -106,7 +103,7 @@ const Navbar = () => {
           )}
         </div>
         <div className='hidden md:block'>
-          <PrimaryButton link='/' label='Contact Us' />
+          <PrimaryButton link='/profile' label='Profile' />
         </div>
 
         {/* mobile menu */}
@@ -144,31 +141,31 @@ const Navbar = () => {
             {navigation.map(
               (item, itemIndex) =>
                 item.subItem ? (
-                  <>
+                  <div key={itemIndex}>
                     <li onClick={() => toggleSubItems(itemIndex)}>
                       <LgText className='py-3 font-bold text-deep-blue'>
                         {item.name}
                       </LgText>
                       {/* maps submenu items */}{' '}
-                      {item.subItem.map((subItem) => (
+                      {item.subItem.map((subItem, subItemindex) => (
                         <div
-                          className={`${
-                            isSubMenuOpen.includes(itemIndex)
+                          className={`${isSubMenuOpen.includes(itemIndex)
                               ? 'flex'
                               : 'hidden'
-                          } px-4 py-3 bg-slate-50 justify-center`}
+                            } px-4 py-3 bg-slate-50 justify-center`}
+                          key={subItemindex}
                         >
-                          <NavbarLink key={subItem.name} link={subItem.href}>
+                          <NavbarLink link={subItem.href}>
                             {subItem.name}
                           </NavbarLink>
                         </div>
                       ))}{' '}
                     </li>
-                  </>
+                  </div>
                 ) : (
-                  <li className='py-2'>
+                  <li key={itemIndex} className='py-2'>
                     {/* Main menuItem with no subItems will have a link */}
-                    <NavbarLink key={item.name} link={item.href}>
+                    <NavbarLink link={item.href}>
                       <LgText className='font-bold text-deep-blue'>
                         {item.name}
                       </LgText>
