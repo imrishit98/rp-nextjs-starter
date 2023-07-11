@@ -24,7 +24,7 @@
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-gtm-module": "^2.0.11",
-        "react-hook-form": "^7.43.9",
+        "react-hook-form": "^7.45.1",
         "sass": "^1.63.6",
         "swiper": "^9.2.3",
         "yup": "^1.0.2"
@@ -34,7 +34,7 @@
         "@codeceptjs/examples": "^1.2.1",
         "@codeceptjs/ui": "^0.6.1",
         "autoprefixer": "^10.4.13",
-        "codeceptjs": "^3.4.1",
+        "codeceptjs": "^3.5.1",
         "eslint": "8.35.0",
         "eslint-config-next": "^13.2.3",
         "playwright": "^1.34.3",
