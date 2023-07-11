@@ -400,10 +400,10 @@
   resolved "https://registry.npmjs.org/@codeceptjs/helper/-/helper-1.0.2.tgz"
   integrity sha512-QKuyw4cGVa78YYj+g02RXitcUYpV4qKjZDHxfCIH2w8lJIr1FQohRD3o/MpcqEnvp475HQJN/OyWhdUBstJupA==
 
-"@codeceptjs/ui@^0.5.0":
-  version "0.5.0"
-  resolved "https://registry.npmjs.org/@codeceptjs/ui/-/ui-0.5.0.tgz"
-  integrity sha512-6nZAnn5OKAh2JNRtIwcJV2qF0RcLR6GkciREH8UQgFQBmQAN0dKumfULtX4sD8C5s6yal4PfwRIioyOfY8fEaQ==
+"@codeceptjs/ui@^0.6.1":
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/@codeceptjs/ui/-/ui-0.6.1.tgz#1f4b477294eacb0988fd912a839cde8a6be33050"
+  integrity sha512-dkcmSzVV7jE8M3eVYCCdieNFk2MTRDoc+dKt1z+ubfW92mgt6fy7uRejwfBnCKQIGSn6eYGiu01v4fondQHFOg==
   dependencies:
     "@codeceptjs/configure" "^0.8.0"
     axios "^0.24.0"
