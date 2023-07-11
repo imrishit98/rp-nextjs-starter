@@ -32,7 +32,7 @@
     "devDependencies": {
         "@codeceptjs/configure": "^0.10.0",
         "@codeceptjs/examples": "^1.2.1",
-        "@codeceptjs/ui": "^0.5.0",
+        "@codeceptjs/ui": "^0.6.1",
         "autoprefixer": "^10.4.13",
         "codeceptjs": "^3.4.1",
         "eslint": "8.35.0",
