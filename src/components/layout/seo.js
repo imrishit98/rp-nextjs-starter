@@ -6,6 +6,7 @@ const SEO = ({
   title = siteConfig.title,
   description = siteConfig.tagline,
   path,
+  keywords,
   children,
 }) => {
   const router = useRouter();
@@ -33,6 +34,7 @@ const SEO = ({
       <meta name='twitter:title' content={title} />
       <meta name='twitter:description' content={description} />
       <meta name='twitter:url' content={seoUrl} />
+      {keywords && <meta name='keywords' content={keywords} />}
 
       {/* Images */}
       <link rel='icon' href='/favicon.ico' />
