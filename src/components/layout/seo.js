@@ -7,6 +7,7 @@ const SEO = ({
   description = siteConfig.tagline,
   path,
   keywords,
+  jsonLd,
   children,
 }) => {
   const router = useRouter();
@@ -40,6 +41,15 @@ const SEO = ({
       <link rel='icon' href='/favicon.ico' />
       {/* <meta property='og:image' content={`${siteConfig.url}/og-image.png`} />
       <meta name='twitter:image' content={`${siteConfig.url}/og-image.png`} /> */}
+
+      {/* Structured data */}
+      {jsonLd && (
+        <script
+          key='structured-data'
+          type='application/ld+json'
+          dangerouslySetInnerHTML={{ __html: jsonLd }}
+        />
+      )}
 
       {children}
     </Head>
