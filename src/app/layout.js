@@ -4,7 +4,7 @@ import siteConfig from '../../site-config';
 export const metadata = {
   title: siteConfig.title,
   description: siteConfig.tagline,
-  metadataBase: new URL(siteConfig.url),
+  metadataBase: siteConfig.url,
   openGraph: {
     title: siteConfig.title,
     description: siteConfig.tagline,
