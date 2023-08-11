@@ -2,22 +2,12 @@ import '../styles/main.scss';
 import siteConfig from '../../site-config';
 
 export const metadata = {
-  title: siteConfig.title,
+  title: {
+    template: `%s | ${siteConfig.title}`,
+    default: siteConfig.title,
+  },
   description: siteConfig.tagline,
-  metadataBase: siteConfig.url,
-  openGraph: {
-    title: siteConfig.title,
-    description: siteConfig.tagline,
-    // images: `${siteConfig.url}/og-image.png`,
-    url: siteConfig.url,
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: siteConfig.title,
-    description: siteConfig.tagline,
-    // images: [`${siteConfig.url}/og-image.png`],
-    url: siteConfig.url,
-  },
+  metadataBase: new URL(siteConfig.url),
   alternates: {
     canonical: siteConfig.url,
   },
@@ -31,6 +21,19 @@ export const metadata = {
   },
   icons: {
     icon: './favicon.ico',
+  },
+  openGraph: {
+    title: siteConfig.title,
+    description: siteConfig.tagline,
+    // images: `${siteConfig.url}/og-image.png`,
+    url: siteConfig.url,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteConfig.title,
+    description: siteConfig.tagline,
+    // images: [`${siteConfig.url}/og-image.png`],
+    url: siteConfig.url,
   },
 };
 
