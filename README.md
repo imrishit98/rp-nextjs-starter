@@ -1,10 +1,9 @@
 # Rishit Patel's Default Next.js Starter
 
-This is a starter template for Next.js projects. It includes the following:
-- [Tailwind CSS](https://tailwindcss.com/)
-- [React GTM Module](https://www.npmjs.com/package/react-gtm-module)
+This is a starter template for Next.js projects. It's a simple, clean, and modern starter template that includes Tailwind CSS, React GTM Module, and more. It's built with new app directory structure but it also includes the old pages directory structure for backwards compatibility. If you want to use only the old pages directory structure, then you can use the [rp-nextjs-starter-pages-dir](https://github.com/imrishit98/rp-nextjs-starter-pages-dir) starter template.
 
 Table of Contents:
+- [Rishit Patel's Default Next.js Starter](#rishit-patels-default-nextjs-starter)
   - [⚡️ Quick Start](#️-quick-start)
   - [🚀 Getting Started](#-getting-started)
   - [📦 Deployment](#-deployment)
@@ -37,7 +36,7 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+You can start editing the page by modifying `src/app/page.js`. The page auto-updates as you edit the file.
 
 ## 📦 Deployment
 
@@ -47,7 +46,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
 
 ## 📧 Contact
 
