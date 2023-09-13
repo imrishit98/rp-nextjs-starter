@@ -8,18 +8,18 @@ export const metadata = {
   openGraph: {
     title: siteConfig.title,
     description: siteConfig.tagline,
-    // images: `${siteConfig.url}/og-image.png`,
     url: siteConfig.url,
+    // images: `${siteConfig.url}/og-image.png`,
   },
   twitter: {
     card: 'summary_large_image',
     title: siteConfig.title,
     description: siteConfig.tagline,
-    // images: [`${siteConfig.url}/og-image.png`],
     url: siteConfig.url,
+    // images: [`${siteConfig.url}/og-image.png`],
   },
   alternates: {
-    canonical: siteConfig.url,
+    canonical: new URL(siteConfig.url),
   },
   viewport: {
     width: 'device-width',
