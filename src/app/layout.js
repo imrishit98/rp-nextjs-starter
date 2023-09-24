@@ -1,5 +1,6 @@
-import '../styles/main.scss';
 import siteConfig from '../../site-config';
+import Layout from '../components/layout';
+import '../styles/main.scss';
 
 export const metadata = {
   title: siteConfig.title,
@@ -37,7 +38,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
-      <body>{children}</body>
+      <body>
+        <Layout>{children}</Layout>
+      </body>
     </html>
   );
 }
