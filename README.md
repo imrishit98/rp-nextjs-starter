@@ -2,8 +2,16 @@
 
 This is a starter template for Next.js projects. It's a simple, clean, and modern starter template that includes Tailwind CSS, React GTM Module, and more. It's built with new app directory structure but it also includes the old pages directory structure for backwards compatibility. If you want to use only the old pages directory structure, then you can use the [rp-nextjs-starter-pages-dir](https://github.com/imrishit98/rp-nextjs-starter-pages-dir) starter template.
 
+Popular Projects Built With This Starter Template:
+- [aitools.fyi - Find the best ai tools!](https://aitools.fyi)
+- [PDFPeer - Chat with any document!](https://pdfpeer.com)
+- [Amazing Newsletters - Find the best newsletters!](https://amazingnewsletters.com)
+
+## Getting Started
+
 Table of Contents:
 - [Rishit Patel's Default Next.js Starter](#rishit-patels-default-nextjs-starter)
+  - [Getting Started](#getting-started)
   - [⚡️ Quick Start](#️-quick-start)
   - [🚀 Getting Started](#-getting-started)
   - [📦 Deployment](#-deployment)
