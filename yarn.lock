@@ -467,12 +467,11 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
-"@next/codemod@^13.4.7":
-  version "13.4.7"
-  resolved "https://registry.yarnpkg.com/@next/codemod/-/codemod-13.4.7.tgz#4e10b6c6696d2d8fff04adb3d4dfef56c83f23fd"
-  integrity sha512-NVsRgwhHwB5OkuGKZejb0KSrTZ6sgQmHjTrShkLclNL8foUjtfn0/lwyO9i/K1BxqCTLDCMAADOFvjf2Cnnqpw==
+"@next/codemod@^13.5.4":
+  version "13.5.4"
+  resolved "https://registry.yarnpkg.com/@next/codemod/-/codemod-13.5.4.tgz#79d8d186ca077dafdcc13251b049555f7d3fa45d"
+  integrity sha512-f2QdnKpEusSBuXwc3ILZgh0keO1QacwW6PBJEU9ITZb9UWxlx8JgaRCmk0IaYZI31fRBOXzRaQUjEGVFBz1Zzw==
   dependencies:
-    chalk "4.1.0"
     cheerio "1.0.0-rc.9"
     execa "4.0.3"
     globby "11.0.1"
@@ -480,6 +479,7 @@
     is-git-clean "1.1.0"
     jscodeshift "0.13.1"
     meow "7.0.1"
+    picocolors "1.0.0"
 
 "@next/env@13.5.4", "@next/env@^13.4.3":
   version "13.5.4"
@@ -1056,14 +1056,6 @@ caniuse-lite@^1.0.30001400, caniuse-lite@^1.0.30001406, caniuse-lite@^1.0.300014
   version "1.0.30001427"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001427.tgz#d3a749f74be7ae0671fbec3a4eea18576e8ad646"
   integrity sha512-lfXQ73oB9c8DP5Suxaszm+Ta2sr/4tf8+381GkIm1MLj/YdLf+rEDyDSRCzeltuyTVGm+/s18gdZ0q+Wmp8VsQ==
-
-chalk@4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/chalk/-/chalk-4.1.0.tgz#4e14870a618d9e2edd97dd8345fd9d9dc315646a"
-  integrity sha512-qwx12AxXe2Q5xQ43Ac//I6v5aXTipYrSESdOgzrN+9XjgEpyjpKuvSGaN4qE93f7TQTlerQQ8S+EQ0EyDoVL1A==
-  dependencies:
-    ansi-styles "^4.1.0"
-    supports-color "^7.1.0"
 
 chalk@^2.0.0:
   version "2.4.2"
@@ -3547,7 +3539,7 @@ path-type@^4.0.0:
   resolved "https://registry.yarnpkg.com/path-type/-/path-type-4.0.0.tgz#84ed01c0a7ba380afe09d90a8c180dcd9d03043b"
   integrity sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
 
-picocolors@^1.0.0:
+picocolors@1.0.0, picocolors@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/picocolors/-/picocolors-1.0.0.tgz#cb5bdc74ff3f51892236eaf79d68bc44564ab81c"
   integrity sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==
