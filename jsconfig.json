@@ -7,7 +7,8 @@
       "@/forms/*": ["src/components/ui/forms/*"],
       "@/icons/*": ["src/components/icons/*"],
       "@/layout/*": ["src/components/layout/*"],
-      "@/utils/*": ["src/utils/*"]
+      "@/utils/*": ["src/utils/*"],
+      "@/tests/*": ["src/tests/*"]
     }
   }
 }
