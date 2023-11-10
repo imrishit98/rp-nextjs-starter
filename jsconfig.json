@@ -1,5 +1,14 @@
 {
   "compilerOptions": {
-    "allowJs": true
+    "baseUrl": ".",
+    "paths": {
+      "@/components/*": ["src/components/*"],
+      "@/ui/*": ["src/components/ui/*"],
+      "@/forms/*": ["src/components/ui/forms/*"],
+      "@/icons/*": ["src/components/icons/*"],
+      "@/layout/*": ["src/components/layout/*"],
+      "@/utils/*": ["src/utils/*"],
+      "@/tests/*": ["src/tests/*"]
+    }
   }
 }

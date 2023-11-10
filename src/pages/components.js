@@ -10,16 +10,17 @@ const title = 'Components Page';
 
 const Components = () => {
   return (
-    <Layout seoTitle={title} seoDesc=''>
+    <Layout
+      seoTitle={title}
+      seoDesc=''>
       <Container className='text-center h-[50vh] flex'>
         <div>
           <H1 className='mb-4'>
-            ion8&apos;s <span className='text-cobalt'>Next.js</span> Starter
-            Template
+            ion8&apos;s <span className='text-cobalt'>Next.js</span> Starter Template
           </H1>
           <LgText className='md:px-20 lg:px-40'>
-            A boilerplate with all the necessary and common styles and
-            components for your needs.
+            A boilerplate with all the necessary and common styles and components for
+            your needs.
           </LgText>
         </div>
       </Container>
@@ -27,17 +28,27 @@ const Components = () => {
         <div className='grid grid-cols-1 gap-4 md:grid-cols-3'>
           <div>
             {/* Primary Button without icon */}
-            <PrimaryButton link='#' label='Primary Button' />
+            <PrimaryButton
+              link='#'
+              label='Primary Button'
+            />
           </div>
           <div>
             {/* Secondary Button with the icon on the left by default */}
-            <SecondaryButton link='#' label='Left Icon' hasIcon>
+            <SecondaryButton
+              link='#'
+              label='Left Icon'
+              hasIcon>
               <SubmitIcon />
             </SecondaryButton>
           </div>{' '}
           <div>
             {/* Primary Button with the icon on the right using the prop iconOnTheRight */}
-            <PrimaryButton link='#' label='Right Icon' hasIcon iconOnTheRight>
+            <PrimaryButton
+              link='#'
+              label='Right Icon'
+              hasIcon
+              iconOnTheRight>
               <SubmitIcon />
             </PrimaryButton>
           </div>

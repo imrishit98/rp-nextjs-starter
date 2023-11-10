@@ -25,9 +25,12 @@ jobs:
         run: |
           yarn build
           yarn start &
+      
+      - name: Install Playwright
+        run: yarn playwright install
 
       - name: Run the tests
-        run: yarn run codeceptjs:headless
+        run: yarn run codeceptjs:headless --verbose
 
         env:
           CI: false

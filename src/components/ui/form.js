@@ -22,7 +22,7 @@ export const Form = ({ pageTitle }) => {
   const { register, formState, handleSubmit } = useForm(formOptions);
   const { errors } = formState;
 
-  const onSubmit = (data) => {
+  const onSubmit = data => {
     setLoading(true);
     const submitURL = `/api/form-handler`;
 
@@ -36,11 +36,11 @@ export const Form = ({ pageTitle }) => {
 
       axios
         .post(submitURL, webhookData)
-        .then((res) => {
+        .then(res => {
           setIsSubmitted(true);
           router.push('/thank-you');
         })
-        .catch((err) => {
+        .catch(err => {
           console.error(err);
           alert('There was an error submitting your form. Please try again.');
         });
@@ -48,11 +48,16 @@ export const Form = ({ pageTitle }) => {
   };
   return (
     <div className='justify-center py-20 lg:text-left'>
-      <form id='form' className='' onSubmit={handleSubmit(onSubmit)}>
+      <form
+        id='form'
+        className=''
+        onSubmit={handleSubmit(onSubmit)}>
         <div className='grid grid-cols-1 gap-5 lg:grid-cols-2'>
           {/* Input Field - Required */}
           <div>
-            <label htmlFor='firstName' className='block mb-1'>
+            <label
+              htmlFor='firstName'
+              className='block mb-1'>
               First Name
               <span className='inline text-red'>*</span>
             </label>
@@ -64,15 +69,15 @@ export const Form = ({ pageTitle }) => {
               type='text'
               {...register('firstName')}
             />
-            <XSText className='inline text-red'>
-              {errors.firstName?.message}
-            </XSText>
+            <XSText className='inline text-red'>{errors.firstName?.message}</XSText>
           </div>
 
           {/* Dropdown Field - Optional */}
 
           <div className='relative'>
-            <label htmlFor='dropdownField' className='block mb-1'>
+            <label
+              htmlFor='dropdownField'
+              className='block mb-1'>
               Dropdown Label
             </label>
             <select
@@ -80,9 +85,10 @@ export const Form = ({ pageTitle }) => {
               className='w-full px-4 py-3 border border-solid rounded-md border-light-blue focus:border-cyan focus:outline-none'
               {...register('dropdownField', {
                 required: false,
-              })}
-            >
-              <option value='' selected>
+              })}>
+              <option
+                value=''
+                selected>
                 Select
               </option>
               <option value='option-1'>Option 1</option>
@@ -96,8 +102,7 @@ export const Form = ({ pageTitle }) => {
             <SubmitButton
               className
               label={loading ? 'Submitting...' : 'Submit'}
-              hasIcon
-            >
+              hasIcon>
               <SubmitIcon />
             </SubmitButton>
           </div>

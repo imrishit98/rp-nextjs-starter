@@ -47,8 +47,8 @@ const Navbar = () => {
 
   function toggleSubItems(itemIndex) {
     isSubMenuOpen.includes(itemIndex)
-      ? setIsSubMenuOpen((current) =>
-          current.filter((isSubMenuOpen) => isSubMenuOpen !== itemIndex)
+      ? setIsSubMenuOpen(current =>
+          current.filter(isSubMenuOpen => isSubMenuOpen !== itemIndex),
         )
       : setIsSubMenuOpen([...isSubMenuOpen, itemIndex]);
   }
@@ -57,7 +57,9 @@ const Navbar = () => {
     <nav>
       <Container className='justify-between h-[72px] md:h-[94px] flex'>
         <div className='flex items-center flex-grow py-3 md:flex-none'>
-          <Link href='/' className='font-bold text-cobalt'>
+          <Link
+            href='/'
+            className='font-bold text-cobalt'>
             <H3>ion8</H3>
           </Link>
         </div>
@@ -69,41 +71,48 @@ const Navbar = () => {
               <div key={index}>
                 {/* main menu item */}
                 <LgText
-                  className={`p-5 ${item.subItem ? 'nav-subitem' : ''
-                    } font-bold text-deep-blue hover:text-cobalt`}
-                >
+                  className={`p-5 ${
+                    item.subItem ? 'nav-subitem' : ''
+                  } font-bold text-deep-blue hover:text-cobalt`}>
                   {item.name}
                 </LgText>
                 {/* subItem menu */}
                 <ul className='absolute top-[60px] z-10 w-[240px] nav-subitem-content'>
                   {item.subItem
                     ? item.subItem.map((subItem, subIndex) => (
-                      <li className='px-4 py-4 bg-slate-50 hover:bg-slate-100' key={subIndex}>
-                        <NavbarLink
-                          link={subItem.href}
-                          className='text-left'
-                        >
-                          {subItem.name}
-                        </NavbarLink>
-                      </li>
-                    ))
+                        <li
+                          className='px-4 py-4 bg-slate-50 hover:bg-slate-100'
+                          key={subIndex}>
+                          <NavbarLink
+                            link={subItem.href}
+                            className='text-left'>
+                            {subItem.name}
+                          </NavbarLink>
+                        </li>
+                      ))
                     : null}
                 </ul>
               </div>
             ) : (
-              <NavbarLink key={index} link={item.href} className=''>
+              <NavbarLink
+                key={index}
+                link={item.href}
+                className=''>
                 <LgText
-                  className={`p-5 ${item.subItem ? 'nav-subitem' : ''
-                    } font-bold text-deep-blue hover:text-cobalt`}
-                >
+                  className={`p-5 ${
+                    item.subItem ? 'nav-subitem' : ''
+                  } font-bold text-deep-blue hover:text-cobalt`}>
                   {item.name}
                 </LgText>
               </NavbarLink>
-            )
+            ),
           )}
         </div>
         <div className='hidden md:block'>
-          <PrimaryButton link='/profile' label='Profile' />
+          <PrimaryButton
+            link='/profile'
+            label='Profile'
+          />
         </div>
 
         {/* mobile menu */}
@@ -116,12 +125,9 @@ const Navbar = () => {
             className='inline-flex items-center justify-center ml-8 rounded-lg lg:hidden focus:outline-none focus:ring-none'
             aria-controls='mobileMenuBtn'
             aria-expanded='false'
-            onClick={() => setIsOpen(!isOpen)}
-          >
+            onClick={() => setIsOpen(!isOpen)}>
             <span className='sr-only'>Open main menu</span>
-            <HamburgerIcon
-              className={('w-6 h-6 ', isOpen ? 'hidden' : 'block')}
-            />
+            <HamburgerIcon className={('w-6 h-6 ', isOpen ? 'hidden' : 'block')} />
             <CloseIcon
               className={('w-6 h-6 ', isOpen ? 'block' : 'hidden')}
               onClick={() => setIsSubMenuOpen([])}
@@ -135,8 +141,7 @@ const Navbar = () => {
             (isOpen ? 'block' : 'hidden')
           }
           data-collapse-content='mobileMenuEvent'
-          id='mobileMenu'
-        >
+          id='mobileMenu'>
           <ul className='static top-[60px] z-10 w-full text-center'>
             {navigation.map(
               (item, itemIndex) =>
@@ -149,36 +154,35 @@ const Navbar = () => {
                       {/* maps submenu items */}{' '}
                       {item.subItem.map((subItem, subItemindex) => (
                         <div
-                          className={`${isSubMenuOpen.includes(itemIndex)
-                              ? 'flex'
-                              : 'hidden'
-                            } px-4 py-3 bg-slate-50 justify-center`}
-                          key={subItemindex}
-                        >
-                          <NavbarLink link={subItem.href}>
-                            {subItem.name}
-                          </NavbarLink>
+                          className={`${
+                            isSubMenuOpen.includes(itemIndex) ? 'flex' : 'hidden'
+                          } px-4 py-3 bg-slate-50 justify-center`}
+                          key={subItemindex}>
+                          <NavbarLink link={subItem.href}>{subItem.name}</NavbarLink>
                         </div>
                       ))}{' '}
                     </li>
                   </div>
                 ) : (
-                  <li key={itemIndex} className='py-2'>
+                  <li
+                    key={itemIndex}
+                    className='py-2'>
                     {/* Main menuItem with no subItems will have a link */}
                     <NavbarLink link={item.href}>
-                      <LgText className='font-bold text-deep-blue'>
-                        {item.name}
-                      </LgText>
+                      <LgText className='font-bold text-deep-blue'>{item.name}</LgText>
                     </NavbarLink>
                   </li>
-                )
+                ),
 
               /* end of item.subItem ? */
             )}{' '}
           </ul>{' '}
           {/* end of navigation.map ? */}
           <div className='mt-5 md:hidden'>
-            <PrimaryButton link='/' label='Contact Us' />
+            <PrimaryButton
+              link='/'
+              label='Contact Us'
+            />
           </div>
         </div>
         {/* end of mobile menu */}
