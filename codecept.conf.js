@@ -1,7 +1,12 @@
 const { setHeadlessWhen, setCommonPlugins } = require('@codeceptjs/configure');
 // turn on headless mode when running with HEADLESS=true environment variable
 // export HEADLESS=true && npx codeceptjs run
-setHeadlessWhen(process.env.HEADLESS || true);
+if (process.env.HEADLESS  !== null) {
+  setHeadlessWhen(process.env.HEADLESS);
+} else {
+  setHeadlessWhen(true);
+}
+
 const localhostURL = process.env.LOCALHOST_URL || 'http://localhost:3000';
 const { devices } = require('playwright');
 
