@@ -32,14 +32,16 @@
     "devDependencies": {
         "@codeceptjs/configure": "^0.10.0",
         "@codeceptjs/examples": "^1.2.1",
-        "@codeceptjs/ui": "^0.6.1",
+        "@codeceptjs/ui": "^0.7.0",
         "autoprefixer": "^10.4.13",
-        "codeceptjs": "^3.5.1",
+        "codeceptjs": "^3.5.7",
+        "dotenv": "^16.3.1",
         "eslint": "^8.50.0",
         "eslint-config-next": "^13.4.9",
         "eslint-config-prettier": "^9.0.0",
         "playwright": "^1.35.1",
         "postcss": "^8.4.31",
+        "prettier": "^3.0.3",
         "tailwindcss": "^3.3.2"
     },
     "engines": {
