@@ -27,7 +27,7 @@ jobs:
           yarn start &
 
       - name: Run the tests
-        run: yarn run codeceptjs:headless
+        run: yarn run codeceptjs:headless --verbose
 
         env:
           CI: false
