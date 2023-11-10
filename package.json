@@ -1,50 +1,50 @@
 {
-    "name": "ion8-nextjs-starter",
-    "version": "0.1.0",
-    "private": true,
-    "scripts": {
-        "dev": "next dev",
-        "build": "next build",
-        "postbuild": "next-sitemap",
-        "start": "next start",
-        "lint": "next lint",
-        "codeceptjs": "codeceptjs run --steps",
-        "codeceptjs:headless": "HEADLESS=true codeceptjs run --steps",
-        "codeceptjs:ui": "codecept-ui --app",
-        "codeceptjs:demo": "codeceptjs run --steps -c node_modules/@codeceptjs/examples",
-        "codeceptjs:demo:headless": "HEADLESS=true codeceptjs run --steps -c node_modules/@codeceptjs/examples",
-        "codeceptjs:demo:ui": "codecept-ui --app  -c node_modules/@codeceptjs/examples"
-    },
-    "dependencies": {
-        "@hookform/resolvers": "^3.0.1",
-        "@next/codemod": "^13.4.9",
-        "axios": "^1.4.0",
-        "next": "^13.4.9",
-        "next-sitemap": "^4.1.8",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
-        "react-gtm-module": "^2.0.11",
-        "react-hook-form": "^7.45.1",
-        "sass": "^1.68.0",
-        "swiper": "^10.3.1",
-        "yup": "^1.2.0"
-    },
-    "devDependencies": {
-        "@codeceptjs/configure": "^0.10.0",
-        "@codeceptjs/examples": "^1.2.1",
-        "@codeceptjs/ui": "^0.7.0",
-        "autoprefixer": "^10.4.13",
-        "codeceptjs": "^3.5.7",
-        "dotenv": "^16.3.1",
-        "eslint": "^8.50.0",
-        "eslint-config-next": "^13.4.9",
-        "eslint-config-prettier": "^9.0.0",
-        "playwright": "^1.35.1",
-        "postcss": "^8.4.31",
-        "prettier": "^3.0.3",
-        "tailwindcss": "^3.3.2"
-    },
-    "engines": {
-        "node": ">=18.x.x"
-    }
+  "name": "ion8-nextjs-starter",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "postbuild": "next-sitemap",
+    "start": "next start",
+    "lint": "next lint",
+    "codeceptjs": "codeceptjs run --steps",
+    "codeceptjs:headless": "HEADLESS=true codeceptjs run --steps",
+    "codeceptjs:ui": "codecept-ui --app",
+    "codeceptjs:demo": "codeceptjs run --steps -c node_modules/@codeceptjs/examples",
+    "codeceptjs:demo:headless": "HEADLESS=true codeceptjs run --steps -c node_modules/@codeceptjs/examples",
+    "codeceptjs:demo:ui": "codecept-ui --app  -c node_modules/@codeceptjs/examples"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^3.0.1",
+    "@next/codemod": "^13.4.9",
+    "axios": "^1.4.0",
+    "next": "^13.4.9",
+    "next-sitemap": "^4.1.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-gtm-module": "^2.0.11",
+    "react-hook-form": "^7.45.1",
+    "sass": "^1.68.0",
+    "swiper": "^10.3.1",
+    "yup": "^1.2.0"
+  },
+  "devDependencies": {
+    "@codeceptjs/configure": "^0.10.0",
+    "@codeceptjs/examples": "^1.2.1",
+    "@codeceptjs/ui": "^0.7.0",
+    "autoprefixer": "^10.4.13",
+    "codeceptjs": "^3.5.7",
+    "dotenv": "^16.3.1",
+    "eslint": "^8.50.0",
+    "eslint-config-next": "^13.4.9",
+    "eslint-config-prettier": "^9.0.0",
+    "playwright": "^1.35.1",
+    "postcss": "^8.4.31",
+    "prettier": "^3.0.3",
+    "tailwindcss": "^3.3.2"
+  },
+  "engines": {
+    "node": ">=18.x.x"
+  }
 }

@@ -39,8 +39,7 @@ export const Gallery = () => {
         slides-per-view='3'
         pagination='true'
         navigation='true'
-        pagination-clickable='true'
-      >
+        pagination-clickable='true'>
         {GalleryImages.map((image, index) => (
           <swiper-slide key={index}>
             <Image
@@ -78,8 +77,7 @@ export const Testimonials = () => {
         slides-per-view='1'
         pagination='true'
         navigation='true'
-        pagination-clickable='true'
-      >
+        pagination-clickable='true'>
         {theTestimonials.map((testimonial, index) => (
           <swiper-slide key={index}>
             <blockquote className='flex flex-col justify-between h-full pt-20 pb-10 text-center'>

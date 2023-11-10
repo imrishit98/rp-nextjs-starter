@@ -19,14 +19,10 @@ export const PrimaryButton = ({
         'flex py-4 justify-center items-senter rounded-[5px] text-white bg-cobalt px-5 focus:outline-none focus:ring-none hover:bg-cyan font-bold ' +
         className
       }
-      {...props}
-    >
+      {...props}>
       <span
-        className={` ${
-          iconOnTheRight ? 'order-last ml-[10px] mr-0' : 'mr-[10px] ml-0'
-        }
-       ${!hasIcon ? 'hidden' : ''}`}
-      >
+        className={` ${iconOnTheRight ? 'order-last ml-[10px] mr-0' : 'mr-[10px] ml-0'}
+       ${!hasIcon ? 'hidden' : ''}`}>
         {children}
       </span>
       <span>{label}</span>
@@ -52,13 +48,11 @@ export const SecondaryButton = ({
         'flex justify-center items-senter py-4 rounded-[5px] text-white bg-cyan px-5 focus:outline-none focus:ring-none hover:bg-cobalt font-bold ' +
         className
       }
-      {...props}
-    >
+      {...props}>
       <span
         className={` ${
           iconOnTheRight ? 'order-last ml-[10px] mr-0' : ' mr-[10px] ml-0'
-        } ${!hasIcon ? 'hidden' : ''}`}
-      >
+        } ${!hasIcon ? 'hidden' : ''}`}>
         {children}
       </span>
       <span>{label}</span>
@@ -66,24 +60,14 @@ export const SecondaryButton = ({
   );
 };
 
-export const SubmitButton = ({
-  label,
-  hasIcon,
-  iconOnTheRight,
-  children,
-  ...props
-}) => {
+export const SubmitButton = ({ label, hasIcon, iconOnTheRight, children, ...props }) => {
   return (
     <button
       className='block px-6 py-3 text-center text-white rounded-lg bg-cobalt md:inline-block hover:bg-cyan focus:outline-none focus:ring'
-      type='submit'
-    >
+      type='submit'>
       <span
-        className={` ${
-          iconOnTheRight ? 'order-last ml-[10px] mr-0' : 'mr-[10px] ml-0'
-        }
-       ${!hasIcon ? 'hidden' : ''}`}
-      >
+        className={` ${iconOnTheRight ? 'order-last ml-[10px] mr-0' : 'mr-[10px] ml-0'}
+       ${!hasIcon ? 'hidden' : ''}`}>
         {children}
       </span>
       <span>{label}</span>

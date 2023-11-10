@@ -6,7 +6,10 @@ import SEO from './seo';
 const Layout = ({ seoTitle, seoDesc, seoPath, seoChildren, children }) => {
   return (
     <>
-      <SEO title={seoTitle} description={seoDesc} path={seoPath}>
+      <SEO
+        title={seoTitle}
+        description={seoDesc}
+        path={seoPath}>
         {seoChildren}
       </SEO>
       <Navbar />
