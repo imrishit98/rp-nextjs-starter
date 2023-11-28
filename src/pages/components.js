@@ -1,10 +1,11 @@
-import Layout from '../components/layout';
-import { SecondaryButton, PrimaryButton } from '../components/ui/buttons';
-import { Container } from '../components/ui/containers';
-import { Form } from '../components/ui/form';
-import { SubmitIcon } from '../components/ui/icons';
 import { Gallery, Testimonials } from '../components/ui/sliders';
 import { H1, H4, LgText } from '../components/ui/typography';
+import { PrimaryButton, SecondaryButton } from '../components/ui/buttons';
+
+import { Container } from '../components/ui/containers';
+import { Form } from '../components/ui/form';
+import Layout from '../components/layout';
+import { SubmitIcon } from '../components/ui/icons';
 
 const title = 'Components Page';
 

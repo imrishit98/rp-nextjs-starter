@@ -47,20 +47,42 @@ export const H4 = ({ className, children, ...props }) => {
   );
 };
 
+// Used in Content Headings
+export const H5 = ({ className, children, ...props }) => {
+  return (
+    <h4
+      className={'text-lg font-semibold leading-snug font-inter' + ' ' + className}
+      {...props}>
+      {children}
+    </h4>
+  );
+};
+
+// Used in Content Headings
+export const H6 = ({ className, children, ...props }) => {
+  return (
+    <h6
+      className={'text-2xl font-bold leading-loose font-inter' + ' ' + className}
+      {...props}>
+      {children}
+    </h6>
+  );
+};
+
+export const BodyText = ({ className, children, ...props }) => {
+  return (
+    <div
+      className={'leading-normal text-base font-poppins' + ' ' + className}
+      {...props}>
+      {children}
+    </div>
+  );
+};
+
 export const LgText = ({ className, children, ...props }) => {
   return (
     <p
       className={'text-[18px] leading-[27px]' + ' ' + className}
-      {...props}>
-      {children}
-    </p>
-  );
-};
-
-export const P = ({ className, children, ...props }) => {
-  return (
-    <p
-      className={'text-[16px] leading-[24px]' + ' ' + className}
       {...props}>
       {children}
     </p>
