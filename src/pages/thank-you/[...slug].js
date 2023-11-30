@@ -2,7 +2,6 @@ import { H1, LgText } from '@/ui/typography';
 
 import { Container } from '@/ui/containers';
 import Layout from '@/layout/index';
-import RecentPostsBlock from '@/ui/blog/recent-posts-block';
 import { SecondaryButton } from '@/ui/buttons';
 
 const ThankYou = () => {
