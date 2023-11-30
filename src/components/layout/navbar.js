@@ -17,30 +17,23 @@ const Navbar = ({ conversionPageUrl }) => {
       href: '/',
     },
     {
-      name: 'About',
-      href: '/about',
-      subItem: [
-        {
-          name: 'About our team',
-          href: '/about/team',
-        },
-        {
-          name: 'History Timeline',
-          href: '/about/history',
-        },
-      ],
+      name: 'Components',
+      href: '/components',
     },
     {
-      name: 'Services',
-      href: '/services',
+      name: 'Styleguide',
+      href: '/styleguide',
+    },
+    {
+      name: 'Other',
       subItem: [
         {
-          name: 'Software Engineering',
-          href: '/services/software-engineering',
+          name: 'item 1',
+          href: '/',
         },
         {
-          name: 'Marketing',
-          href: '/services/Marketing',
+          name: 'item 2',
+          href: '/',
         },
       ],
     },

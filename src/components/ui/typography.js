@@ -99,7 +99,7 @@ export const SmText = ({ className, children, ...props }) => {
   );
 };
 
-export const XSText = ({ className, children, ...props }) => {
+export const XsText = ({ className, children, ...props }) => {
   return (
     <p
       className={'text-[12px] leading-[18px]' + ' ' + className}
