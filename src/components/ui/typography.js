@@ -120,3 +120,17 @@ export const NavbarLink = ({ link, children, ...props }) => {
     </Link>
   );
 };
+
+export const FooterLabel = ({ className, children, ...props }) => {
+  return (
+    <p
+      className={
+        'text-sm leading-tight font-poppins text-white font-semibold uppercase' +
+        ' ' +
+        className
+      }
+      {...props}>
+      {children}
+    </p>
+  );
+};

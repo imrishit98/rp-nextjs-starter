@@ -1,14 +1,16 @@
-import axios from 'axios';
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
-import { useRouter } from 'next/router';
-import { useState } from 'react';
+
 import { DropdownArrowIcon, SubmitIcon } from './icons';
+
 import { SubmitButton } from './buttons';
 import { XSText } from './typography';
+import axios from 'axios';
+import { useForm } from 'react-hook-form';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
+import { yupResolver } from '@hookform/resolvers/yup';
 
-export const Form = ({ pageTitle }) => {
+export const Form = ({ pageTitle, conversionPageUrl }) => {
   const router = useRouter();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -30,7 +32,7 @@ export const Form = ({ pageTitle }) => {
       const webhookData = {
         firstName: data.firstName,
         dropdown: data.dropdownField,
-        conversionPageUrl: 'website-url.com' + router.pathname,
+        conversionPageUrl: conversionPageUrl,
         conversionPageTitle: pageTitle,
       };
 
@@ -38,7 +40,7 @@ export const Form = ({ pageTitle }) => {
         .post(submitURL, webhookData)
         .then(res => {
           setIsSubmitted(true);
-          router.push('/thank-you');
+          router.push('/thank-you' + conversionPageUrl);
         })
         .catch(err => {
           console.error(err);

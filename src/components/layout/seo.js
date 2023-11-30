@@ -1,13 +1,8 @@
 import Head from 'next/head';
-import { useRouter } from 'next/router';
 import siteConfig from '../../../site-config';
+import { useRouter } from 'next/router';
 
-const SEO = ({
-  title = siteConfig.title,
-  description = siteConfig.tagline,
-  path,
-  children,
-}) => {
+const SEO = ({ title, description, path, children }) => {
   const router = useRouter();
 
   const seoUrl = path

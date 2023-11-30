@@ -1,5 +1,16 @@
+import { BodyText } from './typography';
 import Link from 'next/link';
 import React from 'react';
+
+export const FooterLink = ({ link, conversionPageUrl, label, className }) => {
+  return (
+    <Link
+      href={conversionPageUrl ? link + '?conversionPageUrl=' + conversionPageUrl : link}
+      className={` text-gray-400 ${className}`}>
+      <BodyText className='inline'>{label}</BodyText>
+    </Link>
+  );
+};
 
 export const PrimaryButton = ({
   id,
