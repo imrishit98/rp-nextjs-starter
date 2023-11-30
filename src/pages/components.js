@@ -30,7 +30,7 @@ const Components = () => {
           <H4>Form Elements with Validation</H4>
           <hr class='h-px my-8 bg-gray-200 border-0 dark:bg-gray-700' />
         </div>
-        <Form />
+        {/* <Form /> */}
       </Container>
 
       <Container>

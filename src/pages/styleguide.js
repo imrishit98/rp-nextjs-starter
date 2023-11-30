@@ -35,6 +35,7 @@ const StyleGuide = () => {
 
       {/* Typography */}
       <Container className='items-center mb-10'>
+        <hr class='h-px my-8 bg-gray-200 border-0 dark:bg-gray-700' />
         <div className='grid grid-cols-1 gap-4 md:grid-cols-7'>
           <div className='col-span-3'>
             <H1>Heading 1</H1> <br />
@@ -83,6 +84,7 @@ const StyleGuide = () => {
 
       {/* Buttons */}
       <Container className='items-center mb-10'>
+        <hr class='h-px my-8 bg-gray-200 border-0 dark:bg-gray-700' />
         <div className='grid grid-cols-1 gap-4 md:grid-cols-3'>
           <div>
             {/* Primary Button without icon */}
@@ -106,6 +108,7 @@ const StyleGuide = () => {
       {/* Form elements */}
 
       <Container className='items-center'>
+        <hr class='h-px my-8 bg-gray-200 border-0 dark:bg-gray-700' />
         <div className=''>
           {/* Input Field - Required */}
           <div className='grid grid-cols-1 gap-4 md:grid-cols-2'>
