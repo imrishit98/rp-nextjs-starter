@@ -10,13 +10,14 @@ const Footer = ({ conversionPageUrl }) => {
         <FooterLink
           link='/'
           label='Privacy Policy'
-          className='underline font-semibold'
+          className='font-semibold underline'
         />{' '}
         |{' '}
         <FooterLink
-          link={'/contact-us' + '?conversionPageUrl=' + conversionPageUrl}
+          link='/contact-us'
           label='Contact Us'
-          className='underline font-semibold'
+          conversionPageUrl={conversionPageUrl}
+          className='font-semibold underline'
         />
       </Container>
     </footer>
