@@ -1,9 +1,9 @@
 import * as Yup from 'yup';
 
-import { DropdownArrowIcon, SubmitIcon } from './icons';
+import { DropdownArrowIcon, SubmitIcon } from '@/ui/icons';
 
-import { SubmitButton } from './buttons';
-import { XSText } from './typography';
+import { SubmitButton } from '@/ui/buttons';
+import { XSText } from '@/ui/typography';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';

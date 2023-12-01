@@ -1,7 +1,7 @@
-import Footer from './footer';
-import Main from './main';
-import Navbar from './navbar';
-import SEO from './seo';
+import Footer from '@/layout/footer';
+import Main from '@/layout/main';
+import Navbar from '@/layout/navbar';
+import SEO from '@/layout/seo';
 
 // conversionPageUrl tracks the path that leads to contact form
 const Layout = ({

@@ -2,8 +2,8 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-import { BodyText, H4, SmText } from './typography';
-import { Container, FullWidthContainer } from './containers';
+import { BodyText, H4, SmText } from '@/ui/typography';
+import { Container, FullWidthContainer } from '@/ui/containers';
 import { Navigation, Pagination } from 'swiper/modules';
 import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -73,7 +73,7 @@ export const Gallery = () => {
               alt={image.imgAlt}
               width={556}
               height={192}
-              className='w-full relative px-4'
+              className='relative w-full px-4'
             />
           </SwiperSlide>
         ))}{' '}

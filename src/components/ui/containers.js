@@ -1,4 +1,4 @@
-import { H2, LgText } from './typography';
+import { H2, LgText } from '@/ui/typography';
 
 // this container is used when there's a full bg color or bg pattern
 export const FullWidthContainer = ({ className = '', bgPattern, children }) => {

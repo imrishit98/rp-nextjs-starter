@@ -1,5 +1,5 @@
-import Layout from '../components/layout';
-import { Container } from '../components/ui/containers';
+import { Container } from '@/ui/containers';
+import Layout from '@/components/layout';
 
 const Home = () => {
   return (

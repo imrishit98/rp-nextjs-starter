@@ -1,6 +1,5 @@
-import { Container } from '../ui/containers';
-import { FooterLink } from '../ui/buttons';
-import Link from 'next/link';
+import { Container } from '@/ui/containers';
+import { FooterLink } from '@/ui/buttons';
 
 const Footer = ({ conversionPageUrl }) => {
   return (

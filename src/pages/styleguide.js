@@ -10,12 +10,12 @@ import {
   LgText,
   SmText,
   XsText,
-} from '../components/ui/typography';
-import { PrimaryButton, SecondaryButton } from '../components/ui/buttons';
+} from '@/ui/typography';
+import { PrimaryButton, SecondaryButton } from '@/ui/buttons';
 
-import { Container } from '../components/ui/containers';
-import Layout from '../components/layout';
-import { SubmitIcon } from '../components/ui/icons';
+import { Container } from '@/ui/containers';
+import Layout from '@/components/layout';
+import { SubmitIcon } from '@/ui/icons';
 
 const title = 'StyleGuide Page';
 

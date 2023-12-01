@@ -1,10 +1,10 @@
-import { CloseIcon, HamburgerIcon } from '../ui/icons';
-import { H3, LgText, NavbarLink } from '../ui/typography';
+import { CloseIcon, HamburgerIcon } from '@/ui/icons';
+import { H3, LgText, NavbarLink } from '@/ui/typography';
 import { useEffect, useState } from 'react';
 
-import { Container } from '../ui/containers';
+import { Container } from '@/ui/containers';
 import Link from 'next/link';
-import { PrimaryButton } from '../ui/buttons';
+import { PrimaryButton } from '@/ui/buttons';
 
 const Navbar = ({ conversionPageUrl }) => {
   const [isOpen, setIsOpen] = useState(false);
