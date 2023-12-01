@@ -1,7 +1,15 @@
-import React from 'react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+import { BodyText, H4, SmText } from '@/ui/typography';
+import { Container, FullWidthContainer } from '@/ui/containers';
+import { Navigation, Pagination } from 'swiper/modules';
+import React, { useRef, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
 import Image from 'next/image';
 import { register } from 'swiper/element/bundle';
-import { LgText } from './typography';
 
 register();
 
@@ -34,25 +42,43 @@ export const Gallery = () => {
   ];
 
   return (
-    <div className='flex items-center'>
-      <swiper-container
-        slides-per-view='3'
-        pagination='true'
-        navigation='true'
-        pagination-clickable='true'>
+    <Container>
+      <Swiper
+        slidesPerView={5}
+        breakpoints={{
+          1280: {
+            slidesPerView: 4,
+          },
+          1024: {
+            slidesPerView: 4,
+          },
+          768: {
+            slidesPerView: 3,
+          },
+          480: {
+            slidesPerView: 3,
+          },
+          375: {
+            slidesPerView: 2,
+          },
+        }}
+        navigation
+        loop
+        modules={[Navigation]}
+        className='mySwiper'>
         {GalleryImages.map((image, index) => (
-          <swiper-slide key={index}>
+          <SwiperSlide key={index}>
             <Image
               src={image.imgSrc}
               alt={image.imgAlt}
               width={556}
               height={192}
-              className='w-full relative px-4'
+              className='relative w-full px-4'
             />
-          </swiper-slide>
+          </SwiperSlide>
         ))}{' '}
-      </swiper-container>{' '}
-    </div>
+      </Swiper>{' '}
+    </Container>
   );
 };
 
@@ -72,25 +98,44 @@ export const Testimonials = () => {
     },
   ];
   return (
-    <div className='flex items-center'>
-      <swiper-container
-        slides-per-view='1'
-        pagination='true'
-        navigation='true'
-        pagination-clickable='true'>
+    <FullWidthContainer>
+      <Swiper
+        slidesPerView={1}
+        navigation
+        loop
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Navigation, Pagination]}
+        className='mySwiper'>
         {theTestimonials.map((testimonial, index) => (
-          <swiper-slide key={index}>
-            <blockquote className='flex flex-col justify-between h-full pt-20 pb-10 text-center'>
-              <div className='align-middle px-16 md:px-28 mb-5'>
-                <LgText className=''>{testimonial.feedback}</LgText>
-              </div>
-              <div className='px-4'>
-                <LgText className='block font-bold'>{testimonial.from}</LgText>
-              </div>
-            </blockquote>
-          </swiper-slide>
+          <SwiperSlide key={index}>
+            <div className='max-w-screen-md mx-8 my-auto lg:mx-auto md:mx-16'>
+              <svg
+                className='h-12 mx-auto mb-3 text-gray-500'
+                viewBox='0 0 24 27'
+                fill='none'
+                xmlns='http://www.w3.org/2000/svg'>
+                <path
+                  d='M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z'
+                  fill='currentColor'
+                />
+              </svg>
+              <blockquote className='mb-10 text-center'>
+                <H4 className='font-medium text-gray-700 mb-9'>
+                  {testimonial.feedback}
+                </H4>
+                <BodyText className='mb-1 font-bold text-gray-400'>
+                  {testimonial.from}
+                </BodyText>
+                <SmText className='font-semibold text-gray-500'>
+                  {testimonial.when}
+                </SmText>
+              </blockquote>
+            </div>
+          </SwiperSlide>
         ))}{' '}
-      </swiper-container>
-    </div>
+      </Swiper>
+    </FullWidthContainer>
   );
 };

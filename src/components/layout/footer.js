@@ -1,18 +1,23 @@
-import Link from 'next/link';
-import { Container } from '../ui/containers';
+import { Container } from '@/ui/containers';
+import { FooterLink } from '@/ui/buttons';
 
-const Footer = () => {
+const Footer = ({ conversionPageUrl }) => {
   return (
     <footer className='py-2 mt-20 border-t-2'>
       <Container className='flex items-center justify-center text-sm font-medium'>
-        © {new Date().getFullYear()}&nbsp;
-        <Link
-          href={'/'}
-          target='_blank'
-          rel='noopener noreferrer'>
-          NextJS Starter Template
-        </Link>
-        . All Rights Reserved.
+        © {new Date().getFullYear()}&nbsp; NextJS Starter Template |{' '}
+        <FooterLink
+          link='/'
+          label='Privacy Policy'
+          className='font-semibold underline'
+        />{' '}
+        |{' '}
+        <FooterLink
+          link='/contact-us'
+          label='Contact Us'
+          conversionPageUrl={conversionPageUrl}
+          className='font-semibold underline'
+        />
       </Container>
     </footer>
   );

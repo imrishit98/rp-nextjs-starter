@@ -22,3 +22,18 @@
 select {
   appearance: none;
 }
+
+
+.mySwiper{
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+
+.swiper-button-next:after {
+  position: relative;
+  right: -10px;
+}
+.swiper-button-prev:after {
+  position: relative;
+  left: -10px;
+}

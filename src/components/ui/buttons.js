@@ -1,5 +1,16 @@
+import { BodyText } from '@/ui/typography';
 import Link from 'next/link';
 import React from 'react';
+
+export const FooterLink = ({ link, conversionPageUrl, label, className }) => {
+  return (
+    <Link
+      href={conversionPageUrl ? link + '?conversionPageUrl=' + conversionPageUrl : link}
+      className={` text-gray-400 ${className}`}>
+      <BodyText className='inline'>{label}</BodyText>
+    </Link>
+  );
+};
 
 export const PrimaryButton = ({
   id,
@@ -7,7 +18,6 @@ export const PrimaryButton = ({
   label,
   className,
   hasIcon,
-  iconOnTheRight,
   children,
   ...props
 }) => {
@@ -16,13 +26,11 @@ export const PrimaryButton = ({
       id={id}
       href={link}
       className={
-        'flex py-4 justify-center items-senter rounded-[5px] text-white bg-cobalt px-5 focus:outline-none focus:ring-none hover:bg-cyan font-bold ' +
+        'flex py-4 justify-center items-center rounded-[5px] text-white bg-cobalt px-5 focus:outline-none focus:ring-none hover:bg-cyan font-bold ' +
         className
       }
       {...props}>
-      <span
-        className={` ${iconOnTheRight ? 'order-last ml-[10px] mr-0' : 'mr-[10px] ml-0'}
-       ${!hasIcon ? 'hidden' : ''}`}>
+      <span className={` 'mr-[10px] ml-0 ' ${!hasIcon ? 'hidden' : ''}`}>
         {children}
       </span>
       <span>{label}</span>
@@ -36,7 +44,6 @@ export const SecondaryButton = ({
   label,
   className,
   hasIcon,
-  iconOnTheRight,
   children,
   ...props
 }) => {
@@ -50,9 +57,8 @@ export const SecondaryButton = ({
       }
       {...props}>
       <span
-        className={` ${
-          iconOnTheRight ? 'order-last ml-[10px] mr-0' : ' mr-[10px] ml-0'
-        } ${!hasIcon ? 'hidden' : ''}`}>
+        className={`mr-[10px] ml-0 '
+         ${!hasIcon ? 'hidden' : ''}`}>
         {children}
       </span>
       <span>{label}</span>

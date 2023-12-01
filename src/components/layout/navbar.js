@@ -1,11 +1,12 @@
-import Link from 'next/link';
-import { Container } from '../ui/containers';
+import { CloseIcon, HamburgerIcon } from '@/ui/icons';
+import { H3, LgText, NavbarLink } from '@/ui/typography';
 import { useEffect, useState } from 'react';
-import { PrimaryButton } from '../ui/buttons';
-import { H3, NavbarLink, LgText } from '../ui/typography';
-import { CloseIcon, HamburgerIcon } from '../ui/icons';
 
-const Navbar = () => {
+import { Container } from '@/ui/containers';
+import Link from 'next/link';
+import { PrimaryButton } from '@/ui/buttons';
+
+const Navbar = ({ conversionPageUrl }) => {
   const [isOpen, setIsOpen] = useState(false);
   // toggle the submenu in mobile on click
   const [isSubMenuOpen, setIsSubMenuOpen] = useState([]);
@@ -16,30 +17,23 @@ const Navbar = () => {
       href: '/',
     },
     {
-      name: 'About',
-      href: '/about',
-      subItem: [
-        {
-          name: 'About our team',
-          href: '/about/team',
-        },
-        {
-          name: 'History Timeline',
-          href: '/about/history',
-        },
-      ],
+      name: 'Components',
+      href: '/components',
     },
     {
-      name: 'Services',
-      href: '/services',
+      name: 'Styleguide',
+      href: '/styleguide',
+    },
+    {
+      name: 'Other',
       subItem: [
         {
-          name: 'Software Engineering',
-          href: '/services/software-engineering',
+          name: 'item 1',
+          href: '/',
         },
         {
-          name: 'Marketing',
-          href: '/services/Marketing',
+          name: 'item 2',
+          href: '/',
         },
       ],
     },
@@ -110,8 +104,8 @@ const Navbar = () => {
         </div>
         <div className='hidden md:block'>
           <PrimaryButton
-            link='/profile'
-            label='Profile'
+            link={'/contact-us' + '?conversionPageUrl=' + conversionPageUrl}
+            label='Contact Us'
           />
         </div>
 
@@ -180,7 +174,7 @@ const Navbar = () => {
           {/* end of navigation.map ? */}
           <div className='mt-5 md:hidden'>
             <PrimaryButton
-              link='/'
+              link={'/contact-us' + '?conversionPageUrl=' + conversionPageUrl}
               label='Contact Us'
             />
           </div>

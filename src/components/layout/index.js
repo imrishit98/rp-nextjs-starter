@@ -1,9 +1,17 @@
-import Footer from './footer';
-import Main from './main';
-import Navbar from './navbar';
-import SEO from './seo';
+import Footer from '@/layout/footer';
+import Main from '@/layout/main';
+import Navbar from '@/layout/navbar';
+import SEO from '@/layout/seo';
 
-const Layout = ({ seoTitle, seoDesc, seoPath, seoChildren, children }) => {
+// conversionPageUrl tracks the path that leads to contact form
+const Layout = ({
+  seoTitle,
+  seoDesc,
+  seoPath,
+  seoChildren,
+  conversionPageUrl,
+  children,
+}) => {
   return (
     <>
       <SEO
@@ -12,9 +20,9 @@ const Layout = ({ seoTitle, seoDesc, seoPath, seoChildren, children }) => {
         path={seoPath}>
         {seoChildren}
       </SEO>
-      <Navbar />
+      <Navbar conversionPageUrl={conversionPageUrl} />
       <Main>{children}</Main>
-      <Footer />
+      <Footer conversionPageUrl={conversionPageUrl} />
     </>
   );
 };
