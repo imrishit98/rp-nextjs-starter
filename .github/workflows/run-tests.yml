@@ -25,12 +25,19 @@ jobs:
         run: |
           yarn build
           yarn start &
-      
+
       - name: Install Playwright
         run: yarn playwright install
 
       - name: Run the tests
         run: yarn run codeceptjs:headless --verbose
+
+      - name: Run Meticulous tests
+        uses: alwaysmeticulous/report-diffs-action@v1
+        with:
+          api-token: ${{ secrets.METICULOUS_API_TOKEN }}
+          # TODO: Update the port and protocol below to match your app's frontend
+          app-url: 'http://localhost:3000/'
 
         env:
           CI: false
