@@ -1,17 +1,22 @@
 import { Container, SectionHeader } from '@/ui/containers';
 import { Gallery, Testimonials } from '@/ui/sliders';
-import { H1, H4, LgText } from '@/ui/typography';
 
 import { Form } from '@/components/ui/form';
+import { H4 } from '@/ui/typography';
 import Layout from '@/components/layout';
-
-const title = 'Components Page';
+import { useRouter } from 'next/router';
 
 const Components = () => {
+  const router = useRouter();
+
+  const title = 'Components Page';
+  // this is the current page url that will be captured
+  const pageUrl = router.pathname;
   return (
     <Layout
       seoTitle={title}
-      seoDesc=''>
+      seoDesc=''
+      conversionPageUrl={pageUrl}>
       {/* Section header for the page */}
       <Container className='py-10 lg:py-20'>
         <SectionHeader
@@ -48,7 +53,7 @@ const Components = () => {
           <H4>Contact Form</H4>
           <hr class='h-px my-8 bg-gray-200 border-0 dark:bg-gray-700' />
         </div>
-        <Form />
+        <Form conversionPageUrl={pageUrl} />
       </Container>
     </Layout>
   );

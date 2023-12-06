@@ -1,17 +1,17 @@
 import * as Yup from 'yup';
 
-import { CheckboxList, Input, Select, Textarea } from './form-elements';
+import { CheckboxList,RadioButtonList, Input, Select, Textarea } from './form-elements';
+
 import { DropdownArrowIcon, SubmitIcon } from '@/ui/icons';
-import { useFieldArray, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 
 import { SubmitButton } from '@/ui/buttons';
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useEffect } from 'react';
 
-export const Form = ({ pageTitle, conversionPageUrl }) => {
+export const Form = ({ conversionPageUrl }) => {
   const router = useRouter();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -23,47 +23,27 @@ export const Form = ({ pageTitle, conversionPageUrl }) => {
     phoneNumber: Yup.string(),
     aboutYourDepartment: Yup.string().required('Please select one of the options'),
     hobbiesChk: Yup.array(),
+    ageGroupLst: Yup.string(),
     message: Yup.string().required('Please enter your message'),
   });
 
-  const { formState, register, handleSubmit, setValue, control } = useForm({
+  const { formState, register, handleSubmit } = useForm({
     resolver: yupResolver(validationSchema),
   });
   const { errors } = formState;
 
   const onSubmit = data => {
-    console.log(data);
-    // setLoading(true);
-    // const submitURL = `/api/form-handler`;
-    // if (data) {
-    //   const webhookData = {
-    //     firstName: data.firstName,
-    //     dropdown: data.dropdownField,
-    //     conversionPageUrl: conversionPageUrl,
-    //     conversionPageTitle: pageTitle,
-    //   };
-    //   axios
-    //     .post(submitURL, webhookData)
-    //     .then(res => {
-    //       setIsSubmitted(true);
-    //       router.push('/thank-you' + conversionPageUrl);
-    //     })
-    //     .catch(err => {
-    //       console.error(err);
-    //       alert('There was an error submitting your form. Please try again.');
-    //     });
-    // }
+    //console.log(data);
+    router.push('/thank-you' + conversionPageUrl);
+
   };
-
-
-
   return (
     <div className='justify-center py-20 lg:text-left'>
       <form
         id='form'
         className=''
         onSubmit={handleSubmit(onSubmit)}>
-        <div className='grid grid-cols-1 gap-5 lg:grid-cols-2'>
+        <div className='grid grid-cols-1 gap-10 lg:grid-cols-2'>
           {/* First name - Required */}
           <div>
             <Input
@@ -104,8 +84,7 @@ export const Form = ({ pageTitle, conversionPageUrl }) => {
               errorMessage={errors.emailAddress?.message}
             />
           </div>
-
-        
+          
           {/* Phone number - Optional */}
           <div> 
             <Input
@@ -121,7 +100,7 @@ export const Form = ({ pageTitle, conversionPageUrl }) => {
           </div> 
 
           {/* Dropdown Field - Required */}
-          <div>
+          <div className='w-1/2 col-span-2'> 
             <Select
               label='Tell us about your department'
               name='aboutYourDepartment'
@@ -133,20 +112,29 @@ export const Form = ({ pageTitle, conversionPageUrl }) => {
             />
           </div>
 
-          {/* Checkbox */}
-          <div> 
-        
+          {/* Optional Checkbox list */}
+          <div className='w-1/2 col-span-2'> 
+          
           <CheckboxList
               label='What are your hobbies'
               name='hobbiesChk'
+              isRequired
               options={['Books', 'Biking', 'Gardening']}
-              register={...register('hobbiesChk', {required:false})}
-              // errorMessage={errors.hobbiesChk?.message}
+              register={...register('hobbiesChk')}
+            />
+         </div>
+          {/* Optional Checkbox list */}
+          <div className='w-1/2 col-span-2'> 
+          <RadioButtonList
+              label='What is your age group'
+              name='ageGroupLst'
+              options={['2 - 12', '13 - 30', '31 - 45']}
+              register={...register('ageGroupLst')}
             />
           </div>
 
           {/* Textarea Field - Required */}
-          <div>
+          <div className='col-span-2'>
             <Textarea
               label='Your message'
               name='message'
