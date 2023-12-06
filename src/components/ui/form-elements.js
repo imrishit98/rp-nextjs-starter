@@ -150,9 +150,6 @@ export const CheckboxList = ({
   children,
   ...props
 }) => {
-  // const handleCheckboxChange = e => {
-  //   setValue(e.target.name, e.target.checked ? e.target.value : null);
-  // };
   const { setValue, control } = useForm();
   const { fields } = useFieldArray({
     control,
