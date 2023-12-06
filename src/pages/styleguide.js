@@ -11,9 +11,9 @@ import {
   SmText,
   XsText,
 } from '@/ui/typography';
+import { Container, SectionHeader } from '@/ui/containers';
 import { PrimaryButton, SecondaryButton } from '@/ui/buttons';
 
-import { Container } from '@/ui/containers';
 import Layout from '@/components/layout';
 import { SubmitIcon } from '@/ui/icons';
 
@@ -24,13 +24,13 @@ const StyleGuide = () => {
     <Layout
       seoTitle={title}
       seoDesc=''>
-      <Container className='flex py-20 text-center'>
-        <div>
-          <H1 className='mb-4'>StyleGuide</H1>
-          <LgText className='md:px-20 lg:px-40'>
-            This styleguide is created to match the Figma's styleguide
-          </LgText>
-        </div>
+      {/* Section header for the page */}
+      <Container className='py-10 lg:py-20'>
+        <SectionHeader
+          title='Styleguide'
+          desc="This styleguide is created to match the Figma's styleguide"
+          className='text-center'
+        />
       </Container>
 
       {/* Typography */}
@@ -110,22 +110,39 @@ const StyleGuide = () => {
       <Container className='items-center'>
         <hr class='h-px my-8 bg-gray-200 border-0 dark:bg-gray-700' />
         <div className=''>
-          {/* Input Field - Required */}
-          <div className='grid grid-cols-1 gap-4 md:grid-cols-2'>
+          <div className='grid grid-cols-1 gap-20 md:grid-cols-2'>
+            {/* Input Field - Required - See Form section in Components for validation */}
             <div>
               <label
-                htmlFor='firstName'
+                htmlFor='reqField'
                 className='block mb-1'>
-                First Name
+                Required Field
                 <span className='inline text-red-700'> *</span>
               </label>
               <input
                 className={`px-4 py-3 rounded-md border border-solid border-cobalt w-full focus:border-cyan focus:outline-none `}
-                name='firstName'
+                name='reqField'
                 type='text'
+                placeholder='Required field'
               />
               <XsText className='inline text-red-700'>Enter your first name</XsText>
             </div>
+            {/* Optional field */}
+            <div>
+              <label
+                htmlFor='optField'
+                className='block mb-1'>
+                Optional Field
+              </label>
+              <input
+                className={`px-4 py-3 rounded-md border border-solid border-cobalt w-full focus:border-cyan focus:outline-none `}
+                name='optField'
+                type='tel'
+                placeholder='Optional field'
+              />
+            </div>
+
+            {/* select boxes */}
           </div>
         </div>
       </Container>

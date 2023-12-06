@@ -1,14 +1,15 @@
 import * as Yup from 'yup';
 
+import { CheckboxList, Input, Select, Textarea } from './form-elements';
 import { DropdownArrowIcon, SubmitIcon } from '@/ui/icons';
+import { useFieldArray, useForm } from 'react-hook-form';
 
 import { SubmitButton } from '@/ui/buttons';
-import { XSText } from '@/ui/typography';
 import axios from 'axios';
-import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useEffect } from 'react';
 
 export const Form = ({ pageTitle, conversionPageUrl }) => {
   const router = useRouter();
@@ -17,37 +18,45 @@ export const Form = ({ pageTitle, conversionPageUrl }) => {
 
   const validationSchema = Yup.object().shape({
     firstName: Yup.string().required('Please enter your first name'),
-    dropdownField: Yup.string(),
+    lastName: Yup.string().required('Please enter your last name'),
+    emailAddress: Yup.string().required('Please enter your email address'),
+    phoneNumber: Yup.string(),
+    aboutYourDepartment: Yup.string().required('Please select one of the options'),
+    hobbiesChk: Yup.array(),
+    message: Yup.string().required('Please enter your message'),
   });
 
-  const formOptions = { resolver: yupResolver(validationSchema) };
-  const { register, formState, handleSubmit } = useForm(formOptions);
+  const { formState, register, handleSubmit, setValue, control } = useForm({
+    resolver: yupResolver(validationSchema),
+  });
   const { errors } = formState;
 
   const onSubmit = data => {
-    setLoading(true);
-    const submitURL = `/api/form-handler`;
-
-    if (data) {
-      const webhookData = {
-        firstName: data.firstName,
-        dropdown: data.dropdownField,
-        conversionPageUrl: conversionPageUrl,
-        conversionPageTitle: pageTitle,
-      };
-
-      axios
-        .post(submitURL, webhookData)
-        .then(res => {
-          setIsSubmitted(true);
-          router.push('/thank-you' + conversionPageUrl);
-        })
-        .catch(err => {
-          console.error(err);
-          alert('There was an error submitting your form. Please try again.');
-        });
-    }
+    console.log(data);
+    // setLoading(true);
+    // const submitURL = `/api/form-handler`;
+    // if (data) {
+    //   const webhookData = {
+    //     firstName: data.firstName,
+    //     dropdown: data.dropdownField,
+    //     conversionPageUrl: conversionPageUrl,
+    //     conversionPageTitle: pageTitle,
+    //   };
+    //   axios
+    //     .post(submitURL, webhookData)
+    //     .then(res => {
+    //       setIsSubmitted(true);
+    //       router.push('/thank-you' + conversionPageUrl);
+    //     })
+    //     .catch(err => {
+    //       console.error(err);
+    //       alert('There was an error submitting your form. Please try again.');
+    //     });
+    // }
   };
+
+
+
   return (
     <div className='justify-center py-20 lg:text-left'>
       <form
@@ -55,48 +64,97 @@ export const Form = ({ pageTitle, conversionPageUrl }) => {
         className=''
         onSubmit={handleSubmit(onSubmit)}>
         <div className='grid grid-cols-1 gap-5 lg:grid-cols-2'>
-          {/* Input Field - Required */}
+          {/* First name - Required */}
           <div>
-            <label
-              htmlFor='firstName'
-              className='block mb-1'>
-              First Name
-              <span className='inline text-red'>*</span>
-            </label>
-            <input
-              className={`px-4 py-3 rounded-md border border-solid border-light-blue w-full focus:border-cyan focus:outline-none ${
-                errors.firstName ? 'invalid' : ''
-              }`}
+            <Input
+              label='First name'
               name='firstName'
+              id='firstName'
               type='text'
-              {...register('firstName')}
+              placeholder='First name'
+              isRequired
+              register={...register('firstName')}
+              errorMessage={errors.firstName?.message}
             />
-            <XSText className='inline text-red'>{errors.firstName?.message}</XSText>
           </div>
 
-          {/* Dropdown Field - Optional */}
+          {/* Last name - Required */}
+          <div>
+            <Input
+              label='Last name'
+              name='lastName'
+              id='lastName'
+              type='text'
+              placeholder='Last name'
+              isRequired
+              register={ ...register('lastName') }
+              errorMessage={errors.lastName?.message}
+            />
+          </div>
+          {/* Email address - Required */}
+          <div>
+            <Input
+              label='Email address'
+              name='emailAddress'
+              id='emailAddress'
+              type='email'
+              placeholder='Email address'
+              isRequired
+              register={...register('emailAddress')}
+              errorMessage={errors.emailAddress?.message}
+            />
+          </div>
 
-          <div className='relative'>
-            <label
-              htmlFor='dropdownField'
-              className='block mb-1'>
-              Dropdown Label
-            </label>
-            <select
-              name='dropdownField'
-              className='w-full px-4 py-3 border border-solid rounded-md border-light-blue focus:border-cyan focus:outline-none'
-              {...register('dropdownField', {
+        
+          {/* Phone number - Optional */}
+          <div> 
+            <Input
+              label='Phone number'
+              name='phoneNumber'
+              id='phoneNumber'
+              type='tel'
+              placeholder='Phone number'
+              register={...register('phoneNumber', {
                 required: false,
-              })}>
-              <option
-                value=''
-                selected>
-                Select
-              </option>
-              <option value='option-1'>Option 1</option>
-              <option value='option-2'>Option 2</option>
-            </select>
-            <DropdownArrowIcon className='stroke-light-blue' />
+              })}
+            />
+          </div> 
+
+          {/* Dropdown Field - Required */}
+          <div>
+            <Select
+              label='Tell us about your department'
+              name='aboutYourDepartment'
+              isRequired
+              options={['Software Engineering', 'Sales & Marketing', 'Design']}
+              register={...register('aboutYourDepartment')}
+              errorMessage={errors.aboutYourDepartment?.message}
+              
+            />
+          </div>
+
+          {/* Checkbox */}
+          <div> 
+        
+          <CheckboxList
+              label='What are your hobbies'
+              name='hobbiesChk'
+              options={['Books', 'Biking', 'Gardening']}
+              register={...register('hobbiesChk', {required:false})}
+              // errorMessage={errors.hobbiesChk?.message}
+            />
+          </div>
+
+          {/* Textarea Field - Required */}
+          <div>
+            <Textarea
+              label='Your message'
+              name='message'
+              id='message'
+              isRequired
+              register={...register('message')}
+              errorMessage={errors.message?.message}
+            />
           </div>
 
           {/* Submit Button */}
@@ -104,9 +162,7 @@ export const Form = ({ pageTitle, conversionPageUrl }) => {
             <SubmitButton
               className
               label={loading ? 'Submitting...' : 'Submit'}
-              hasIcon>
-              <SubmitIcon />
-            </SubmitButton>
+            />
           </div>
         </div>
       </form>
