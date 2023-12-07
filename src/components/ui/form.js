@@ -1,8 +1,7 @@
 import * as Yup from 'yup';
 
-import { CheckboxList,RadioButtonList, Input, Select, Textarea } from './form-elements';
+import { CheckboxList,RadioButtonList, Input, Select, Textarea } from '@/ui/form-elements';
 
-import { DropdownArrowIcon, SubmitIcon } from '@/ui/icons';
 import { useForm } from 'react-hook-form';
 
 import { SubmitButton } from '@/ui/buttons';
@@ -128,7 +127,7 @@ export const Form = ({ conversionPageUrl }) => {
           <RadioButtonList
               label='What is your age group'
               name='ageGroupLst'
-              options={['2 - 12', '13 - 30', '31 - 45']}
+              options={['2 - 12', '13 - 30', '31 - 45','46 - 65']}
               register={...register('ageGroupLst')}
             />
           </div>
@@ -148,7 +147,7 @@ export const Form = ({ conversionPageUrl }) => {
           {/* Submit Button */}
           <div className='flex mt-5 lg:col-span-2 md:justify-end'>
             <SubmitButton
-              className
+              className='px-10'
               label={loading ? 'Submitting...' : 'Submit'}
             />
           </div>
