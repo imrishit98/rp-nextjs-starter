@@ -149,7 +149,7 @@ export const Form = ({ conversionPageUrl }) => {
           {/* Submit Button */}
           <div className='flex mt-5 lg:col-span-2 md:justify-end'>
             <SubmitButton
-              className=''
+              className='px-10'
               label={loading ? 'Submitting...' : 'Submit'}
             />
           </div>
