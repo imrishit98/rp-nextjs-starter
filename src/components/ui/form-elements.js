@@ -95,7 +95,6 @@ export const Select = ({
   options,
   register,
   isRequired,
-  onChange,
   errorMessage,
   className,
   children,
@@ -167,17 +166,13 @@ export const CheckboxList = ({
         isRequired={isRequired}
         className='block text-gray-900'
       />
-      {errorMessage ? (
-        <XsText className='inline text-red-600'>{errorMessage}</XsText>
-      ) : null}
+
       <div className={`grid grid-flow-col mt-4`}>
-        {/* Option component */}
         {options.map((option, index) => (
           <div key={index}>
-            <input
+            <Checkbox
               name={name[index]}
               value={option}
-              type='checkbox'
               className='focus:ring-2 focus:ring-green-500 text-green-500 w-4 h-4 p-2.5 bg-gray-50 rounded border border-gray-300'
               {...register}
               onChange={() => handleCheckboxChange(index)}
@@ -190,6 +185,61 @@ export const CheckboxList = ({
           </div>
         ))}
       </div>
+      {errorMessage ? (
+        <XsText className='inline text-red-600'>{errorMessage}</XsText>
+      ) : null}
+    </>
+  );
+};
+
+export const RadioButtonList = ({
+  label,
+  name,
+  options,
+  register,
+  isRequired,
+  errorMessage,
+  className,
+  children,
+  ...props
+}) => {
+  const { setValue, control } = useForm();
+
+  const handleRadioChange = value => {
+    setValue(name, value);
+  };
+
+  return (
+    <>
+      <Label
+        label={label}
+        name={name}
+        isRequired={isRequired}
+        className='block text-gray-900'
+      />
+
+      <div className={`grid grid-flow-col mt-4`}>
+        {options.map((option, index) => (
+          <div key={index}>
+            <Radio
+              name={name[index]}
+              value={option}
+              // type='radio'
+              className='w-4 h-4 border border-gray-300 focus:ring-2 focus:ring-green-500 text-gray-50 bg-gray-50 rounded-3xl checked:border-green-500 checked:rounded-full checked:border-4 focus:border-green-500 focus:rounded-full focus:border-4'
+              {...register}
+              onChange={() => handleRadioChange(index)}
+            />{' '}
+            <Label
+              name={name + index}
+              label={option}
+              className='inline-block mb-4 ml-2 text-gray-600'
+            />
+          </div>
+        ))}
+      </div>
+      {errorMessage ? (
+        <XsText className='inline text-red-600'>{errorMessage}</XsText>
+      ) : null}
     </>
   );
 };

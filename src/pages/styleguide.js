@@ -16,14 +16,19 @@ import { PrimaryButton, SecondaryButton } from '@/ui/buttons';
 
 import Layout from '@/components/layout';
 import { SubmitIcon } from '@/ui/icons';
-
-const title = 'StyleGuide Page';
+import { useRouter } from 'next/router';
 
 const StyleGuide = () => {
+  const router = useRouter();
+
+  const title = 'Styleguide Page';
+  // this is the current page url that will be captured
+  const pageUrl = router.pathname;
   return (
     <Layout
       seoTitle={title}
-      seoDesc=''>
+      seoDesc=''
+      conversionPageUrl={pageUrl}>
       {/* Section header for the page */}
       <Container className='py-10 lg:py-20'>
         <SectionHeader

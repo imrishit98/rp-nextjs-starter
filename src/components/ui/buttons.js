@@ -66,16 +66,11 @@ export const SecondaryButton = ({
   );
 };
 
-export const SubmitButton = ({ label, hasIcon, iconOnTheRight, children, ...props }) => {
+export const SubmitButton = ({ label, children, ...props }) => {
   return (
     <button
       className='block px-6 py-3 text-center text-white rounded-lg bg-cobalt md:inline-block hover:bg-cyan focus:outline-none focus:ring'
       type='submit'>
-      <span
-        className={` ${iconOnTheRight ? 'order-last ml-[10px] mr-0' : 'mr-[10px] ml-0'}
-       ${!hasIcon ? 'hidden' : ''}`}>
-        {children}
-      </span>
       <span>{label}</span>
     </button>
   );
