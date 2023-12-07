@@ -66,10 +66,10 @@ export const SecondaryButton = ({
   );
 };
 
-export const SubmitButton = ({ label, children, ...props }) => {
+export const SubmitButton = ({ label, children, className, ...props }) => {
   return (
     <button
-      className='block px-6 py-3 text-center text-white rounded-lg bg-cobalt md:inline-block hover:bg-cyan focus:outline-none focus:ring'
+      className={`block py-3 text-center text-white rounded-lg bg-cobalt md:inline-block hover:bg-cyan focus:outline-none focus:ring ${className}`}
       type='submit'>
       <span>{label}</span>
     </button>
