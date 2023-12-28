@@ -22,10 +22,6 @@ export const metadata = {
   alternates: {
     canonical: new URL(siteConfig.url),
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-  },
   robots: {
     index: true,
     follow: true,
@@ -33,6 +29,11 @@ export const metadata = {
   icons: {
     icon: './favicon.ico',
   },
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
 };
 
 export default function RootLayout({ children }) {
