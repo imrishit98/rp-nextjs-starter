@@ -20,7 +20,7 @@ export const Gallery = () => {
       imgAlt: 'nature image',
     },
     {
-      imgSrc: 'https://via.placeholder.com',
+      imgSrc: 'https://via.placeholder.com/600x400/AB355F/000000',
       imgAlt: 'nature image',
     },
     {
