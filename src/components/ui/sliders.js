@@ -16,11 +16,11 @@ register();
 export const Gallery = () => {
   const GalleryImages = [
     {
-      imgSrc: 'https://via.placeholder.com/600x400/00455F/ffffff',
+      imgSrc: 'https://via.placeholder.com/600x400/AB355F/000000',
       imgAlt: 'nature image',
     },
     {
-      imgSrc: 'https://via.placeholder.com/600x400/115C89/ffffff',
+      imgSrc: 'https://via.placeholder.com/600x400/AB355F/000000',
       imgAlt: 'nature image',
     },
     {
