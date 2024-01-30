@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { Container } from '../ui/containers';
+
+import { Container } from '@/components/ui/containers';
 
 const Navbar = () => {
   const navLinks = [
