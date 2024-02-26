@@ -1,8 +1,8 @@
-import { H1, LgText } from '@/ui/typography';
+import { H1, LgText } from '@/components/ui/typography';
 
-import { Container } from '@/ui/containers';
-import Layout from '@/components/layout';
-import { SecondaryButton } from '@/ui/buttons';
+import { Container } from '@/components/ui/containers';
+import Layout from '@/components/Layout';
+import { SecondaryButton } from '@/components/ui/buttons';
 
 const ThankYou = () => {
   var title = 'Thank You';

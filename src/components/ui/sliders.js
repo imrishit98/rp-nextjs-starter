@@ -2,8 +2,8 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-import { BodyText, H4, SmText } from '@/ui/typography';
-import { Container, FullWidthContainer } from '@/ui/containers';
+import { BodyText, H4, SmText } from '@/components/ui/typography';
+import { Container, FullWidthContainer } from '@/components/ui/containers';
 import { Navigation, Pagination } from 'swiper/modules';
 import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -16,11 +16,11 @@ register();
 export const Gallery = () => {
   const GalleryImages = [
     {
-      imgSrc: 'https://via.placeholder.com/600x400/AB355F/000000',
+      imgSrc: 'https://via.placeholder.com/600x400/#00EBF4/000000',
       imgAlt: 'nature image',
     },
     {
-      imgSrc: 'https://via.placeholder.com/600x400/AB355F/000000',
+      imgSrc: 'https://via.placeholder.com/600x400/#115C89/000000',
       imgAlt: 'nature image',
     },
     {

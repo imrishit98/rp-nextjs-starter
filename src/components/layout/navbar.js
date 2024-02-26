@@ -1,10 +1,10 @@
-import { CloseIcon, HamburgerIcon } from '@/ui/icons';
-import { H3, LgText, NavbarLink } from '@/ui/typography';
+import { CloseIcon, HamburgerIcon } from '@/svgs/icons';
+import { H3, LgText, NavbarLink } from '@/components/ui/typography';
 import { useEffect, useState } from 'react';
 
-import { Container } from '@/ui/containers';
+import { Container } from '@/components/ui/containers';
 import Link from 'next/link';
-import { PrimaryButton } from '@/ui/buttons';
+import { PrimaryButton } from '@/components/ui/buttons';
 
 const Navbar = ({ conversionPageUrl }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,24 +16,25 @@ const Navbar = ({ conversionPageUrl }) => {
       name: 'Home',
       href: '/',
     },
-    {
-      name: 'Components',
-      href: '/components',
-    },
+
     {
       name: 'Styleguide',
       href: '/styleguide',
     },
     {
-      name: 'Other',
+      name: 'Components',
       subItem: [
         {
-          name: 'item 1',
-          href: '/',
+          name: 'tabs',
+          href: '/components-gallery/list-of-tabs',
         },
         {
-          name: 'item 2',
-          href: '/',
+          name: 'sliders',
+          href: '/components-gallery/list-of-sliders',
+        },
+        {
+          name: 'grids',
+          href: '/components-gallery/list-of-grids',
         },
       ],
     },

@@ -35,13 +35,13 @@ export const Container = ({ className = '', align, children, ...props }) => {
 };
 
 // this component will be used for the section's header wrapped in Container component to adjust top/bottom paddings
-export const SectionHeader = ({ title, desc, bgDark, className, children }) => {
+export const SectionHeader = ({ title, subTitle, bgDark, className, children }) => {
   return (
-    <div className={className}>
+    <div className='mb-10 text-center'>
       <H2 className={` ${bgDark ? 'text-white' : 'text-gray-900'}`}>{title}</H2>
-      {desc ? (
+      {subTitle ? (
         <LgText className={` ${bgDark ? 'text-gray-300' : 'text-gray-500'} mt-4`}>
-          {desc}
+          {subTitle}
         </LgText>
       ) : null}
 

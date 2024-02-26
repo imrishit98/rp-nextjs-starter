@@ -1,12 +1,13 @@
 import { Container, SectionHeader } from '@/ui/containers';
 import { Gallery, Testimonials } from '@/ui/sliders';
 
-import { Form } from '@/components/ui/form';
+import { Form } from '@/ui/form';
 import { H4 } from '@/ui/typography';
-import Layout from '@/components/layout';
+import Layout from '@/components/Layout';
+
 import { useRouter } from 'next/router';
 
-const Components = () => {
+const ComponentsGallery = () => {
   const router = useRouter();
 
   const title = 'Components Page';
@@ -59,4 +60,4 @@ const Components = () => {
   );
 };
 
-export default Components;
+export default ComponentsGallery;

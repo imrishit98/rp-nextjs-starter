@@ -1,5 +1,22 @@
 import React from 'react';
 
+export const EllipseIcon = ({ className }) => {
+  return (
+    <svg
+      width='11'
+      height='11'
+      viewBox='0 0 11 11'
+      fill='none'
+      xmlns='http://www.w3.org/2000/svg'
+      className={`${className} `}>
+      <path
+        d='M11 5.5C11 8.53757 8.53757 11 5.5 11C2.46243 11 0 8.53757 0 5.5C0 2.46243 2.46243 0 5.5 0C8.53757 0 11 2.46243 11 5.5ZM2.54816 5.5C2.54816 7.13026 3.86974 8.45184 5.5 8.45184C7.13026 8.45184 8.45184 7.13026 8.45184 5.5C8.45184 3.86974 7.13026 2.54816 5.5 2.54816C3.86974 2.54816 2.54816 3.86974 2.54816 5.5Z'
+        fill='#0DC1DE'
+      />
+    </svg>
+  );
+};
+
 export const DropdownArrowIcon = ({ className, ...props }) => {
   return (
     <svg

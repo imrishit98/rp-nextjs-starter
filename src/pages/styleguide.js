@@ -10,12 +10,12 @@ import {
   LgText,
   SmText,
   XsText,
-} from '@/ui/typography';
-import { Container, SectionHeader } from '@/ui/containers';
-import { PrimaryButton, SecondaryButton } from '@/ui/buttons';
+} from '@/components/ui/typography';
+import { Container, SectionHeader } from '@/components/ui/containers';
+import { PrimaryButton, SecondaryButton } from '@/components/ui/buttons';
 
-import Layout from '@/components/layout';
-import { SubmitIcon } from '@/ui/icons';
+import Layout from '@/components/Layout';
+import { SubmitIcon } from '@/svgs/icons';
 import { useRouter } from 'next/router';
 
 const StyleGuide = () => {
