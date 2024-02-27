@@ -1,4 +1,4 @@
-import { BodyText } from '@/components/ui/typography';
+import { BodyText } from '@/ui/typography';
 import { EllipseIcon } from '@/svgs/icons';
 
 export const Bullet = ({ className, children }) => {

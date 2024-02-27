@@ -3,8 +3,7 @@
     "baseUrl": ".",
     "paths": {
       "@/components/*": ["src/components/*"],
-      // this doesn't seem to work - todo
-      // "@/ui/*": ["src/components/ui/*"],
+      "@/ui/*": ["src/components/ui/*"],
       "@/forms/*": ["src/components/ui/forms/*"],
       "@/svgs/*": ["src/components/ui/svgs/*"],
       // this doesn't seem to work - todo

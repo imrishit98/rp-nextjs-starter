@@ -1,7 +1,7 @@
-import { Gallery, Testimonials } from '@/components/ui/sliders';
+import { Gallery, Testimonials } from '@/ui/sliders';
 
-import { Container } from '@/components/ui/containers';
-import { H4 } from '@/components/ui/typography';
+import { Container } from '@/ui/containers';
+import { H4 } from '@/ui/typography';
 import Layout from '@/components/Layout';
 import React from 'react';
 

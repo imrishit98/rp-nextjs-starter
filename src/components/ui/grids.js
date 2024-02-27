@@ -1,4 +1,4 @@
-import { BodyText, H1, H3, H4, LgText } from '@/components/ui/typography';
+import { BodyText, H1, H3, H4, LgText } from '@/ui/typography';
 
 import Image from 'next/image';
 

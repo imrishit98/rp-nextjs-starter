@@ -10,9 +10,9 @@ import {
   LgText,
   SmText,
   XsText,
-} from '@/components/ui/typography';
-import { Container, SectionHeader } from '@/components/ui/containers';
-import { PrimaryButton, SecondaryButton } from '@/components/ui/buttons';
+} from '@/ui/typography';
+import { Container, SectionHeader } from '@/ui/containers';
+import { PrimaryButton, SecondaryButton } from '@/ui/buttons';
 
 import Layout from '@/components/Layout';
 import { SubmitIcon } from '@/svgs/icons';

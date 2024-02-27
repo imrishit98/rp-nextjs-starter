@@ -1,9 +1,5 @@
-import {
-  Container,
-  FullWidthContainer,
-  SectionHeader,
-} from '@/components/ui/containers';
-import { RepeatableCols, TwoColsWImg } from '@/components/ui/grids';
+import { Container, FullWidthContainer, SectionHeader } from '@/ui/containers';
+import { RepeatableCols, TwoColsWImg } from '@/ui/grids';
 
 import Layout from '@/components/Layout';
 import React from 'react';

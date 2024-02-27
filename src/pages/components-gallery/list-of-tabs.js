@@ -1,9 +1,5 @@
-import {
-  Container,
-  FullWidthContainer,
-  SectionHeader,
-} from '@/components/ui/containers';
-import { HorizontalTabs, VerticalTabs } from '@/components/ui/tabs';
+import { Container, FullWidthContainer, SectionHeader } from '@/ui/containers';
+import { HorizontalTabs, VerticalTabs } from '@/ui/tabs';
 
 import Layout from '@/components/Layout';
 import React from 'react';

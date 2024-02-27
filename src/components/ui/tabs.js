@@ -5,9 +5,9 @@
  *
  */
 
-import { BodyText, H5 } from '@/components/ui/typography';
+import { BodyText, H5 } from '@/ui/typography';
 
-import { Bullet } from '@/components/ui/bullets';
+import { Bullet } from '@/ui/bullets';
 import Image from 'next/image';
 import { Tabs } from 'flowbite-react';
 
