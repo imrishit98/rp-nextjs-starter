@@ -1,10 +1,9 @@
-import { Container, SectionHeader } from '@/ui/containers';
-import { Gallery, Testimonials } from '@/ui/sliders';
+import { Container, SectionHeader } from '@/components/ui/containers';
+import { Gallery, Testimonials } from '@/components/ui/sliders';
 
-import { Form } from '@/ui/form';
-import { H4 } from '@/ui/typography';
+import { Form } from '@/components/ui/form';
+import { H4 } from '@/components/ui/typography';
 import Layout from '@/components/Layout';
-
 import { useRouter } from 'next/router';
 
 const ComponentsGallery = () => {

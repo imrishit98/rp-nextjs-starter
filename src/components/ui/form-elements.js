@@ -1,5 +1,5 @@
 import { Checkbox, Radio } from 'flowbite-react';
-import { SmText, XsText } from '@/ui/typography';
+import { SmText, XsText } from '@/components/ui/typography';
 import { useFieldArray, useForm } from 'react-hook-form';
 
 export const Label = ({ label, name, isRequired, className }) => {

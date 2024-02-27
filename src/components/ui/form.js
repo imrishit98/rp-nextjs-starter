@@ -1,10 +1,10 @@
 import * as Yup from 'yup';
 
-import { CheckboxList,RadioButtonList, Input, Select, Textarea } from '@/ui/form-elements';
+import { CheckboxList,RadioButtonList, Input, Select, Textarea } from '@/components/ui/form-elements';
 
 import { useForm } from 'react-hook-form';
 
-import { SubmitButton } from '@/ui/buttons';
+import { SubmitButton } from '@/components/ui/buttons';
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import { useState } from 'react';

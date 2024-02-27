@@ -1,4 +1,4 @@
-import { BodyText } from '@/ui/typography';
+import { BodyText } from '@/components/ui/typography';
 import Link from 'next/link';
 import React from 'react';
 
