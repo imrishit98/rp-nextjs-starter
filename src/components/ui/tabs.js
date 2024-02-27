@@ -78,7 +78,7 @@ export const VerticalTabs = ({ children }) => {
     },
   ];
   return (
-    <Tabs.Group
+    <Tabs
       style='vertical'
       theme={customTabsTheme}>
       {data.map((tab, index) => (
@@ -100,7 +100,7 @@ export const VerticalTabs = ({ children }) => {
         </Tabs.Item>
       ))}
       {/* end of tabs.item */}
-    </Tabs.Group>
+    </Tabs>
   );
 };
 
@@ -134,7 +134,7 @@ export const HorizontalTabs = ({ children }) => {
     },
   ];
   return (
-    <Tabs.Group
+    <Tabs
       style='horizontal'
       theme={customTabsTheme}>
       {data.map((tab, index) => (
@@ -147,6 +147,6 @@ export const HorizontalTabs = ({ children }) => {
         </Tabs.Item>
       ))}
       {/* end of tabs.item */}
-    </Tabs.Group>
+    </Tabs>
   );
 };
