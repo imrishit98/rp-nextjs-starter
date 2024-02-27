@@ -14,7 +14,7 @@ import {
 import { Container, SectionHeader } from '@/ui/containers';
 import { PrimaryButton, SecondaryButton } from '@/ui/buttons';
 
-import Layout from '@/components/Layout';
+import Layout from '@/components/layout';
 import { SubmitIcon } from '@/svgs/icons';
 import { useRouter } from 'next/router';
 

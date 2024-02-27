@@ -1,7 +1,7 @@
 import { H1, LgText } from '@/ui/typography';
 
 import { Container } from '@/ui/containers';
-import Layout from '@/components/Layout';
+import Layout from '@/components/layout';
 import { SecondaryButton } from '@/ui/buttons';
 
 const ThankYou = () => {

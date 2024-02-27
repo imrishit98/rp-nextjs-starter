@@ -2,7 +2,7 @@ import { Gallery, Testimonials } from '@/ui/sliders';
 
 import { Container } from '@/ui/containers';
 import { H4 } from '@/ui/typography';
-import Layout from '@/components/Layout';
+import Layout from '@/components/layout';
 import React from 'react';
 
 const ListOfSliders = () => {

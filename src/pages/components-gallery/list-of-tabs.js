@@ -1,7 +1,7 @@
 import { Container, FullWidthContainer, SectionHeader } from '@/ui/containers';
 import { HorizontalTabs, VerticalTabs } from '@/ui/tabs';
 
-import Layout from '@/components/Layout';
+import Layout from '@/components/layout';
 import React from 'react';
 
 const ListOfTabs = () => {

@@ -3,7 +3,7 @@ import { Gallery, Testimonials } from '@/ui/sliders';
 
 import { Form } from '@/ui/form';
 import { H4 } from '@/ui/typography';
-import Layout from '@/components/Layout';
+import Layout from '@/components/layout';
 import { useRouter } from 'next/router';
 
 const ComponentsGallery = () => {
