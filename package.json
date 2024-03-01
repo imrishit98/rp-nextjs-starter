@@ -22,7 +22,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-gtm-module": "^2.0.11",
-    "react-hook-form": "^7.49.2",
+    "react-hook-form": "^7.51.0",
     "sass": "^1.69.5",
     "swiper": "^11.0.4",
     "yup": "^1.2.0"
