@@ -1,5 +1,5 @@
 import { Container, SectionHeader } from '@/ui/containers';
-import { Gallery, Testimonials } from '@/ui/sliders';
+import { GallerySlider, Testimonials } from '@/ui/sliders';
 
 import { Form } from '@/ui/form';
 import { H4 } from '@/ui/typography';
@@ -33,7 +33,7 @@ const ComponentsGallery = () => {
           <H4>Image Gallery</H4>
           <hr class='h-px my-8 bg-gray-200 border-0 dark:bg-gray-700' />
         </div>
-        <Gallery />
+        <GallerySlider />
       </Container>
 
       <Container>
