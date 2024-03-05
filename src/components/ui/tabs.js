@@ -1,14 +1,6 @@
-/**
- * this file contains two components for tabs - horizontal and vertical
- * Utilizes Flowbite-react
- *
- *
- */
-
 import { BodyText, H5 } from '@/ui/typography';
 
 import { Bullet } from '@/ui/bullets';
-import Image from 'next/image';
 import { Tabs } from 'flowbite-react';
 
 const customTabsTheme = {
@@ -20,19 +12,19 @@ const customTabsTheme = {
       vertical: 'w-full lg:w-1/2 flex flex-col gap-8 lg:pr-8',
     },
     tabitem: {
-      base: 'p-4 text-sm font-normal text-white focus:outline-none',
+      base: 'p-4 text-[20px] font-semibold text-cobalt focus:outline-none',
       styles: {
         horizontal: {
-          base: 'text-center py-5 h-[106px] px-8',
+          base: 'text-center py-5 h-[80px] px-8',
           active: {
-            on: 'active bg-new-cobalt rounded-[20px] border border-[#ccc]',
-            off: 'bg-transparent border border-new-cobalt rounded-[20px] hover:cursor',
+            on: 'active bg-cobalt rounded-[20px] text-white',
+            off: 'bg-transparent border border-[#ccc] rounded-[20px] hover:cursor',
           },
         },
         vertical: {
-          base: 'text-left py-8 px-8 text-[20px] font-semibold',
+          base: 'text-left py-8 px-8',
           active: {
-            on: 'active bg-new-cobalt-05 shadow-lg rounded-[20px] ',
+            on: 'active bg-cobalt shadow-lg rounded-[20px] text-white',
             off: 'bg-transparent border border-[#ccc] rounded-[20px] hover:cursor',
           },
         },
@@ -42,95 +34,33 @@ const customTabsTheme = {
   tabpanel: 'py-0',
 };
 
-// Flowbite - This component uses the Flowbite Tabs - Vertical - What we do section
-export const VerticalTabs = ({ children }) => {
-  const data = [
-    {
-      title: 'Business process and strategy',
-      details: [
-        'CRM and business software ecosystems',
-        'Federal and provincial grants, funding applications, and expertise',
-        'Software and cloud systems implementation',
-        'eLearning and training for new process, systems, and software',
-      ],
-    },
-    {
-      title: 'Software development and deployment',
-      details: [
-        'Full-stack engineering',
-        'Bespoke solutions, integrations, and middleware',
-        'Web apps',
-        'User interface and experience (UX/UI)',
-        'Security, testing, and quality assurance process',
-        'Website and application maintenance',
-        'Marketing integrations checks and protocols',
-      ],
-    },
-    {
-      title: 'Marketing, communications, and design',
-      details: [
-        'Analytics, optimization, and spend attribution',
-        'Intelligent website design and development',
-        'Branding, brand research, and content strategy ',
-        'Tactical content and SEO campaigns',
-        'User interface and experience (UX/UI)',
-      ],
-    },
-  ];
-  return (
-    <Tabs
-      style='vertical'
-      theme={customTabsTheme}>
-      {data.map((tab, index) => (
-        <Tabs.Item
-          key={index}
-          title={tab.title}>
-          <div className='w-full lg:w-1/2 lg:ml-[50%] mt-6 lg:-mt-[484px] xl:-mt-[358px] 2xl:-mt-[395px] text-left py-12 px-4 md:p-10  bg-new-cobalt-05 shadow-lg rounded-[20px] lg:min-h-[410px] xl:min-h-[386px]'>
-            <H5 className='mb-12'>{tab.title}</H5>
-            <ul>
-              {tab.details.map((item, index) => (
-                <Bullet
-                  key={index}
-                  className='mb-4'>
-                  {item}
-                </Bullet>
-              ))}
-            </ul>
-          </div>
-        </Tabs.Item>
-      ))}
-      {/* end of tabs.item */}
-    </Tabs>
-  );
-};
+/**
+ * @description - Adopted from Flowbite-react
+ * @param {*} param0 - no required props for the template, but for a real world project we can use the data from a data file.
+ * @returns
+ */
 
-// Flowbite - This component uses the Flowbite Tabs - Horizontal - for Software implementation section
 export const HorizontalTabs = ({ children }) => {
   const data = [
     {
-      title: 'Business process and strategy',
-      details: [
-        'CRM and business software ecosystems',
-        'Federal and provincial grants, funding applications, and expertise',
-        'Software and cloud systems implementation',
-        'eLearning and training for new process, systems, and software',
-      ],
+      title: 'Tab One',
+      details:
+        'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     },
     {
-      title: 'Software development and deployment',
-      details: [
-        'Full-stack engineering',
-        'Bespoke solutions, integrations, and middleware',
-        'Web apps',
-      ],
+      title: 'Tab Two',
+      details:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     },
     {
-      title: 'Marketing, communications, and design',
-      details: [
-        'Analytics, optimization, and spend attribution',
-        'Intelligent website design and development',
-        'Branding, brand research, and content strategy ',
-      ],
+      title: 'Tab Three',
+      details:
+        'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    },
+    {
+      title: 'Tab Four',
+      details:
+        'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
     },
   ];
   return (
@@ -141,12 +71,74 @@ export const HorizontalTabs = ({ children }) => {
         <Tabs.Item
           key={index}
           title={tab.title}>
-          <BodyText className='mt-16 mb-12 font-normal text-white'>
-            {tab.details}
-          </BodyText>
+          <BodyText className='mt-16 mb-12'>{tab.details}</BodyText>
         </Tabs.Item>
       ))}
       {/* end of tabs.item */}
     </Tabs>
+  );
+};
+
+/**
+ * @description - Adopted from Flowbite-react and customized so that the tabs are stacked vertically rather than horizontally.
+ * @param {*} param0 - no required props for the template, but for a real world project we can use the data from a data file.
+ * @returns
+ */
+export const VerticalTabs = ({ children }) => {
+  const data = [
+    {
+      title: 'Tab One',
+      details: [
+        'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur',
+        'Ut enim ad minim veniam',
+        'Excepteur sint occaecat cupidatat non proident',
+        'Ut enim ad minim veniam',
+      ],
+    },
+    {
+      title: 'Tab Two',
+      details: [
+        'Lorem ipsum dolor sit amet',
+        'Ut enim ad minim veniam',
+        'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur',
+        'Excepteur sint occaecat cupidatat non proident',
+      ],
+    },
+    {
+      title: 'Tab Three',
+      details: [
+        'Ut enim ad minim veniam',
+        'Lorem ipsum dolor sit amet',
+        'Excepteur sint occaecat cupidatat non proident',
+        'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur',
+      ],
+    },
+  ];
+  return (
+    <div className='lg:relative'>
+      <Tabs
+        style='vertical'
+        theme={customTabsTheme}>
+        {data.map((tab, index) => (
+          <Tabs.Item
+            key={index}
+            title={tab.title}>
+            <div className='w-full lg:w-[50%] lg:left-[50%] lg:top-0 lg:absolute mt-6 lg:mt-0 text-left py-12 px-4 md:p-10 bg-cobalt shadow-lg rounded-[20px] h-full'>
+              <H5 className='mb-12 text-white'>{tab.title}</H5>
+              <ul>
+                {tab.details.map((item, index) => (
+                  <Bullet
+                    key={index}
+                    className='mb-4 text-white'>
+                    {item}
+                  </Bullet>
+                ))}
+              </ul>
+            </div>
+          </Tabs.Item>
+        ))}
+        {/* end of tabs.item */}
+      </Tabs>
+    </div>
   );
 };

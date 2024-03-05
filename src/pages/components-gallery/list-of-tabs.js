@@ -11,26 +11,24 @@ const ListOfTabs = () => {
       seoDesc=''>
       {/* This component uses the Flowbite Tabs in vertical style
       section: What we do */}
-      <FullWidthContainer className='pb-[100px]'>
+
+      <FullWidthContainer className='bg-cool-gray'>
         <Container className='text-center'>
-          <VerticalTabs>
-            <SectionHeader
-              title='What we do'
-              subTitle='We are a full-cycle business management consultancy that partners with companies to streamline their processes and improve their bottom line.'
-            />
-          </VerticalTabs>
+          <SectionHeader
+            title='Horizontal Tabs'
+            subTitle='Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+          />
+          <HorizontalTabs />
         </Container>
       </FullWidthContainer>
 
-      <FullWidthContainer className='pb-[100px]'>
+      <FullWidthContainer>
         <Container className='text-center'>
-          <HorizontalTabs>
-            <SectionHeader
-              title='Software implementation'
-              subTitle='ion8 partners with more than 50 top software providers for CRM, UCaaS,
-          secure document handling, and more.'
-            />
-          </HorizontalTabs>
+          <SectionHeader
+            title='Vertical Tabs'
+            subTitle='Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+          />
+          <VerticalTabs />
         </Container>
       </FullWidthContainer>
     </Layout>

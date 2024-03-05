@@ -7,7 +7,7 @@ export const Bullet = ({ className, children }) => {
       <span className='w-[11px]'>
         <EllipseIcon className='w-full h-[11px] mr-3 mt-[6px]' />
       </span>
-      <BodyText className='inline-block ml-3 text-deep-blue'>{children}</BodyText>
+      <BodyText className='inline-block ml-3'>{children}</BodyText>
     </li>
   );
 };

@@ -26,7 +26,7 @@ export const PrimaryButton = ({
       id={id}
       href={link}
       className={
-        'flex py-4 justify-center items-center rounded-[5px] text-white bg-cobalt px-5 focus:outline-none focus:ring-none hover:bg-cyan font-bold ' +
+        'flex py-4 justify-center items-center rounded-[5px] text-white bg-cobalt px-5 focus:outline-none focus:ring-none hover:bg-cyan font-bold mt-10 ' +
         className
       }
       {...props}>
@@ -52,7 +52,7 @@ export const SecondaryButton = ({
       id={id}
       href={link}
       className={
-        'flex justify-center items-senter py-4 rounded-[5px] text-white bg-cyan px-5 focus:outline-none focus:ring-none hover:bg-cobalt font-bold ' +
+        'flex justify-center items-center py-4 rounded-[5px] text-white bg-cyan px-5 focus:outline-none focus:ring-none hover:bg-cobalt font-bold mt-10 ' +
         className
       }
       {...props}>

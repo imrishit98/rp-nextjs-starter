@@ -1,4 +1,4 @@
-import { Container, FullWidthContainer, SectionHeader } from '@/ui/containers';
+import { Container, FullWidthContainer } from '@/ui/containers';
 import { RepeatableCols, TwoColsWImg } from '@/ui/grids';
 
 import Layout from '@/components/layout';
@@ -19,7 +19,6 @@ prototype to launch"
             imgW={980}
             imgH={854}
             isHero
-            bgLight
           />
         </Container>
       </FullWidthContainer>
@@ -36,7 +35,6 @@ prototype to launch"
             imgAlt=''
             imgW={980}
             imgH={854}
-            bgLight
             imgOnTheLeft
           />
         </Container>
