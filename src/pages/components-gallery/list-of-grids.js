@@ -2,7 +2,6 @@ import { Container, FullWidthContainer } from '@/ui/containers';
 import { RepeatableCols, TwoColsWImg } from '@/ui/grids';
 
 import Layout from '@/components/layout';
-import React from 'react';
 
 const ListOfGrids = () => {
   return (
