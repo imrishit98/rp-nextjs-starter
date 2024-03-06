@@ -1,8 +1,8 @@
 import { H1, LgText } from '@/ui/typography';
 
+import { Button } from '@/ui/buttons';
 import { Container } from '@/ui/containers';
 import Layout from '@/components/layout';
-import { SecondaryButton } from '@/ui/buttons';
 
 const ThankYou = () => {
   var title = 'Thank You';
@@ -17,10 +17,11 @@ const ThankYou = () => {
             <LgText className='text-gray-500 pb-7'>
               Your information has been received.
             </LgText>
-            <SecondaryButton
+            <Button
               link='/'
               label='Go to home page'
               className='w-[245px] mx-auto'
+              type='link'
             />
           </div>
         </Container>
