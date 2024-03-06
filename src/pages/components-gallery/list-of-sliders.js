@@ -1,16 +1,22 @@
 import { Container, FullWidthContainer, SectionHeader } from '@/ui/containers';
 import { GallerySlider, HeroWithSlider, Testimonials } from '@/ui/sliders';
 
-import { H4 } from '@/ui/typography';
 import Layout from '@/components/layout';
-import React from 'react';
+
+/**
+ * @description - This page lists different variants of the sliders
+ * @returns
+ */
 
 const ListOfSliders = () => {
   return (
     <Layout seoTitle='List of Sliders'>
+      {/* Hero section within a slider */}
       <FullWidthContainer>
         <HeroWithSlider />
       </FullWidthContainer>
+
+      {/* Gallery of images */}
       <FullWidthContainer className='bg-cool-grey'>
         <SectionHeader
           title='Gallery Slider'
@@ -18,6 +24,8 @@ const ListOfSliders = () => {
         />
         <GallerySlider />
       </FullWidthContainer>
+
+      {/* Testimonials Slider */}
       <FullWidthContainer>
         <SectionHeader
           title='Testimonials'

@@ -6,6 +6,9 @@ import { H4 } from '@/ui/typography';
 import Layout from '@/components/layout';
 import { useRouter } from 'next/router';
 
+/**
+ * @description - This page is going to be a gallery of all the components available in the Starter template. The structure is yet to be determined.
+ */
 const ComponentsGallery = () => {
   const router = useRouter();
 

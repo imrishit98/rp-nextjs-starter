@@ -8,9 +8,9 @@ import { Navigation, Pagination } from 'swiper/modules';
 import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import { Button } from '@/ui/buttons';
 import Image from 'next/image';
 import Link from 'next/link';
-import { PrimaryButton } from '@/ui/buttons';
 import { register } from 'swiper/element/bundle';
 
 register();
@@ -22,6 +22,8 @@ register();
  */
 
 export const HeroWithSlider = () => {
+  // the data can be moved to and exported from a data file under utils/ to increase maintenance and organization
+
   const heroSlidesCopy = [
     {
       title: 'Heading',
@@ -82,9 +84,11 @@ export const HeroWithSlider = () => {
               <div className='text-center lg:text-left'>
                 <H2 className='mb-4'>{slide.title}</H2>
                 <BodyText className='mb-12 lg:mr-10'>{slide.desc}</BodyText>
-                <PrimaryButton
+                <Button
                   link='#'
                   label='Learn more'
+                  variant='primary'
+                  type='link'
                   className='w-auto'
                 />
               </div>
@@ -103,6 +107,8 @@ export const HeroWithSlider = () => {
  */
 
 export const GallerySlider = () => {
+  // the data can be moved to and exported from a data file under utils/ to increase maintenance and organization
+
   const GalleryImages = [
     {
       imgSrc: 'https://via.placeholder.com/600x400/00455F/ffffff',
@@ -178,6 +184,8 @@ export const GallerySlider = () => {
  */
 
 export const Testimonials = () => {
+  // the data can be moved to and exported from a data file under utils/ to increase maintenance and organization
+
   const data = [
     {
       reviewerImgSrc: 'https://via.placeholder.com/60x60/00EBF4/ffffff',
@@ -283,7 +291,7 @@ export const TestimonialCard = ({
           <Link
             href={url}
             target={'_blank'}>
-            <SmText className='font-semibold text-turquoise'>{reviewerName}</SmText>
+            <SmText className='font-semibold text-teal'>{reviewerName}</SmText>
             <SmText className='font-normal text-black'>{reviewerInfo}</SmText>
           </Link>
         </div>

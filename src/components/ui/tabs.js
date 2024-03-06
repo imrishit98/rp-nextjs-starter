@@ -41,6 +41,8 @@ const customTabsTheme = {
  */
 
 export const HorizontalTabs = ({ children }) => {
+  // the data can be moved to and exported from a data file under utils/ to increase maintenance and organization
+
   const data = [
     {
       title: 'Tab One',
@@ -85,6 +87,8 @@ export const HorizontalTabs = ({ children }) => {
  * @returns
  */
 export const VerticalTabs = ({ children }) => {
+  // the data can be moved to and exported from a data file under utils/ to increase maintenance and organization
+
   const data = [
     {
       title: 'Tab One',
@@ -129,7 +133,8 @@ export const VerticalTabs = ({ children }) => {
                 {tab.details.map((item, index) => (
                   <Bullet
                     key={index}
-                    className='mb-4 text-white'>
+                    className='mb-4 text-white'
+                    color='cyan'>
                     {item}
                   </Bullet>
                 ))}

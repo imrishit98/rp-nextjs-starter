@@ -2,16 +2,18 @@ import { Container, FullWidthContainer, SectionHeader } from '@/ui/containers';
 import { HorizontalTabs, VerticalTabs } from '@/ui/tabs';
 
 import Layout from '@/components/layout';
-import React from 'react';
+
+/**
+ * @description - This page lists different variants of tabbed sections - adopted from Flowbite-react
+ * @returns
+ */
 
 const ListOfTabs = () => {
   return (
     <Layout
       seoTitle='List of Tabs'
       seoDesc=''>
-      {/* This component uses the Flowbite Tabs in vertical style
-      section: What we do */}
-
+      {/* Horizontal tabs */}
       <FullWidthContainer className='bg-cool-gray'>
         <Container className='text-center'>
           <SectionHeader
@@ -22,6 +24,7 @@ const ListOfTabs = () => {
         </Container>
       </FullWidthContainer>
 
+      {/* Vertical tabs */}
       <FullWidthContainer>
         <Container className='text-center'>
           <SectionHeader

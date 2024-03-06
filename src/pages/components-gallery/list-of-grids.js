@@ -2,8 +2,11 @@ import { Container, FullWidthContainer } from '@/ui/containers';
 import { RepeatableCols, TwoColsWImg } from '@/ui/grids';
 
 import Layout from '@/components/layout';
-import React from 'react';
 
+/**
+ * @description - This page lists different variants of grid sections
+ * @returns
+ */
 const ListOfGrids = () => {
   return (
     <Layout seoTitle='List of Grids'>

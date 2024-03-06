@@ -12,12 +12,16 @@ import {
   XsText,
 } from '@/ui/typography';
 import { Container, SectionHeader } from '@/ui/containers';
-import { PrimaryButton, SecondaryButton } from '@/ui/buttons';
 
+import { Button } from '@/ui/buttons';
 import Layout from '@/components/layout';
 import { SubmitIcon } from '@/svgs/icons';
 import { useRouter } from 'next/router';
 
+/**
+ * @description - This page is mainly implemented based on the Figma Styleguide - a replication of how the Figma Styleguide looks like.
+ * @returns
+ */
 const StyleGuide = () => {
   const router = useRouter();
 
@@ -92,21 +96,33 @@ const StyleGuide = () => {
         <hr class='h-px my-8 bg-gray-200 border-0 dark:bg-gray-700' />
         <div className='grid grid-cols-1 gap-4 md:grid-cols-3'>
           <div>
-            {/* Primary Button without icon */}
-            <PrimaryButton
+            {/* Primary  Button without icon */}
+            <Button
               link='#'
               label='Primary Button'
+              variant='primary'
+              type='link'
             />
           </div>
           <div>
             {/* Secondary Button with the icon */}
-            <SecondaryButton
+            <Button
               link='#'
-              label='Button w/ icon'
-              hasIcon>
+              label='Secondary Button w/ icon'
+              variant='secondary'
+              hasIcon
+              type='link'>
               <SubmitIcon />
-            </SecondaryButton>
-          </div>{' '}
+            </Button>
+          </div>
+          <div>
+            {/* Default Button without icon */}
+            <Button
+              link='#'
+              label='Default Button'
+              type='link'
+            />
+          </div>
         </div>
       </Container>
 

@@ -1,6 +1,6 @@
 import { BodyText, H1, H3, H4, LgText } from '@/ui/typography';
-import { PrimaryButton, SecondaryButton } from '@/ui/buttons';
 
+import { Button } from '@/ui/buttons';
 import Image from 'next/image';
 
 /**
@@ -33,9 +33,11 @@ export const TwoColsWImg = ({
           <>
             <H1 className='text-black mb-9'>{title}</H1>
             <LgText className='text-black'>{desc}</LgText>
-            <PrimaryButton
+            <Button
               link='#'
               label='Learn more'
+              variant='secondary'
+              type='link'
               className='w-full mx-auto md:w-[200px] lg:ml-0'
             />
           </>

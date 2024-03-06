@@ -16,7 +16,16 @@ module.exports = {
         'light-blue': '#D6EBF4',
         'cool-grey': '#EBF3F9',
       },
+
+      backgroundImage: {
+        noise: "url('/images/bg-noise.webp')",
+      },
     },
   },
   plugins: [require('flowbite/plugin')],
+  safelist: [
+    {
+      pattern: /(bg|text)/,
+    },
+  ],
 };

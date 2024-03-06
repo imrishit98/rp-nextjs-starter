@@ -2,9 +2,9 @@ import { CloseIcon, HamburgerIcon } from '@/svgs/icons';
 import { H3, LgText, NavbarLink } from '@/ui/typography';
 import { useEffect, useState } from 'react';
 
+import { Button } from '@/ui/buttons';
 import { Container } from '@/ui/containers';
 import Link from 'next/link';
-import { PrimaryButton } from '@/ui/buttons';
 
 const Navbar = ({ conversionPageUrl }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -104,9 +104,11 @@ const Navbar = ({ conversionPageUrl }) => {
           )}
         </div>
         <div className='hidden md:block'>
-          <PrimaryButton
+          <Button
             link={'/contact-us' + '?conversionPageUrl=' + conversionPageUrl}
             label='Contact Us'
+            variant='primary'
+            type='link'
           />
         </div>
 
@@ -174,9 +176,11 @@ const Navbar = ({ conversionPageUrl }) => {
           </ul>{' '}
           {/* end of navigation.map ? */}
           <div className='mt-5 md:hidden'>
-            <PrimaryButton
+            <Button
               link={'/contact-us' + '?conversionPageUrl=' + conversionPageUrl}
               label='Contact Us'
+              variant='primary'
+              type='link'
             />
           </div>
         </div>
