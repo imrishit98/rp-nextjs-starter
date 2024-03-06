@@ -1,7 +1,7 @@
 import { BodyText } from '@/ui/typography';
 import { EllipseIcon } from '@/svgs/icons';
 
-export const Bullet = ({ className, children }) => {
+export const Bullet = ({ className='', children }) => {
   return (
     <li className={`flex ${className}`}>
       <span className='w-[11px]'>
