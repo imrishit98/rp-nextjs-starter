@@ -337,6 +337,24 @@ export const ControlledSliderWImages = () => {
       desc: 'Toffee dessert ice cream danish pastry sweet roll. Cotton candy I love candy cookie cake. Pastry I love lemon drops cupcake pie oat cake. Fruitcake tiramisu chocolate fruitcake caramels soufflé cake. I love I love bonbon chocolate bar chocolate chocolate cake dragée chupa chups pudding.',
       readMoreLink: '#',
     },
+    {
+      imgSrc: 'https://via.placeholder.com/500x300/00AEEF/ffffff',
+      imgAlt: '',
+      imgW: 500,
+      imgH: 300,
+      title: 'Slide Four',
+      desc: 'Wafer I love icing cookie toffee shortbread I love cookie. Tart liquorice icing croissant topping tootsie roll. Croissant liquorice danish carrot cake I love candy canes tootsie roll. Sugar plum dessert danish caramels icing jelly beans cheesecake jelly. Bonbon danish toffee soufflé danish caramels pie soufflé.',
+      readMoreLink: '#',
+    },
+    {
+      imgSrc: 'https://via.placeholder.com/500x300/EBF3F9/000000',
+      imgAlt: '',
+      imgW: 500,
+      imgH: 300,
+      title: 'Slide Five',
+      desc: 'Toffee dessert ice cream danish pastry sweet roll. Cotton candy I love candy cookie cake. Pastry I love lemon drops cupcake pie oat cake. Fruitcake tiramisu chocolate fruitcake caramels soufflé cake. I love I love bonbon chocolate bar chocolate chocolate cake dragée chupa chups pudding.',
+      readMoreLink: '#',
+    },
   ];
   return (
     <>
@@ -354,8 +372,8 @@ export const ControlledSliderWImages = () => {
         className='mySwiper'>
         {data.map((slide, sliderIndex) => (
           <SwiperSlide key={sliderIndex}>
-            <div className='grid gap-8 px-10 lg:grid-cols-3 xl:gap-16 md:px-16 xl:px-28'>
-              <div className='my-auto col-span-2 lg:col-span-1'>
+            <div className='grid gap-8 px-10 lg:grid-cols-4 xl:gap-16 md:px-16 xl:px-28'>
+              <div className='my-auto col-span-2'>
                 <Image
                   src={slide.imgSrc}
                   alt={slide.imgAlt}
@@ -393,13 +411,13 @@ export const ControlledSliderWImages = () => {
 
 const ClickableImages = ({ controlledSwiper, data }) => {
   return (
-    <div className='flex flex-wrap md:flex-nowrap my-[70px] border-b pb-8 border-gray-300 justify-center'>
+    <div className='flex flex-wrap md:flex-nowrap my-[70px] border-b pb-8 border-gray-300 justify-center mx-4 md:mx-0'>
       {data.map((image, index) => (
         <div
           key={index}
-          className='inline-block pb-8 my-auto xl:px-10'>
+          className='inline-block pb-8 my-auto'>
           <button
-            className='relative mt-8 hover:opacity-70 first:pl-4 last:pr-4'
+            className='relative hover:opacity-70 first:pl-4 last:pr-4'
             onClick={() => controlledSwiper.slideTo(index)}>
             <Image
               src={image.imgSrc}
