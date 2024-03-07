@@ -2,8 +2,8 @@ import { Accordion, Tabs } from 'flowbite-react';
 import { BodyText, LgText } from '@/ui/typography';
 
 /**
- * @description - this is the basic FAQ accordion adopted from Flowbite-react
- * @returns
+ * @description - This is the basic FAQ accordion adopted from Flowbite-react showing one question/answer at a time and collapsing the rest of the panels.
+ * @param - the potential prop could be the data file
  */
 export const BasicAccordion = () => {
   // the data can be moved to and exported from a data file under utils/ to increase maintenance and organization
@@ -42,10 +42,10 @@ export const BasicAccordion = () => {
 };
 
 /**
- * @description - This component uses Flowbite-react's tabs component in order to categorize the questions into different tabs
- * @returns
+ * @description - This component combines Flowbite-react's two components (Tabs and Accordion) in order to categorize the questions/answers (accordion) into different categories (tabs). Each tab when clicked will load its own set of questions/answers.
+ *
  */
-export const CategorizedAccordion = () => {
+export const TabbedAccordion = () => {
   const data = [
     {
       category: 'Category One',

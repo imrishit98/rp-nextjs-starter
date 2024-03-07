@@ -301,9 +301,8 @@ export const TestimonialCard = ({
 };
 
 /**
- * @description - This component is combination of a list of images that when clicked will slide to the related slide in the slider.
- * @param -
- * @returns
+ * @description - This component displays a list of images that when clicked will control which slide should be displayed in the slider beneath it. The slider is a grid of two cols; image on the left and text information on the right.
+ * @param - the potential prop can the data file
  */
 
 export const ControlledSliderWImages = () => {
@@ -403,8 +402,8 @@ export const ControlledSliderWImages = () => {
 };
 
 /**
- * @description - this component is a child component of the ControlledSliderWImages component.
- * @param {state} controlledSwiper - the state variable that is controls the index of the slide
+ * @description - this component is a child component of the ControlledSliderWImages component. Lists a set of clickable images in a row. When one of the images is clicked, then the slider slides to the relevant index and displays the relevant information.
+ * @param {state} controlledSwiper - the state variable that controls the index of the slide
  * @param {array} data - the information stored in data const
  *
  */

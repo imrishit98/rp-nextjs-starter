@@ -1,11 +1,16 @@
-import { BasicAccordion, CategorizedAccordion } from '@/components/ui/accordions';
+import { BasicAccordion, TabbedAccordion } from '@/components/ui/accordions';
 import { Container, FullWidthContainer, SectionHeader } from '@/ui/containers';
 
 import Layout from '@/components/layout';
 
+/**
+ * @description - This page lists different variants of the Flowbite-react accordion
+ *
+ */
 const ListOfAccordions = () => {
   return (
     <Layout seoTitle='List of Accordions'>
+      {/* Basic Accordion */}
       <FullWidthContainer>
         <Container>
           <SectionHeader
@@ -16,14 +21,14 @@ const ListOfAccordions = () => {
         </Container>
       </FullWidthContainer>
 
-      {/* Categorized Accordion */}
+      {/* Tabbed Accordion */}
       <FullWidthContainer>
         <Container className='text-center'>
           <SectionHeader
-            title='Categorized Accordion'
+            title='Tabbed Accordion'
             subTitle='Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
           />
-          <CategorizedAccordion />
+          <TabbedAccordion />
         </Container>
       </FullWidthContainer>
     </Layout>
