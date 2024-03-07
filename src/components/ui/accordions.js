@@ -3,7 +3,6 @@ import { BodyText, LgText } from '@/ui/typography';
 
 /**
  * @description - this is the basic FAQ accordion adopted from Flowbite-react
- * @returns
  */
 export const BasicAccordion = () => {
   // the data can be moved to and exported from a data file under utils/ to increase maintenance and organization
