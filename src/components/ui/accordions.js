@@ -1,7 +1,5 @@
+import { Accordion, Tabs } from 'flowbite-react';
 import { BodyText, LgText } from '@/ui/typography';
-
-import { Accordion } from 'flowbite-react';
-import { Tabs } from 'flowbite-react';
 
 /**
  * @description - this is the basic FAQ accordion adopted from Flowbite-react

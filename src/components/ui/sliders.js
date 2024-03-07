@@ -299,3 +299,119 @@ export const TestimonialCard = ({
     </div>
   );
 };
+
+/**
+ * @description - This component is combination of a list of images that when clicked will slide to the related slide in the slider.
+ * @param -
+ * @returns
+ */
+
+export const ControlledSliderWImages = () => {
+  const [controlledSwiper, setControlledSwiper] = useState(null);
+
+  const data = [
+    {
+      imgSrc: 'https://via.placeholder.com/500x300/00AEEF/ffffff',
+      imgAlt: '',
+      imgW: 500,
+      imgH: 300,
+      title: 'Slide One',
+      desc: 'Wafer I love icing cookie toffee shortbread I love cookie. Tart liquorice icing croissant topping tootsie roll. Croissant liquorice danish carrot cake I love candy canes tootsie roll. Sugar plum dessert danish caramels icing jelly beans cheesecake jelly. Bonbon danish toffee soufflé danish caramels pie soufflé.',
+      readMoreLink: '#',
+    },
+    {
+      imgSrc: 'https://via.placeholder.com/500x300/00EBF4/000000',
+      imgAlt: '',
+      imgW: 500,
+      imgH: 300,
+      title: 'Slide Two',
+      desc: 'Sweet icing apple pie cotton candy I love. Sweet topping wafer pie oat cake I love pudding danish sugar plum. Cheesecake I love danish danish jelly-o. Apple pie I love macaroon pastry danish I love.',
+      readMoreLink: '#',
+    },
+    {
+      imgSrc: 'https://via.placeholder.com/500x300/EBF3F9/000000',
+      imgAlt: '',
+      imgW: 500,
+      imgH: 300,
+      title: 'Slide Three',
+      desc: 'Toffee dessert ice cream danish pastry sweet roll. Cotton candy I love candy cookie cake. Pastry I love lemon drops cupcake pie oat cake. Fruitcake tiramisu chocolate fruitcake caramels soufflé cake. I love I love bonbon chocolate bar chocolate chocolate cake dragée chupa chups pudding.',
+      readMoreLink: '#',
+    },
+  ];
+  return (
+    <>
+      <ClickableImages
+        controlledSwiper={controlledSwiper}
+        data={data}
+      />
+      <Swiper
+        onSwiper={setControlledSwiper}
+        slidesPerView={1}
+        spaceBetween={30}
+        navigation
+        loop
+        modules={[Navigation]}
+        className='mySwiper'>
+        {data.map((slide, sliderIndex) => (
+          <SwiperSlide key={sliderIndex}>
+            <div className='grid gap-8 px-10 lg:grid-cols-3 xl:gap-16 md:px-16 xl:px-28'>
+              <div className='my-auto col-span-2 lg:col-span-1'>
+                <Image
+                  src={slide.imgSrc}
+                  alt={slide.imgAlt}
+                  width={slide.imgW}
+                  height={slide.imgH}
+                  sizes={'(max-width: 768px) 100vw, (max-width: 1280px) 75vw'}
+                  className=' mx-auto'
+                />
+              </div>
+              <div className='col-span-2 text-center lg:text-left'>
+                <H2 className='mb-8 text-gray-900'>{slide.title}</H2>
+                <BodyText className='text-gray-900'>{slide.desc}</BodyText>
+                {slide.readMoreLink ? (
+                  <Link
+                    href={slide.readMoreLink}
+                    className='block mt-8'>
+                    Read more
+                  </Link>
+                ) : null}
+              </div>{' '}
+            </div>
+          </SwiperSlide>
+        ))}{' '}
+      </Swiper>
+    </>
+  );
+};
+
+/**
+ * @description - this component is a child component of the ControlledSliderWImages component.
+ * @param {state} controlledSwiper - the state variable that is controls the index of the slide
+ * @param {array} data - the information stored in data const
+ *
+ */
+
+const ClickableImages = ({ controlledSwiper, data }) => {
+  return (
+    <div className='flex flex-wrap md:flex-nowrap my-[70px] border-b pb-8 border-gray-300 justify-center'>
+      {data.map((image, index) => (
+        <div
+          key={index}
+          className='inline-block pb-8 my-auto xl:px-10'>
+          <button
+            className='relative mt-8 hover:opacity-70 first:pl-4 last:pr-4'
+            onClick={() => controlledSwiper.slideTo(index)}>
+            <Image
+              src={image.imgSrc}
+              alt={image.imgAlt}
+              width={image.imgW}
+              height={image.imgH}
+              sizes={'(max-width: 768px) 100vw, (max-width: 1280px) 75vw'}
+              className='w-full'
+            />
+          </button>
+        </div>
+      ))}
+    </div>
+  );
+};

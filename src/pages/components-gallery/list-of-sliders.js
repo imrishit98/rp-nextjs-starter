@@ -1,5 +1,10 @@
 import { Container, FullWidthContainer, SectionHeader } from '@/ui/containers';
-import { GallerySlider, HeroWithSlider, Testimonials } from '@/ui/sliders';
+import {
+  ControlledSliderWImages,
+  GallerySlider,
+  HeroWithSlider,
+  Testimonials,
+} from '@/ui/sliders';
 
 import Layout from '@/components/layout';
 
@@ -32,6 +37,15 @@ const ListOfSliders = () => {
           subTitle='Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
         />
         <Testimonials />
+      </FullWidthContainer>
+
+      {/* Controlled Slider with images */}
+      <FullWidthContainer>
+        <SectionHeader
+          title='Controlled Slider'
+          subTitle='Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+        />
+        <ControlledSliderWImages />
       </FullWidthContainer>
     </Layout>
   );
