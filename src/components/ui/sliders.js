@@ -417,7 +417,7 @@ const ClickableImages = ({ controlledSwiper, data }) => {
           key={index}
           className='inline-block pb-8 my-auto'>
           <button
-            className='relative hover:opacity-70 first:pl-4 last:pr-4'
+            className='relative hover:opacity-70 first:pl-2 last:pr-2'
             onClick={() => controlledSwiper.slideTo(index)}>
             <Image
               src={image.imgSrc}
