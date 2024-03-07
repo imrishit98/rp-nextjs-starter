@@ -1,12 +1,15 @@
 import { Container, SectionHeader } from '@/ui/containers';
-import { Gallery, Testimonials } from '@/ui/sliders';
+import { GallerySlider, Testimonials } from '@/ui/sliders';
 
-import { Form } from '@/components/ui/form';
+import { Form } from '@/ui/form';
 import { H4 } from '@/ui/typography';
 import Layout from '@/components/layout';
 import { useRouter } from 'next/router';
 
-const Components = () => {
+/**
+ * @description - This page is going to be a gallery of all the components available in the Starter template. The structure is yet to be determined.
+ */
+const ComponentsGallery = () => {
   const router = useRouter();
 
   const title = 'Components Page';
@@ -33,7 +36,7 @@ const Components = () => {
           <H4>Image Gallery</H4>
           <hr class='h-px my-8 bg-gray-200 border-0 dark:bg-gray-700' />
         </div>
-        <Gallery />
+        <GallerySlider />
       </Container>
 
       <Container>
@@ -59,4 +62,4 @@ const Components = () => {
   );
 };
 
-export default Components;
+export default ComponentsGallery;

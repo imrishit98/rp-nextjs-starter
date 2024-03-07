@@ -1,6 +1,26 @@
-import React from 'react';
+/**
+ *
+ * @param {string} color - name of the color defined in the tailwind.config.js such as white or teal without any prefix
+ * @returns
+ */
+export const EllipseIcon = ({ color, className = '' }) => {
+  return (
+    <svg
+      width='11'
+      height='11'
+      viewBox='0 0 11 11'
+      fill='none'
+      xmlns='http://www.w3.org/2000/svg'
+      className={`${className} `}>
+      <path
+        d='M11 5.5C11 8.53757 8.53757 11 5.5 11C2.46243 11 0 8.53757 0 5.5C0 2.46243 2.46243 0 5.5 0C8.53757 0 11 2.46243 11 5.5ZM2.54816 5.5C2.54816 7.13026 3.86974 8.45184 5.5 8.45184C7.13026 8.45184 8.45184 7.13026 8.45184 5.5C8.45184 3.86974 7.13026 2.54816 5.5 2.54816C3.86974 2.54816 2.54816 3.86974 2.54816 5.5Z'
+        fill={color}
+      />
+    </svg>
+  );
+};
 
-export const DropdownArrowIcon = ({ className, ...props }) => {
+export const DropdownArrowIcon = ({ className = '', ...props }) => {
   return (
     <svg
       width='20'
@@ -21,7 +41,7 @@ export const DropdownArrowIcon = ({ className, ...props }) => {
   );
 };
 
-export const CloseIcon = ({ className, ...props }) => {
+export const CloseIcon = ({ className = '', ...props }) => {
   return (
     <svg
       width='25'
@@ -49,7 +69,7 @@ export const CloseIcon = ({ className, ...props }) => {
   );
 };
 
-export const HamburgerIcon = ({ className, ...props }) => {
+export const HamburgerIcon = ({ className = '', ...props }) => {
   return (
     <svg
       width='25'
@@ -101,7 +121,7 @@ export const SubmitIcon = () => {
   );
 };
 
-export const MessageSentIcon = ({ className, ...props }) => {
+export const MessageSentIcon = ({ className = '', ...props }) => {
   return (
     <svg
       className={`mx-auto ` + className}
