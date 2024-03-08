@@ -2,15 +2,17 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-import { BodyText, H2, LgText, SmText } from '@/ui/typography';
+import { BodyText, H2, H3, LgText, SmText } from '@/ui/typography';
 import { Container, FullWidthContainer } from '@/ui/containers';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Grid, Navigation, Pagination, Thumbs } from 'swiper/modules';
 import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { Button } from '@/ui/buttons';
+import { CloseIcon } from '@/svgs/icons';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Modal } from 'flowbite-react';
 import { register } from 'swiper/element/bundle';
 
 register();
@@ -101,9 +103,9 @@ export const HeroWithSlider = () => {
 };
 
 /**
- * @description - This component is a gallery slider.
+ * @description - This component is a gallery slider showing a row of 4 images at a time in large devices. It has navigations to slide to the right or left image in the slider.
  * @param - The potential prop for a real world project could be the data file that would be passed on from the page to this component.
- * @returns
+ *
  */
 
 export const GallerySlider = () => {
@@ -141,9 +143,6 @@ export const GallerySlider = () => {
       <Swiper
         slidesPerView={5}
         breakpoints={{
-          1280: {
-            slidesPerView: 4,
-          },
           1024: {
             slidesPerView: 4,
           },
@@ -178,14 +177,13 @@ export const GallerySlider = () => {
 };
 
 /**
- * @description - This component is a slider component for the testimonials.
+ * @description - This component is a slider component for the testimonials displaying two testimonials per slide. This component uses a child component for each of the testimonials.
  * @param - The potential prop for a real world project could be the data file that would be passed on from the page to this component.
  * @returns
  */
 
 export const Testimonials = () => {
   // the data can be moved to and exported from a data file under utils/ to increase maintenance and organization
-
   const data = [
     {
       reviewerImgSrc: 'https://via.placeholder.com/60x60/00EBF4/ffffff',
@@ -254,14 +252,13 @@ export const Testimonials = () => {
 };
 
 /**
- *
+ * @description - this component is a child component of the Testimonials slider component creating each testimonial card.
  * @param {string} reviewerImgSrc - the src for the reviewer's image
  * @param {string} reviewerImgAlt - the alt for the reviewer's image
  * @param {string} reviewerName - the name of the reviewer
  * @param {string} reviewerInfo - This could be the department or title/profession or any other related information of the reviewer that we would like to display.
  * @param {url} url - This could be a link to the reviewer's website or profile.
  *
- * @returns
  */
 export const TestimonialCard = ({
   reviewerImgSrc,
@@ -299,6 +296,215 @@ export const TestimonialCard = ({
     </div>
   );
 };
+
+/**
+ * @description - This component is a thumbnail gallery. When a thumbnail is clicked, the slider will slide to the related slide. Also when clicked on the enlarged image, a modal will pop up to further enlarge the image. The ThumbnailGallerySlider is developed to display the following information: Title, details and a list of images.
+ * @param - the potential prop for this component is the data that would be passed to it from a data file under utils/
+ */
+export const ThumbnailGallerySlider = () => {
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+
+  // the data can be moved to and exported from a data file under utils/ to increase maintenance and organization
+  const data = {
+    title: 'Thumbnail Gallery One',
+    details: (
+      <span>
+        Cookie I love soufflé pie pie tart. Sweet macaroon ice cream marshmallow cupcake
+        halvah sweet sweet roll cotton candy. I love carrot cake sweet roll sugar plum
+        sweet roll. <br />
+        <br /> Jelly pastry pudding marshmallow bonbon pudding. Shortbread gummi bears
+        marshmallow jelly cake chocolate cake. Cookie oat cake cake I love chupa chups
+        lollipop I love. Carrot cake pastry topping chupa chups I love. Bear claw jelly
+        beans marzipan I love sweet roll I love icing chocolate. I love pudding candy
+        canes I love I love. Shortbread powder topping gingerbread pastry powder oat
+        cake. I love gummi bears dessert gingerbread jujubes marzipan I love.
+      </span>
+    ),
+    images: [
+      {
+        src: 'https://via.placeholder.com/600x400/115C89/ffffff',
+        alt: '',
+        width: 1000,
+        height: 700,
+      },
+      {
+        src: 'https://via.placeholder.com/600x400/00AEEF/ffffff',
+        alt: '',
+        width: 1000,
+        height: 700,
+      },
+      {
+        src: 'https://via.placeholder.com/600x400/00EBF4/000000',
+        alt: '',
+        width: 1000,
+        height: 700,
+      },
+      {
+        src: 'https://via.placeholder.com/600x400/D6EBF4/000000',
+        alt: '',
+        width: 1000,
+        height: 700,
+      },
+    ],
+  };
+  return (
+    <div className='grid lg:grid-cols-[1fr_1fr] lg:gap-[50px] mt-12'>
+      <div className='max-w-full min-w-full'>
+        {/* Main image viewer */}
+        <Swiper
+          spaceBetween={10}
+          thumbs={{
+            swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
+          }}
+          modules={[Thumbs]}
+          className='mySwiper'>
+          {data.images.map(image => (
+            // maps through the images one at a time
+            <SwiperSlide key={image.src}>
+              <ImageCanGoModal
+                imgSrc={image.src}
+                imgAlt={image.alt}
+                imgW={image.width}
+                imgH={image.height}
+                className='object-contain rounded-[8px] '
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        {/* Thumbnails */}
+        <Swiper
+          onSwiper={setThumbsSwiper}
+          grid={{
+            rows: 2,
+            fill: 'row',
+          }}
+          spaceBetween={10}
+          slidesPerView={4}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Grid, Pagination]}
+          className='mySwiper'>
+          {/* mapping through the images to create the thumbnail grid gallery in the left col of the grid */}
+          {data.images.map(image => (
+            <SwiperSlide
+              key={image.src}
+              className='mt-[10px]'>
+              <div className='hover:border-light-blue border-cool-grey border bg-white hover:cursor-pointer'>
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  width={image.width}
+                  height={image.height}
+                  className='w-full h-[98px] object-contain p-2'
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+
+      {/* the second col on the right to display the title and details of the image gallery */}
+      <div className='py-5'>
+        <H3 className='mb-8'>{data.title}</H3>
+        <BodyText>{data.details}</BodyText>
+      </div>
+    </div>
+  );
+};
+
+/**
+ * @description - This component is used to display a modal when clicked on an image. This component can also be used independently whenever we need a clickable image and a modal to be displayed.
+ * @param {url} imgSrc - url of the image
+ * @param {string} imgAlt - image alt text
+ * @param {number} imgW - width of the image
+ * @param {number} imgH - height of the image
+ *
+ */
+export const ImageCanGoModal = ({ imgSrc, imgAlt, imgH, imgW }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  return (
+    <>
+      <div
+        className='relative align-top group overflow-hidden'
+        onClick={() => setIsModalOpen(true)}>
+        <Image
+          src={imgSrc}
+          alt={imgAlt}
+          width={imgW}
+          height={imgH}
+          sizes={'(max-width: 766px) 100vw, (max-width: 1280px) 75vw'}
+          className='relative lg:h-full lg:w-full bg-white p-5 hover:cursor-pointer'
+        />
+      </div>
+
+      <ImageModal
+        imgSrc={imgSrc}
+        imgAlt={imgAlt}
+        imgOW={imgW}
+        imgOH={imgH}
+        isModalOpen={isModalOpen}
+        setIsModalOpen={setIsModalOpen}
+      />
+    </>
+  );
+};
+
+/**
+ * @description - this component uses the Flowbite-react Modal component in order to load the image in its original size
+ * @param {boolean} isModalOpen - state variable to determine whether the modal is open or close
+ * @param {*} setIsModalOpen - the state function that sets the state variable when the modal is either open or close
+ * @param {url} imgSrc - url of the image
+ * @param {number} imgOW - the original width of the image
+ * @param {number} imgOH - the original height of the image
+ * @param {string} imgAlt - the alt text
+ */
+export const ImageModal = ({
+  isModalOpen,
+  setIsModalOpen,
+  imgSrc,
+  imgOW,
+  imgOH,
+  imgAlt,
+}) => {
+  return (
+    <Modal
+      dismissible
+      show={isModalOpen}
+      onClose={() => setIsModalOpen(false)}
+      className='fixed left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto bg-gray-900 top-20 bg-opacity-80 pt-28 md:pt-0 h-[100vh]'>
+      <div className='relative h-full mx-auto md:h-auto py-10'>
+        <div className='relative shadow'>
+          {/* the modal close button */}
+          <button
+            type='button'
+            className='absolute z-10 top-4 right-5 bg-transparent p-1.5 ml-auto inline-flex items-center lg:-mr-[30%] md:-mr-[10%]'
+            data-modal-hide='popup-modal'
+            aria-label='Close'
+            onClick={() => setIsModalOpen(false)}>
+            <CloseIcon />
+            <span className='sr-only'>Close popup image</span>
+          </button>
+          <div className='grid grid-cols-1 text-center'>
+            <div className={`md:-ml-[30%] md:-mr-[30%] md:w-[${imgOW}px] relative`}>
+              {/* this the image loaded in its original width and height */}
+              <Image
+                src={imgSrc}
+                alt={imgAlt}
+                width={imgOW}
+                height={imgOH}
+                className='inline-block w-full'
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </Modal>
+);
+};
+
 
 /**
  * @description - This component displays a list of images that when clicked will control which slide should be displayed in the slider beneath it. The slider is a grid of two cols; image on the left and text information on the right.
@@ -430,5 +636,6 @@ const ClickableImages = ({ controlledSwiper, data }) => {
         </div>
       ))}
     </div>
+
   );
 };
