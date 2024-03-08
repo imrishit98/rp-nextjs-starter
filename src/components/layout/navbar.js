@@ -36,6 +36,10 @@ const Navbar = ({ conversionPageUrl }) => {
           name: 'grids',
           href: '/components-gallery/list-of-grids',
         },
+        {
+          name: 'accordions',
+          href: '/components-gallery/list-of-accordions',
+        },
       ],
     },
   ];

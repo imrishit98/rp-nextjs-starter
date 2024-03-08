@@ -1,6 +1,7 @@
 import { Container } from '@/ui/containers';
 import Layout from '@/components/layout';
 
+/** this homepage would need a design */
 const Home = () => {
   return (
     <Layout>
