@@ -324,26 +324,26 @@ export const ThumbnailGallerySlider = () => {
       {
         src: 'https://via.placeholder.com/600x400/115C89/ffffff',
         alt: '',
-        width: 1150,
-        height: 864,
+        width: 1000,
+        height: 700,
       },
       {
         src: 'https://via.placeholder.com/600x400/00AEEF/ffffff',
         alt: '',
-        width: 818,
-        height: 512,
+        width: 1000,
+        height: 700,
       },
       {
         src: 'https://via.placeholder.com/600x400/00EBF4/000000',
         alt: '',
-        width: 818,
-        height: 512,
+        width: 1000,
+        height: 700,
       },
       {
         src: 'https://via.placeholder.com/600x400/D6EBF4/000000',
         alt: '',
-        width: 818,
-        height: 512,
+        width: 1000,
+        height: 700,
       },
     ],
   };
@@ -474,8 +474,8 @@ export const ImageModal = ({
       dismissible
       show={isModalOpen}
       onClose={() => setIsModalOpen(false)}
-      className='fixed left-0 right-0 z-50 w-full h-full p-4 overflow-x-hidden overflow-y-auto bg-gray-900 top-20 bg-opacity-80'>
-      <div className='relative h-full mx-auto md:h-auto'>
+      className='fixed left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto bg-gray-900 top-20 bg-opacity-80 pt-28 md:pt-0 h-[100vh]'>
+      <div className='relative h-full mx-auto md:h-auto py-10'>
         <div className='relative shadow'>
           {/* the modal close button */}
           <button
@@ -495,7 +495,6 @@ export const ImageModal = ({
                 alt={imgAlt}
                 width={imgOW}
                 height={imgOH}
-                sizes={'(max-width: 766px) 100vw, (max-width: 1280px) 75vw'}
                 className='inline-block w-full'
               />
             </div>
