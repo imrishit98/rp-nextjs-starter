@@ -1,9 +1,10 @@
 import { Container, FullWidthContainer, SectionHeader } from '@/ui/containers';
-import { ThumbnailGallerySlider,
+import {
   ControlledSliderWImages,
   GallerySlider,
   HeroWithSlider,
-  Testimonials
+  Testimonials,
+  ThumbnailGallerySlider,
 } from '@/ui/sliders';
 
 import Layout from '@/components/layout';
@@ -38,7 +39,6 @@ const ListOfSliders = () => {
         <Testimonials />
       </FullWidthContainer>
 
-
       {/* Thumbnail gallery slider with title and description */}
       <FullWidthContainer>
         <SectionHeader
@@ -46,7 +46,7 @@ const ListOfSliders = () => {
           subTitle='Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
         />
         <ThumbnailGallerySlider />
-
+      </FullWidthContainer>
       {/* Controlled Slider with images */}
       <FullWidthContainer>
         <SectionHeader
@@ -54,7 +54,6 @@ const ListOfSliders = () => {
           subTitle='Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
         />
         <ControlledSliderWImages />
-
       </FullWidthContainer>
     </Layout>
   );
