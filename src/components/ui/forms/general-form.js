@@ -1,23 +1,22 @@
 import * as Yup from 'yup';
 
-import { CheckboxList,RadioButtonList, Input, Select, Textarea } from '@/ui/form-elements';
+import { CheckboxList, RadioButtonList, Input, Select, Textarea } from '@/ui/form-elements';
 
 import { useForm } from 'react-hook-form';
 
-import { SubmitButton } from '@/ui/buttons';
+import { Button } from '@/ui/buttons';
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-export const Form = ({ conversionPageUrl }) => {
+export const GeneralForm = ({ conversionPageUrl }) => {
   const router = useRouter();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const validationSchema = Yup.object().shape({
     firstName: Yup.string().required('Please enter your first name'),
-    lastName: Yup.string().required('Please enter your last name'),
     emailAddress: Yup.string().required('Please enter your email address'),
     phoneNumber: Yup.string(),
     aboutYourDepartment: Yup.string().required('Please select one of the options'),
@@ -57,19 +56,6 @@ export const Form = ({ conversionPageUrl }) => {
             />
           </div>
 
-          {/* Last name - Required */}
-          <div>
-            <Input
-              label='Last name'
-              name='lastName'
-              id='lastName'
-              type='text'
-              placeholder='Last name'
-              isRequired
-              register={ ...register('lastName') }
-              errorMessage={errors.lastName?.message}
-            />
-          </div>
 
             {/* Phone number - Optional */}
             <div> 
@@ -97,11 +83,9 @@ export const Form = ({ conversionPageUrl }) => {
               errorMessage={errors.emailAddress?.message}
             />
           </div>
-          
-        
 
           {/* Dropdown Field - Required */}
-          <div className='w-1/2 col-span-2'> 
+          <div> 
             <Select
               label='Tell us about your department'
               name='aboutYourDepartment'
@@ -113,8 +97,8 @@ export const Form = ({ conversionPageUrl }) => {
             />
           </div>
 
-          {/* Optional Checkbox list */}
-          <div className='w-1/2 col-span-2'> 
+          {/* Checkbox list - Required */}
+          <div> 
           
           <CheckboxList
               label='What are your hobbies'
@@ -124,18 +108,10 @@ export const Form = ({ conversionPageUrl }) => {
               register={...register('hobbiesChk')}
             />
          </div>
-          {/* Optional Checkbox list */}
-          <div className='w-1/2 col-span-2'> 
-          <RadioButtonList
-              label='What is your age group'
-              name='ageGroupLst'
-              options={['2 - 12', '13 - 30', '31 - 45','46 - 65']}
-              register={...register('ageGroupLst')}
-            />
-          </div>
+     
 
           {/* Textarea Field - Required */}
-          <div className='col-span-2'>
+          <div>
             <Textarea
               label='Your message'
               name='message'
@@ -147,10 +123,12 @@ export const Form = ({ conversionPageUrl }) => {
           </div>
 
           {/* Submit Button */}
-          <div className='flex mt-5 lg:col-span-2 md:justify-end'>
-            <SubmitButton
+          <div className='flex lg:col-span-2 md:justify-end'>
+            <Button
               className='px-10'
               label={loading ? 'Submitting...' : 'Submit'}
+              variant='primary'
+              type='button'
             />
           </div>
         </div>

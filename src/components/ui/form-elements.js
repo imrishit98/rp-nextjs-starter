@@ -96,6 +96,8 @@ export const Select = ({
   register,
   isRequired,
   errorMessage,
+  onChange,
+  value,
   className,
   children,
   ...props
@@ -119,7 +121,9 @@ export const Select = ({
           'w-full px-4 py-3 text-sm font-inter font-normal rounded-lg bg-gray-50 border border-solid border-gray-300 focus:border-cyan focus:outline-none mt-2 ' +
           className
         }
-        onChange={e => handleSelectChange(e.target.value)}
+        // onChange={e => handleSelectChange(e.target.value)}
+        onChange={onChange}
+        value={value}
         {...register}>
         <option value=''>Select an option</option>
         {options.map((option, index) => (
@@ -198,6 +202,7 @@ export const RadioButtonList = ({
   options,
   register,
   isRequired,
+  onChange,
   errorMessage,
   className,
   children,
@@ -227,7 +232,8 @@ export const RadioButtonList = ({
               // type='radio'
               className='w-4 h-4 border border-gray-300 focus:ring-2 focus:ring-green-500 text-gray-50 bg-gray-50 rounded-3xl checked:border-green-500 checked:rounded-full checked:border-4 focus:border-green-500 focus:rounded-full focus:border-4'
               {...register}
-              onChange={() => handleRadioChange(index)}
+              // onChange={() => handleRadioChange(index)}
+              onChange={onChange}
             />{' '}
             <Label
               name={name + index}

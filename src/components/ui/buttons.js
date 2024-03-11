@@ -19,10 +19,9 @@ export const FooterLink = ({ link, conversionPageUrl, label, className = '' }) =
 };
 
 /**
- * @description - this is the primary button based on Figma styleguide definition
+ * @description - Submit or link button based on Figma styleguide definition
  * @param {url} link - url to the destination
  * @param {string} label - text to be displayed
-
  * @param {string} variant - possible values are primary or secondary and if not exists then it will be default(tertiary) based on Figma
  * @param {boolean} hasIcon - if an icon exists
  * @param {string} type - possible values are button or link
@@ -51,7 +50,9 @@ export const Button = ({
               ? 'text-white bg-cobalt hover:bg-cyan'
               : variant == 'secondary'
                 ? 'text-white bg-cyan hover:bg-cobalt'
-                : 'text-black bg-cool-grey hover:bg-cyan'
+                : variant == 'tertiary'
+                  ? 'text-black bg-cyan hover:bg-deep-blue'
+                  : null
           }`}>
           <span className={`mr-[10px] ml-0 ${!hasIcon ? 'hidden' : ''}`}>
             {children}
@@ -61,32 +62,22 @@ export const Button = ({
       ) : type == 'button' ? (
         // for a submit button
         <button
-          className={` inline-block w-full md:w-auto py-4 justify-center items-center rounded-[5px] px-5 focus:outline-none focus:ring-none font-bold mt-10 ${
+          className={` inline-block w-full md:w-auto py-4 justify-center items-center rounded-[5px] px-20 focus:outline-none focus:ring-none font-bold ${
             variant == 'primary'
               ? 'text-white bg-cobalt hover:bg-cyan'
               : variant == 'secondary'
                 ? 'text-white bg-cyan hover:bg-cobalt'
-                : 'text-black bg-cool-grey hover:bg-cyan'
+                : variant == 'tertiary'
+                  ? 'text-black bg-cyan hover:bg-light-blue'
+                  : null
           }`}
           type='submit'>
+          <span className={`mr-[10px] ml-0 ${!hasIcon ? 'hidden' : ''}`}>
+            {children}
+          </span>
           <span>{label}</span>
         </button>
       ) : null}
     </>
-  );
-};
-
-/**
- * @description - the submit button for a form
- * @param {*} param0
- * @returns
- */
-export const SubmitButton = ({ label, children, className = '', ...props }) => {
-  return (
-    <button
-      className={`block py-3 text-center text-white rounded-lg bg-cobalt md:inline-block hover:bg-cyan focus:outline-none focus:ring ${className}`}
-      type='submit'>
-      <span>{label}</span>
-    </button>
   );
 };

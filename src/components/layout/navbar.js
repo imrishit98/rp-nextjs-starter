@@ -40,6 +40,10 @@ const Navbar = ({ conversionPageUrl }) => {
           name: 'accordions',
           href: '/components-gallery/list-of-accordions',
         },
+        {
+          name: 'forms',
+          href: '/components-gallery/list-of-forms',
+        },
       ],
     },
   ];
