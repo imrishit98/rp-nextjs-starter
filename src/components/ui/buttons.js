@@ -1,5 +1,29 @@
 import { BodyText } from '@/ui/typography';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+
+export const FormPopupBtn = ({ label, className, ...props }) => {
+  const router = useRouter();
+  const handleRoute = () => {
+    // Preserve existing query parameters and add showForm parameter
+    const newQuery = { ...router.query, showForm: true };
+    router.push({ pathname: router.pathname, query: newQuery }, undefined, {
+      shallow: true,
+    });
+  };
+
+  return (
+    <button
+      className={
+        `flex justify-center items-center py-[10px] rounded-[5px] text-white bg-burnt-sienna px-9 focus:outline-none focus:ring-none hover:bg-[#DE5D2F] ` +
+        className
+      }
+      onClick={handleRoute}
+      {...props}>
+      {label ? <span>{label}</span> : <span>Request a quote</span>}
+    </button>
+  );
+};
 
 /**
  * @description - this component is particular to the footer section links
@@ -79,5 +103,34 @@ export const Button = ({
         </button>
       ) : null}
     </>
+  );
+};
+
+// button with no link
+export const ButtonNoLink = ({
+  id,
+  label,
+  className,
+  hasIcon,
+  iconOnTheRight,
+  children,
+  ...props
+}) => {
+  return (
+    <div
+      id={id}
+      className={
+        'inline-block py-[14px] justify-center items-center text-white rounded-[8px] px-6 focus:outline-none focus:ring-none bg-cobalt hover:bg-teal disabled:bg-[#d1d5db] cursor-pointer ' +
+        className
+      }
+      {...props}>
+      <span
+        className={` ${
+          iconOnTheRight ? 'order-last ml-[10px] mr-0' : ' mr-[10px] ml-0'
+        } ${!hasIcon ? 'hidden' : ''}`}>
+        {children}
+      </span>
+      <span className='text-base font-normal'>{label}</span>
+    </div>
   );
 };

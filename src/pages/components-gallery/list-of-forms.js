@@ -8,6 +8,7 @@ import { FormWConditionalFields } from '@/components/ui/forms/form-with-conditio
 import { GeneralForm } from '@/components/ui/forms/general-form';
 import Layout from '@/components/layout';
 import { NewsletterForm } from '@/components/ui/forms/newsletter-form';
+import { TwoStepForm } from '@/components/ui/forms/two-step';
 
 /** This page will list different variants of forms (simple contact form, two-step form, modal form and newsletter.). */
 const ListOfForms = () => {
@@ -36,7 +37,7 @@ const ListOfForms = () => {
       </FullWidthContainer>
 
       {/* The two-step form */}
-      <FullWidthContainer className='bg-light-blue'>
+      <FullWidthContainer>
         <Container>
           <SectionHeader
             title='The two-step form'

@@ -1,8 +1,8 @@
+import { Button, FormPopupBtn } from '@/ui/buttons';
 import { CloseIcon, HamburgerIcon } from '@/svgs/icons';
 import { H3, LgText, NavbarLink } from '@/ui/typography';
 import { useEffect, useState } from 'react';
 
-import { Button } from '@/ui/buttons';
 import { Container } from '@/ui/containers';
 import Link from 'next/link';
 
@@ -60,6 +60,7 @@ const Navbar = ({ conversionPageUrl }) => {
     <nav>
       <Container className='justify-between h-[72px] md:h-[94px] flex'>
         <div className='flex items-center flex-grow py-3 md:flex-none'>
+          {/* Logo here */}
           <Link
             href='/'
             className='font-bold text-cobalt'>
@@ -112,11 +113,15 @@ const Navbar = ({ conversionPageUrl }) => {
           )}
         </div>
         <div className='hidden md:block'>
-          <Button
+          {/* <Button
             link={'/contact-us' + '?conversionPageUrl=' + conversionPageUrl}
             label='Contact Us'
             variant='primary'
             type='link'
+          /> */}
+          <FormPopupBtn
+            className='h-12 w-[200px] hidden lg:flex'
+            label='Contact us'
           />
         </div>
 

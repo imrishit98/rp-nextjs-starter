@@ -19,7 +19,7 @@ export const GeneralForm = ({ conversionPageUrl }) => {
     firstName: Yup.string().required('Please enter your first name'),
     emailAddress: Yup.string().required('Please enter your email address'),
     phoneNumber: Yup.string(),
-    aboutYourDepartment: Yup.string().required('Please select one of the options'),
+    aboutYourDepartment: Yup.string().required('Please select your department'),
     hobbiesChk: Yup.array(),
     ageGroupLst: Yup.string(),
     message: Yup.string().required('Please enter your message'),
@@ -31,8 +31,41 @@ export const GeneralForm = ({ conversionPageUrl }) => {
   const { errors } = formState;
 
   const onSubmit = data => {
+
+    // const submitURL = `/api/form-handler`;
+    // router.push('/thank-you/');
+console.log(data)
+
+    if (data) {
+      const webhookData = {
+        firstName: data.firstName,
+        lastName: data.lastName,
+        phone: data.phoneNumber,
+        email: data.emailAddress,
+        aboutYourDepartment:data.aboutYourDepartment,
+        hobbiesChk: data.hobbiesChk,
+        ageGroupLst:data.ageGroupLst,
+        message: data.message,
+        page: router.pathname,
+        // pageTitle: { pageTitle },
+      };
     //console.log(data);
-    router.push('/thank-you' + conversionPageUrl);
+    // router.push('/thank-you' + conversionPageUrl);
+
+    // axios
+    //     .post(submitURL, webhookData)
+    //     .then((res) => {
+    //       setContactFormOpen(false);
+    //       if (router.pathname.includes('/lp')) {
+    //         router.push(router.pathname + '/thank-you');
+    //       } else {
+    //         router.push('/thank-you');
+    //       }
+    //     })
+    //     .catch((err) => {
+    //       alert('There was an error submitting your form. Please try again.');
+    //     });
+    }
 
   };
   return (
@@ -87,25 +120,25 @@ export const GeneralForm = ({ conversionPageUrl }) => {
           {/* Dropdown Field - Required */}
           <div> 
             <Select
-              label='Tell us about your department'
+              label='Which department do you belong to?'
               name='aboutYourDepartment'
               isRequired
               options={['Software Engineering', 'Sales & Marketing', 'Design']}
               register={...register('aboutYourDepartment')}
               errorMessage={errors.aboutYourDepartment?.message}
-              
             />
           </div>
 
-          {/* Checkbox list - Required */}
+          {/* Checkbox list - not Required */}
           <div> 
           
           <CheckboxList
               label='What are your hobbies'
               name='hobbiesChk'
-              isRequired
               options={['Books', 'Biking', 'Gardening']}
-              register={...register('hobbiesChk')}
+              register={...register('hobbiesChk', {
+                required: false,
+              })}
             />
          </div>
      

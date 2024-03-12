@@ -2,28 +2,45 @@ import { Checkbox, Radio } from 'flowbite-react';
 import { SmText, XsText } from '@/ui/typography';
 import { useFieldArray, useForm } from 'react-hook-form';
 
+/**
+ *
+ * @param {string} label - label of the field
+ * @param {string} name - name of the field used in htmlFor attribute to connect the label to the field that's used for
+ * @param {boolean} isRequired - indicates whether a required field indicator such as an asterisk should be displayed or not
+ * @param {string} className - extra TailwindCSS classes if needed
+ * @returns
+ */
 export const Label = ({ label, name, isRequired, className }) => {
   return (
     <label htmlFor={name}>
       <SmText className={`font-medium ${className}`}>
-        {label} {isRequired ? <span className={'inline text-red-600'}>*</span> : <></>}
+        {label} {isRequired ? <span className={'inline text-red-600'}>*</span> : null}
       </SmText>
     </label>
   );
 };
 
+/**
+ *
+ * @param {string} label - label of the field
+ * @param {name} name - name of the field
+ * @param {string} type - type of the field - possible values: text, number, password, email
+ * @param {string} placeholder - text that would be displayed as the placeholder
+ * @param {*} register - registers the field for Yup validation
+ * @param {string} errorMessage - the error message that would be displayed if the field is required and fails the validation
+ * @param {boolean} isRequired - just for UI purposes; if exists then it will be passed on to the Label component in order to display the asterisk
+ * @param {string} className - extra TailwindCSS classes if needed
+ * @returns
+ */
 export const Input = ({
   label,
   name,
-  id,
   type,
   placeholder,
   register,
   errorMessage,
   isRequired,
   className,
-  children,
-  ...props
 }) => {
   return (
     <>
@@ -33,13 +50,12 @@ export const Input = ({
         isRequired={isRequired}
       />
 
-      {/* #ToDo - invalid:border-red-500 invalid:text-red-500 */}
       <input
         className={
-          'px-4 py-3 text-sm font-inter font-normal rounded-lg bg-gray-50 border border-solid border-gray-300 w-full focus:border-gray-900 focus:ring-transparent focus:outline-none mt-2 ' +
+          `${errorMessage ? 'border-red-500 text-red-500 ' : null}
+          px-4 py-3 text-sm font-inter font-normal rounded-lg bg-gray-50 border border-solid border-gray-300 w-full focus:border-gray-900 focus:ring-transparent focus:outline-none mt-2 ` +
           className
         }
-        id={name}
         name={name}
         type={type}
         placeholder={placeholder}
@@ -52,17 +68,26 @@ export const Input = ({
   );
 };
 
+/**
+ *
+ * @param {string} label - label of the field
+ * @param {name} name - name of the field
+ * @param {string} placeholder - text that would be displayed as the placeholder
+ * @param {*} register - registers the field for Yup validation
+ * @param {string} errorMessage - the error message that would be displayed if the field is required and fails the validation
+ * @param {boolean} isRequired - just for UI purposes; if exists then it will be passed on to the Label component in order to display the asterisk
+ * @param {string} className - extra TailwindCSS classes if needed
+ * @returns
+ */
+
 export const Textarea = ({
   label,
   name,
-  id,
   placeholder,
   register,
   errorMessage,
   isRequired,
   className,
-  children,
-  ...props
 }) => {
   return (
     <>
@@ -74,11 +99,12 @@ export const Textarea = ({
 
       <textarea
         className={
-          'px-4 py-3 rounded-lg text-sm font-normal bg-gray-50 h-28 border border-solid border-gray-300 w-full focus:border-gray-900 focus:ring-transparent focus:outline-none mt-2 ' +
+          `${
+            errorMessage ? 'border-red-500 text-red-500 ' : null
+          } px-4 py-3 rounded-lg text-sm font-normal bg-gray-50 h-28 border border-solid border-gray-300 w-full focus:border-gray-900 focus:ring-transparent focus:outline-none mt-2 ` +
           className
         }
         name={name}
-        id={id}
         placeholder={placeholder}
         {...register}
       />
@@ -89,18 +115,30 @@ export const Textarea = ({
   );
 };
 
+/**
+ *
+ * @param {string} label - label of the field
+ * @param {name} name - name of the field
+ * @param {array} options - an array of values to fill in the select field as options
+ * @param {event} onChange - if exists then it will replace the default handler with a custom one eg. if we have conditional fields. See form-with-conditional-fields.js
+ * @param {string} value -
+ * @param {*} register - registers the field for Yup validation
+ * @param {string} errorMessage - the error message that would be displayed if the field is required and fails the validation
+ * @param {boolean} isRequired - just for UI purposes; if exists then it will be passed on to the Label component in order to display the asterisk
+ * @param {string} className - extra TailwindCSS classes if needed
+ * @returns
+ */
+
 export const Select = ({
   label,
   name,
   options,
+  onChange,
+  value,
   register,
   isRequired,
   errorMessage,
-  onChange,
-  value,
   className,
-  children,
-  ...props
 }) => {
   const { setValue, control } = useForm();
 
@@ -118,11 +156,12 @@ export const Select = ({
       <select
         name={name}
         className={
-          'w-full px-4 py-3 text-sm font-inter font-normal rounded-lg bg-gray-50 border border-solid border-gray-300 focus:border-cyan focus:outline-none mt-2 ' +
+          `${
+            errorMessage ? 'border-red-500 text-red-500 ' : null
+          } w-full px-4 py-3 text-sm font-inter font-normal rounded-lg bg-gray-50 border border-solid border-gray-300 focus:border-cyan focus:outline-none mt-2 ` +
           className
         }
-        // onChange={e => handleSelectChange(e.target.value)}
-        onChange={onChange}
+        onChange={onChange ? onChange : () => handleSelectChange(e.target.value)}
         value={value}
         {...register}>
         <option value=''>Select an option</option>
@@ -142,10 +181,25 @@ export const Select = ({
   );
 };
 
+// todo: checkbox error message UI
+
+/**
+ *
+ * @param {string} label - label of the field
+ * @param {name} name - name of the field
+ * @param {array} options - an array of values to fill in the checkboxes list field as options
+ * @param {event} onChange - if exists then it will replace the default handler with a custom one eg. if we have conditional fields. See form-with-conditional-fields.js
+ * @param {*} register - registers the field for Yup validation
+ * @param {string} errorMessage - the error message that would be displayed if the field is required and fails the validation
+ * @param {boolean} isRequired - just for UI purposes; if exists then it will be passed on to the Label component in order to display the asterisk
+ * @param {string} className - extra TailwindCSS classes if needed
+ * @returns
+ */
 export const CheckboxList = ({
   label,
   name,
   options,
+  onChange,
   register,
   isRequired,
   errorMessage,
@@ -179,7 +233,7 @@ export const CheckboxList = ({
               value={option}
               className='focus:ring-2 focus:ring-green-500 text-green-500 w-4 h-4 p-2.5 bg-gray-50 rounded border border-gray-300'
               {...register}
-              onChange={() => handleCheckboxChange(index)}
+              onChange={onChange ? onChange : () => handleCheckboxChange(index)}
             />{' '}
             <Label
               name={name + index}
@@ -196,13 +250,27 @@ export const CheckboxList = ({
   );
 };
 
+// todo: error message UI
+
+/**
+ *
+ * @param {string} label - label of the field
+ * @param {name} name - name of the field
+ * @param {array} options - an array of values to fill in the radio buttons list as options
+ * @param {event} onChange - if exists then it will replace the default handler with a custom one eg. if we have conditional fields. See form-with-conditional-fields.js
+ * @param {*} register - registers the field for Yup validation
+ * @param {string} errorMessage - the error message that would be displayed if the field is required and fails the validation
+ * @param {boolean} isRequired - just for UI purposes; if exists then it will be passed on to the Label component in order to display the asterisk
+ * @param {string} className - extra TailwindCSS classes if needed
+ * @returns
+ */
 export const RadioButtonList = ({
   label,
   name,
   options,
+  onChange,
   register,
   isRequired,
-  onChange,
   errorMessage,
   className,
   children,
@@ -229,11 +297,9 @@ export const RadioButtonList = ({
             <Radio
               name={name[index]}
               value={option}
-              // type='radio'
               className='w-4 h-4 border border-gray-300 focus:ring-2 focus:ring-green-500 text-gray-50 bg-gray-50 rounded-3xl checked:border-green-500 checked:rounded-full checked:border-4 focus:border-green-500 focus:rounded-full focus:border-4'
               {...register}
-              // onChange={() => handleRadioChange(index)}
-              onChange={onChange}
+              onChange={onChange ? onChange : () => handleRadioChange(index)}
             />{' '}
             <Label
               name={name + index}

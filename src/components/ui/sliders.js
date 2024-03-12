@@ -9,10 +9,9 @@ import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { Button } from '@/ui/buttons';
-import { CloseIcon } from '@/svgs/icons';
 import Image from 'next/image';
+import { ImageModal } from '@/ui/modals';
 import Link from 'next/link';
-import { Modal } from 'flowbite-react';
 import { register } from 'swiper/element/bundle';
 
 register();
@@ -453,60 +452,6 @@ export const ImageCanGoModal = ({ imgSrc, imgAlt, imgH, imgW }) => {
 };
 
 /**
- * @description - this component uses the Flowbite-react Modal component in order to load the image in its original size
- * @param {boolean} isModalOpen - state variable to determine whether the modal is open or close
- * @param {*} setIsModalOpen - the state function that sets the state variable when the modal is either open or close
- * @param {url} imgSrc - url of the image
- * @param {number} imgOW - the original width of the image
- * @param {number} imgOH - the original height of the image
- * @param {string} imgAlt - the alt text
- */
-export const ImageModal = ({
-  isModalOpen,
-  setIsModalOpen,
-  imgSrc,
-  imgOW,
-  imgOH,
-  imgAlt,
-}) => {
-  return (
-    <Modal
-      dismissible
-      show={isModalOpen}
-      onClose={() => setIsModalOpen(false)}
-      className='fixed left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto bg-gray-900 top-20 bg-opacity-80 pt-28 md:pt-0 h-[100vh]'>
-      <div className='relative h-full mx-auto md:h-auto py-10'>
-        <div className='relative shadow'>
-          {/* the modal close button */}
-          <button
-            type='button'
-            className='absolute z-10 top-4 right-5 bg-transparent p-1.5 ml-auto inline-flex items-center lg:-mr-[30%] md:-mr-[10%]'
-            data-modal-hide='popup-modal'
-            aria-label='Close'
-            onClick={() => setIsModalOpen(false)}>
-            <CloseIcon />
-            <span className='sr-only'>Close popup image</span>
-          </button>
-          <div className='grid grid-cols-1 text-center'>
-            <div className={`md:-ml-[30%] md:-mr-[30%] md:w-[${imgOW}px] relative`}>
-              {/* this the image loaded in its original width and height */}
-              <Image
-                src={imgSrc}
-                alt={imgAlt}
-                width={imgOW}
-                height={imgOH}
-                className='inline-block w-full'
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </Modal>
-);
-};
-
-
-/**
  * @description - This component displays a list of images that when clicked will control which slide should be displayed in the slider beneath it. The slider is a grid of two cols; image on the left and text information on the right.
  * @param - the potential prop can the data file
  */
@@ -636,6 +581,5 @@ const ClickableImages = ({ controlledSwiper, data }) => {
         </div>
       ))}
     </div>
-
   );
 };
