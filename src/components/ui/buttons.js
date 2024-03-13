@@ -11,11 +11,10 @@ export const FormPopupBtn = ({ label, className, ...props }) => {
       shallow: true,
     });
   };
-
   return (
     <button
       className={
-        `flex justify-center items-center py-[10px] rounded-[5px] text-white bg-burnt-sienna px-9 focus:outline-none focus:ring-none hover:bg-[#DE5D2F] ` +
+        `flex justify-center items-center py-[10px] rounded-[5px] text-white bg-cyan px-9 focus:outline-none focus:ring-none hover:bg-cobalt ` +
         className
       }
       onClick={handleRoute}
@@ -106,30 +105,21 @@ export const Button = ({
   );
 };
 
-// button with no link
-export const ButtonNoLink = ({
-  id,
-  label,
-  className,
-  hasIcon,
-  iconOnTheRight,
-  children,
-  ...props
-}) => {
+/**
+ * @description - This button is used as a next/back button for the two-step-form.js
+ * @param {string} label - label of the button
+ * @param {string} className - extra TailwindCSS classes if needed
+ * @param {*} props - the onClick event handler
+ * @returns
+ */
+export const ButtonNoLink = ({ label, className, ...props }) => {
   return (
     <div
-      id={id}
       className={
-        'inline-block py-[14px] justify-center items-center text-white rounded-[8px] px-6 focus:outline-none focus:ring-none bg-cobalt hover:bg-teal disabled:bg-[#d1d5db] cursor-pointer ' +
+        'inline-block py-[14px] justify-center items-center text-white rounded-[8px] px-6 focus:outline-none focus:ring-none bg-cyan hover:bg-teal disabled:bg-[#d1d5db] cursor-pointer ' +
         className
       }
       {...props}>
-      <span
-        className={` ${
-          iconOnTheRight ? 'order-last ml-[10px] mr-0' : ' mr-[10px] ml-0'
-        } ${!hasIcon ? 'hidden' : ''}`}>
-        {children}
-      </span>
       <span className='text-base font-normal'>{label}</span>
     </div>
   );

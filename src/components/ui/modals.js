@@ -1,3 +1,5 @@
+import { BodyText, H3 } from '@/ui/typography';
+
 import { CloseIcon } from '@/svgs/icons';
 import { GeneralForm } from '@/forms/general-form';
 import Image from 'next/image';
@@ -70,32 +72,25 @@ export const FormModal = ({ pageTitle }) => {
   return (
     <>
       <div
-        className={`fixed inset-0 z-[1000] flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none bg-[#00061866]`}>
+        className={`fixed inset-0 z-[1000] flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none bg-[#0a416bd9]`}>
         <div
           id='contact-form-modal'
-          className='relative w-[900px] max-w-lg lg:max-w-4xl mx-auto bg-deep-blue border-oxford border-[3px] shadow-lg sm:my-20 lg:my-6 rounded-[20px]'>
-          <div className='relative flex flex-col border-0 w-full mx-auto outline-none focus:outline-none md:w-full p-3 sm:p-8 lg:p-16 xl:p-[100px]'>
+          className='relative w-[900px] max-w-lg lg:max-w-4xl mx-auto bg-white border-deep-blue shadow-lg p-6 lg:p-10 rounded-[10px]'>
+          <div className='relative'>
+            {/* modal close button */}
             <div className='flex justify-end w-full'>
               <span
                 id='modal-close-btn'
                 className='cursor-pointer'
                 onClick={handleRoute}>
-                {/* <CloseIcon /> */}
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  width='24'
-                  height='24'
-                  fill='none'
-                  viewBox='0 0 24 24'>
-                  <path
-                    stroke='#fff'
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth='2'
-                    d='M18 6L6 18M6 6l12 12'></path>
-                </svg>
+                <CloseIcon />
               </span>
             </div>
+            <H3>Form in a modal</H3>
+            <BodyText>
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+              dolore eu fugiat nulla pariatur.
+            </BodyText>
             <GeneralForm pageTitle={pageTitle} />
           </div>
         </div>
