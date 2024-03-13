@@ -2,6 +2,8 @@ import { Checkbox, Radio } from 'flowbite-react';
 import { SmText, XsText } from '@/ui/typography';
 import { useFieldArray, useForm } from 'react-hook-form';
 
+import { useState } from 'react';
+
 /**
  *
  * @param {string} label - label of the field
@@ -145,6 +147,7 @@ export const Select = ({
   const handleSelectChange = value => {
     setValue(name, value);
   };
+
   return (
     <>
       <Label
@@ -161,9 +164,9 @@ export const Select = ({
           } w-full px-4 py-3 text-sm font-inter font-normal rounded-lg bg-gray-50 border border-solid border-gray-300 focus:border-cyan focus:outline-none mt-2 ` +
           className
         }
-        onChange={onChange ? onChange : () => handleSelectChange(e.target.value)}
-        value={value}
-        {...register}>
+        {...register}
+        onChange={onChange ? onChange : e => handleSelectChange(e.target.value)}
+        value={value}>
         <option value=''>Select an option</option>
         {options.map((option, index) => (
           <option

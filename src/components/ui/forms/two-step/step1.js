@@ -34,7 +34,7 @@ export const Step1 = ({ handleNext, register, errors }) => {
         <div className='place-self-end'>
           <ButtonNoLink
             className='m-auto mt-8 px-16 cursor-pointer'
-            label='Next - Project Information'
+            label='Next >'
             onClick={() => {
               handleNext();
             }}

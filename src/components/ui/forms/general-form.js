@@ -1,11 +1,16 @@
 import * as Yup from 'yup';
 
-import { CheckboxList, RadioButtonList, Input, Select, Textarea } from '@/ui/form-elements';
-
-import { useForm } from 'react-hook-form';
+import {
+  CheckboxList,
+  Input,
+  RadioButtonList,
+  Select,
+  Textarea,
+} from '@/ui/form-elements';
 
 import { Button } from '@/ui/buttons';
 import axios from 'axios';
+import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -31,25 +36,24 @@ export const GeneralForm = ({ conversionPageUrl }) => {
   const { errors } = formState;
 
   const onSubmit = data => {
+    // the following console.log will print out all the data for debugging purposes.
+    console.log(data);
 
     // const submitURL = `/api/form-handler`;
-    // router.push('/thank-you/');
-console.log(data)
+    // if (data) {
+    //   const webhookData = {
+    //     firstName: data.firstName,
+    //     lastName: data.lastName,
+    //     phone: data.phoneNumber,
+    //     email: data.emailAddress,
+    //     aboutYourDepartment: data.aboutYourDepartment,
+    //     hobbiesChk: data.hobbiesChk,
+    //     ageGroupLst: data.ageGroupLst,
+    //     message: data.message,
+    //     page: router.pathname,
+    //     pageTitle: { pageTitle },
+    //   };
 
-    if (data) {
-      const webhookData = {
-        firstName: data.firstName,
-        lastName: data.lastName,
-        phone: data.phoneNumber,
-        email: data.emailAddress,
-        aboutYourDepartment:data.aboutYourDepartment,
-        hobbiesChk: data.hobbiesChk,
-        ageGroupLst:data.ageGroupLst,
-        message: data.message,
-        page: router.pathname,
-        // pageTitle: { pageTitle },
-      };
-    //console.log(data);
     // router.push('/thank-you' + conversionPageUrl);
 
     // axios
@@ -65,11 +69,10 @@ console.log(data)
     //     .catch((err) => {
     //       alert('There was an error submitting your form. Please try again.');
     //     });
-    }
-
+    // }
   };
   return (
-    <div className='justify-center py-20 lg:text-left'>
+    <div className='justify-center pt-20 lg:text-left'>
       <form
         id='form'
         className=''
@@ -84,25 +87,26 @@ console.log(data)
               type='text'
               placeholder='First name'
               isRequired
-              register={...register('firstName')}
+              register={{ ...register('firstName') }}
               errorMessage={errors.firstName?.message}
             />
           </div>
 
-
-            {/* Phone number - Optional */}
-            <div> 
+          {/* Phone number - not required */}
+          <div>
             <Input
               label='Phone number'
               name='phoneNumber'
               id='phoneNumber'
               type='tel'
               placeholder='Phone number'
-              register={...register('phoneNumber', {
-                required: false,
-              })}
+              register={{
+                ...register('phoneNumber', {
+                  required: false,
+                }),
+              }}
             />
-          </div> 
+          </div>
           {/* Email address - Required */}
           <div>
             <Input
@@ -112,36 +116,36 @@ console.log(data)
               type='email'
               placeholder='Email address'
               isRequired
-              register={...register('emailAddress')}
+              register={{ ...register('emailAddress') }}
               errorMessage={errors.emailAddress?.message}
             />
           </div>
 
           {/* Dropdown Field - Required */}
-          <div> 
+          <div>
             <Select
               label='Which department do you belong to?'
               name='aboutYourDepartment'
               isRequired
               options={['Software Engineering', 'Sales & Marketing', 'Design']}
-              register={...register('aboutYourDepartment')}
+              register={{ ...register('aboutYourDepartment') }}
               errorMessage={errors.aboutYourDepartment?.message}
             />
           </div>
 
           {/* Checkbox list - not Required */}
-          <div> 
-          
-          <CheckboxList
+          <div>
+            <CheckboxList
               label='What are your hobbies'
               name='hobbiesChk'
               options={['Books', 'Biking', 'Gardening']}
-              register={...register('hobbiesChk', {
-                required: false,
-              })}
+              register={{
+                ...register('hobbiesChk', {
+                  required: false,
+                }),
+              }}
             />
-         </div>
-     
+          </div>
 
           {/* Textarea Field - Required */}
           <div>
@@ -150,7 +154,7 @@ console.log(data)
               name='message'
               id='message'
               isRequired
-              register={...register('message')}
+              register={{ ...register('message') }}
               errorMessage={errors.message?.message}
             />
           </div>

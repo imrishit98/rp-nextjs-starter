@@ -178,7 +178,6 @@ export const GallerySlider = () => {
 /**
  * @description - This component is a slider component for the testimonials displaying two testimonials per slide. This component uses a child component for each of the testimonials.
  * @param - The potential prop for a real world project could be the data file that would be passed on from the page to this component.
- * @returns
  */
 
 export const Testimonials = () => {
@@ -298,7 +297,7 @@ export const TestimonialCard = ({
 
 /**
  * @description - This component is a thumbnail gallery. When a thumbnail is clicked, the slider will slide to the related slide. Also when clicked on the enlarged image, a modal will pop up to further enlarge the image. The ThumbnailGallerySlider is developed to display the following information: Title, details and a list of images.
- * @param - the potential prop for this component is the data that would be passed to it from a data file under utils/
+ * @param - the potential prop for this component is the data that would be passed to it from a data file under utils/ - the data const consists of title, details and a list of images (src, alt, width, height)
  */
 export const ThumbnailGallerySlider = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -453,7 +452,7 @@ export const ImageCanGoModal = ({ imgSrc, imgAlt, imgH, imgW }) => {
 
 /**
  * @description - This component displays a list of images that when clicked will control which slide should be displayed in the slider beneath it. The slider is a grid of two cols; image on the left and text information on the right.
- * @param - the potential prop can the data file
+ * @param - the potential prop can the data file in this order: imgSrc, imgAlt, imgW, imgH, title, desc, readMoreLink
  */
 
 export const ControlledSliderWImages = () => {
@@ -555,7 +554,7 @@ export const ControlledSliderWImages = () => {
 /**
  * @description - this component is a child component of the ControlledSliderWImages component. Lists a set of clickable images in a row. When one of the images is clicked, then the slider slides to the relevant index and displays the relevant information.
  * @param {state} controlledSwiper - the state variable that controls the index of the slide
- * @param {array} data - the information stored in data const
+ * @param {array} data - the information stored in data const in this order: imgSrc, imgAlt, imgW, imgH, title, desc, readMoreLink. In this particular component, we haven't used the title, desc and the readMoreLink.
  *
  */
 

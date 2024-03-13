@@ -20,15 +20,20 @@ export const FormWConditionalFields = ({ conversionPageUrl }) => {
     setSelectedOption(event.target.value);
   };
 
-  console.log(selectedOption);
-
   const router = useRouter();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const validationSchema = Yup.object().shape({
     aboutYourDepartment: Yup.string().required('Please select one of the options'),
-    deptDetails: Yup.string().required('Please write something about your department'),
+    deptDetails: Yup.string(),
+    // #todo: The following lines requires a revisit since it doesn't work as expected.
+    // The requirement is that when the 'Software Engineering' is selected from the select, only then the deptDetails is required and should display the validation message otherwise deptDetails is optional.
+
+    // deptDetails: Yup.string().when('aboutYourDepartment', {
+    //   is: 'Software Engineering',
+    //   then: Yup.string().required('Please write something about your department'),
+    // }),
     ageGroupLst: Yup.string(),
   });
 
@@ -39,7 +44,7 @@ export const FormWConditionalFields = ({ conversionPageUrl }) => {
 
   const onSubmit = data => {
     //console.log(data);
-    router.push('/thank-you' + conversionPageUrl);
+    // add the submit code for webhook and axios call here - you can find the sample code in the general-form.js
   };
   return (
     <div className='justify-center py-20 lg:text-left'>
@@ -55,22 +60,23 @@ export const FormWConditionalFields = ({ conversionPageUrl }) => {
               name='aboutYourDepartment'
               isRequired
               options={['Software Engineering', 'Sales & Marketing', 'Design']}
-              register={{ ...register('aboutYourDepartment') }}
-              // onChange={displayConditionalField} //not working
-              // value={selectedOption} // not working
+              register={{
+                ...register('aboutYourDepartment'),
+              }}
+              onChange={displayConditionalField}
+              value={selectedOption}
               errorMessage={errors.aboutYourDepartment?.message}
             />
-
-            {/* [WIP] conditional field that's bound to the aboutYourDepartment dropdown.  */}
+          </div>
+          <div>
+            {/* conditional field that's bound to the aboutYourDepartment dropdown.  */}
             {selectedOption === 'Software Engineering' ? (
               <Input
                 label='Tell us something about your department'
                 name='deptDetails'
                 type='text'
                 placeholder='Write something about your department'
-                isRequired
-                register={{ ...register('deptDetails') }}
-                errorMessage={errors.deptDetails?.message}
+                register={{ ...register('deptDetails', { required: false }) }}
               />
             ) : null}
           </div>
@@ -93,7 +99,7 @@ export const FormWConditionalFields = ({ conversionPageUrl }) => {
           </div>
 
           {/* Submit Button */}
-          <div className='flex mt-5 lg:col-span-2 md:justify-end'>
+          <div className='flex mt-5 lg:col-span-2 md:justify-start'>
             <Button
               className='px-10'
               label={loading ? 'Submitting...' : 'Submit'}

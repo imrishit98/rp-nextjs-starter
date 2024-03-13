@@ -4,7 +4,6 @@ import * as yup from 'yup';
 import { FormProvider, useForm } from 'react-hook-form';
 import { useContext, useState } from 'react';
 
-import { ModalContext } from 'src/pages/_app';
 import { Step1 } from './step1';
 import { Step2 } from './step2';
 import axios from 'axios';
@@ -28,10 +27,6 @@ export const TwoStepForm = ({ conversionPath }) => {
   };
 
   const r = 'Please enter your ';
-  // .required() sets the error message when a field is missing
-  // .label() sets the field name that is given when Yup fails other
-  //          validations, for example, "Phone number must be at least 7 characters",
-  //          otherwise it would use the raw field name like "phone_number"
   const validationSchema = [
     // Step 1
     yup.object().shape({
@@ -94,22 +89,21 @@ export const TwoStepForm = ({ conversionPath }) => {
 
   // Submit the entire form - should not arrive here until validation passes for both pages
   const ourHandleSubmit = formData => {
+    // for testing purposes and should be removed on a real project
     console.log(formData);
     // fake post URL - works around lack of CORS support on Zoho Forms
     // see rewrite in next.config.js, and https://stackoverflow.com/a/65058898
-    //const postUrl = '/api/submit-contact-form';
-    // let transformedData = formDataToZohoForms(formData);
+    // const postUrl = '/api/submit-contact-form';
+
     // let config = {
     //   method: 'post',
     //   url: postUrl,
-    //   // data: transformedData,
     //   data: formData,
     //   headers: { 'Content-Type': 'multipart/form-data' },
     // };
     // axios(config)
     //   .then(res => {
     //     reset(); // Clear the form
-    //     // closeModalContact(); // only if we're in the modal contact form; otherwise does nothing
     //     router.push('/thank-you');
     //   })
     //   .catch(err => {

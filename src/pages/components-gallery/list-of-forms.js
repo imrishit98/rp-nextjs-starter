@@ -19,7 +19,7 @@ const ListOfForms = () => {
         <Container>
           <SectionHeader
             title='General form'
-            subTitle='Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+            subTitle='A simple generic form with optional and required fields.'
           />
           <GeneralForm />
         </Container>
@@ -30,7 +30,7 @@ const ListOfForms = () => {
         <Container>
           <SectionHeader
             title='Form with conditional fields'
-            subTitle='Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+            subTitle='Select "Software Engineering" from the select field and you will see a conditional field being added beside it. Also the radio buttons display conditional text based upon which one is being selected. Cool right?'
           />
           <FormWConditionalFields />
         </Container>
@@ -41,7 +41,7 @@ const ListOfForms = () => {
         <Container>
           <SectionHeader
             title='The two-step form'
-            subTitle='Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+            subTitle='Fill in the fields (required and/or optional ones) in both steps and go back and forth between the steps to see the valus perserve between the steps.'
           />
           <TwoStepForm />
         </Container>

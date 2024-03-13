@@ -6,6 +6,8 @@ import Image from 'next/image';
 import { Modal } from 'flowbite-react';
 import { useRouter } from 'next/router';
 
+// WIP ImageModal is NOT ready for review yet.
+
 /**
  * @description - this component uses the Flowbite-react Modal component in order to load the image in its original size
  * @param {boolean} isModalOpen - state variable to determine whether the modal is open or close
@@ -29,7 +31,7 @@ export const ImageModal = ({
       show={isModalOpen}
       onClose={() => setIsModalOpen(false)}
       className='fixed left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto bg-gray-900 top-20 bg-opacity-80 pt-28 md:pt-0 h-[100vh]'>
-      <div className='relative h-full mx-auto md:h-auto py-10'>
+      <div className='relative h-full mx-auto md:h-auto'>
         <div className='relative shadow'>
           {/* the modal close button */}
           <button
@@ -58,6 +60,12 @@ export const ImageModal = ({
     </Modal>
   );
 };
+
+/**
+ * @description - FormModal component is used to load the form in a popup modal usually from the navigation button or a button in a section. This example here specifically loads the form in a modal when the contact button in the navigation bar is clicked.
+ * @param {string} pageTitle - used for page title tracking, could also be used for form title in some specific cases
+ * @returns
+ */
 
 export const FormModal = ({ pageTitle }) => {
   const router = useRouter();
