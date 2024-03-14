@@ -80,11 +80,11 @@ export const FormModal = ({ pageTitle }) => {
   return (
     <>
       <div
-        className={`fixed inset-0 z-[1000] flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none bg-[#0a416bd9]`}>
+        className={`fixed inset-0 z-[1000] flex items-center justify-center overflow-x-hidden overflow-y-auto outline-none focus:outline-none bg-[#0a416bd9] p-6 md:p-0`}>
         <div
           id='contact-form-modal'
-          className='relative w-[900px] max-w-lg lg:max-w-4xl mx-auto bg-white border-deep-blue shadow-lg p-6 lg:p-10 rounded-[10px]'>
-          <div className='relative'>
+          className='relative w-full border-deep-blue mx-auto mt-[400px] md:mt-0'>
+          <div className='relative bg-white md:w-[700px] p-6 rounded-[10px] shadow-lg mx-auto'>
             {/* modal close button */}
             <div className='flex justify-end w-full'>
               <span

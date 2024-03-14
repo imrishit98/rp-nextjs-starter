@@ -10,7 +10,7 @@ import { Input } from '@/ui/form-elements';
  */
 export const Step1 = ({ handleNext, register, errors }) => {
   return (
-    <div className='grid xl:grid-cols-2 gap-4 mt-12'>
+    <div className='grid md:grid-cols-2 gap-4 mt-12'>
       {' '}
       {/* First name */}
       <div>
@@ -36,7 +36,7 @@ export const Step1 = ({ handleNext, register, errors }) => {
           errorMessage={errors.lastName?.message}
         />
       </div>
-      <div className='grid w-full xl:col-start-2'>
+      <div className='grid w-full md:col-start-2'>
         <div className='place-self-end'>
           <ButtonNoLink
             className='m-auto mt-8 px-16 cursor-pointer'

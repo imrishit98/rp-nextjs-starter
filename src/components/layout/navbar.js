@@ -113,14 +113,8 @@ const Navbar = ({ conversionPageUrl }) => {
           )}
         </div>
         <div className='hidden md:block'>
-          {/* <Button
-            link={'/contact-us' + '?conversionPageUrl=' + conversionPageUrl}
-            label='Contact Us'
-            variant='primary'
-            type='link'
-          /> */}
           <FormPopupBtn
-            className='h-12 w-[200px] hidden lg:flex'
+            className='h-12 w-[200px] hidden md:flex'
             label='Contact us'
           />
         </div>
@@ -188,12 +182,12 @@ const Navbar = ({ conversionPageUrl }) => {
             )}{' '}
           </ul>{' '}
           {/* end of navigation.map ? */}
-          <div className='mt-5 md:hidden'>
-            <Button
-              link={'/contact-us' + '?conversionPageUrl=' + conversionPageUrl}
-              label='Contact Us'
-              variant='primary'
-              type='link'
+          <div
+            id='mobileBtn'
+            className='mt-5 md:hidden mx-auto'>
+            <FormPopupBtn
+              className='h-12 w-full md:hidden flex'
+              label='Contact us'
             />
           </div>
         </div>

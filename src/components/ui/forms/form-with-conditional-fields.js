@@ -47,12 +47,12 @@ export const FormWConditionalFields = ({ conversionPageUrl }) => {
     // add the submit code for webhook and axios call here - you can find the sample code in the general-form.js
   };
   return (
-    <div className='justify-center py-20 lg:text-left'>
+    <div className='justify-center py-20 md:text-left'>
       <form
         id='form'
         className=''
         onSubmit={handleSubmit(onSubmit)}>
-        <div className='grid grid-cols-1 gap-10 lg:grid-cols-2'>
+        <div className='grid grid-cols-1 gap-10 md:grid-cols-2'>
           {/* Dropdown Field - Required */}
           <div className=''>
             <Select
@@ -99,7 +99,7 @@ export const FormWConditionalFields = ({ conversionPageUrl }) => {
           </div>
 
           {/* Submit Button */}
-          <div className='flex mt-5 lg:col-span-2 md:justify-start'>
+          <div className='flex mt-5 md:col-span-2 md:justify-start'>
             <Button
               className='px-10'
               label={loading ? 'Submitting...' : 'Submit'}

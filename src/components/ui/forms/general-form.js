@@ -79,7 +79,7 @@ export const GeneralForm = ({ conversionPageUrl }) => {
         id='form'
         className=''
         onSubmit={handleSubmit(onSubmit)}>
-        <div className='grid grid-cols-1 gap-10 lg:grid-cols-2'>
+        <div className='grid grid-cols-1 gap-10 md:grid-cols-2'>
           {/* First name - Required */}
           <div>
             <Input
@@ -162,7 +162,7 @@ export const GeneralForm = ({ conversionPageUrl }) => {
           </div>
 
           {/* Submit Button */}
-          <div className='flex lg:col-span-2 md:justify-end'>
+          <div className='flex md:col-span-2 md:justify-end'>
             <Button
               className='px-10'
               label={loading ? 'Submitting...' : 'Submit'}

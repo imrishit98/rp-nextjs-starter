@@ -10,7 +10,7 @@ import { Select, Textarea } from '@/ui/form-elements';
  */
 export const Step2 = ({ handleBack, register, errors }) => {
   return (
-    <div className='grid gap-4 xl:grid-cols-2 mt-12'>
+    <div className='grid gap-4 md:grid-cols-2 mt-12'>
       {/* department dropdown */}
       <div>
         <Select

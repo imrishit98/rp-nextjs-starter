@@ -228,7 +228,7 @@ export const CheckboxList = ({
         className='block text-gray-900'
       />
 
-      <div className={`grid grid-flow-col mt-4`}>
+      <div className={`grid grid-flow-row lg:grid-flow-col mt-4`}>
         {options.map((option, index) => (
           <div key={index}>
             <Checkbox
@@ -294,7 +294,7 @@ export const RadioButtonList = ({
         className='block text-gray-900'
       />
 
-      <div className={`grid grid-flow-col mt-4`}>
+      <div className={`grid grid-flow-row lg:grid-flow-col mt-4`}>
         {options.map((option, index) => (
           <div key={index}>
             <Radio
