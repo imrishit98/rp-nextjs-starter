@@ -1,6 +1,7 @@
 import { Container, SectionHeader } from '@/components/ui/containers';
 import { H1, LgText } from '@/components/ui/typography';
 
+import { Button } from '@/components/ui/buttons';
 import Layout from '@/components/layout';
 
 const ThankYou = () => {
