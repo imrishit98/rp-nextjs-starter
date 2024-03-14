@@ -1,7 +1,11 @@
+/**
+ * this handler is a sample form handler that can be used and customized for real projects.
+ */
 import axios from 'axios';
 
-const contactHandler = async (req, res) => {
-  const webhookUrl = process.env.NEXT_PUBLIC_CONTACT_FORM_WEBHOOK;
+const formHandler = async (req, res) => {
+  const webhookUrl = '';
+  //const webhookUrl = process.env.NEXT_PUBLIC_CONTACT_FORM_WEBHOOK;
 
   const config = {
     method: req.method,
@@ -17,4 +21,4 @@ const contactHandler = async (req, res) => {
   }
 };
 
-export default contactHandler;
+export default formHandler;

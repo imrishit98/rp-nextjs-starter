@@ -1,7 +1,13 @@
 import { Button, ButtonNoLink } from '@/ui/buttons';
 import { Select, Textarea } from '@/ui/form-elements';
 
-// Form step 2: project information
+/**
+ * @description - Form step 2
+ * @param {event} handleBack - the event that handles the back button
+ * @param {*} register - the React Hook Form register prop that applies the validation on the fields
+ * @param {string} errors - handles the error messages if any
+ * @returns
+ */
 export const Step2 = ({ handleBack, register, errors }) => {
   return (
     <div className='grid gap-4 xl:grid-cols-2 mt-12'>

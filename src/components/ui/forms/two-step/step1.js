@@ -1,7 +1,13 @@
 import { ButtonNoLink } from '@/ui/buttons';
 import { Input } from '@/ui/form-elements';
 
-// Form step 1: personal information information
+/**
+ * @description - Form step 1
+ * @param {event} handleNext - the event that handles the next button
+ * @param {*} register - the React Hook Form register prop that applies the validation on the fields
+ * @param {string} errors - handles the error messages if any
+ * @returns
+ */
 export const Step1 = ({ handleNext, register, errors }) => {
   return (
     <div className='grid xl:grid-cols-2 gap-4 mt-12'>

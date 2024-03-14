@@ -10,28 +10,26 @@ export const NewsletterForm = () => {
 
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
+  // this handler should be further extended for a real project
   const handleSubmit = e => {
-    e.preventDefault();
-
-    const submitURL = `/api/newsletter-form`;
-
-    const formData = new FormData(e.target);
-    if (formData) {
-      const data = {
-        email: formData.get('email'),
-        page: router.pathname,
-      };
-
-      axios
-        .post(submitURL, data)
-        .then(res => {
-          setSubmitSuccess(true);
-        })
-        .catch(err => {
-          console.error(err);
-          alert('There was an error submitting your form. Please try again.');
-        });
-    }
+    // e.preventDefault();
+    // const submitURL = `/api/newsletter-form`;
+    // const formData = new FormData(e.target);
+    // if (formData) {
+    //   const data = {
+    //     email: formData.get('email'),
+    //     page: router.pathname,
+    //   };
+    //   axios
+    //     .post(submitURL, data)
+    //     .then(res => {
+    //       setSubmitSuccess(true);
+    //     })
+    //     .catch(err => {
+    //       console.error(err);
+    //       alert('There was an error submitting your form. Please try again.');
+    //     });
+    // }
   };
 
   return (

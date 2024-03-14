@@ -39,6 +39,8 @@ export const GeneralForm = ({ conversionPageUrl }) => {
     // the following console.log will print out all the data for debugging purposes.
     console.log(data);
 
+    // The following form submission code is a sample code that can be used and customized for real projects
+
     // const submitURL = `/api/form-handler`;
     // if (data) {
     //   const webhookData = {
