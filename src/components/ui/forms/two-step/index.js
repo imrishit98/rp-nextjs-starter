@@ -28,12 +28,12 @@ export const TwoStepForm = ({ conversionPath }) => {
 
   const r = 'Please enter your ';
   const validationSchema = [
-    // Step 1
+    // fields validation for form step 1
     yup.object().shape({
       firstName: yup.string().required(r + 'first name'),
       lastName: yup.string().required(r + 'last name'),
     }),
-    // Step 2
+    // fields validation for form step 2
     yup.object().shape({
       aboutYourDepartment: yup.string().required('Please select your department'),
       details: yup.string().nullable(),
@@ -93,25 +93,27 @@ export const TwoStepForm = ({ conversionPath }) => {
     console.log(formData);
     // fake post URL - works around lack of CORS support on Zoho Forms
     // see rewrite in next.config.js, and https://stackoverflow.com/a/65058898
-    // const postUrl = '/api/submit-contact-form';
+    /*
+    const postUrl = '/api/submit-contact-form';
 
-    // let config = {
-    //   method: 'post',
-    //   url: postUrl,
-    //   data: formData,
-    //   headers: { 'Content-Type': 'multipart/form-data' },
-    // };
-    // axios(config)
-    //   .then(res => {
-    //     reset(); // Clear the form
-    //     router.push('/thank-you');
-    //   })
-    //   .catch(err => {
-    //     console.error('Error: ', err);
-    //     // Sentry.captureException(err);
-    //     alert('There was an error submitting your form. Please try again.');
-    //   })
-    //   .finally();
+    let config = {
+      method: 'post',
+      url: postUrl,
+      data: formData,
+      headers: { 'Content-Type': 'multipart/form-data' },
+    };
+    axios(config)
+      .then(res => {
+        reset(); // Clear the form
+        router.push('/thank-you');
+      })
+      .catch(err => {
+        console.error('Error: ', err);
+        // Sentry.captureException(err);
+        alert('There was an error submitting your form. Please try again.');
+      })
+      .finally();
+      */
   };
 
   return (

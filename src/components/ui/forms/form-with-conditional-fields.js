@@ -43,7 +43,8 @@ export const FormWConditionalFields = ({ conversionPageUrl }) => {
   const { errors } = formState;
 
   const onSubmit = data => {
-    //console.log(data);
+    // The following console.log code is for debugging purposes to make sure all the data is captured. It should be removed on a real project.
+    // console.log(data);
     // add the submit code for webhook and axios call here - you can find the sample code in the general-form.js
   };
   return (

@@ -40,38 +40,39 @@ export const GeneralForm = ({ conversionPageUrl }) => {
     console.log(data);
 
     // The following form submission code is a sample code that can be used and customized for real projects
+    /*
+    const submitURL = `/api/form-handler`;
+    if (data) {
+      const webhookData = {
+        firstName: data.firstName,
+        lastName: data.lastName,
+        phone: data.phoneNumber,
+        email: data.emailAddress,
+        aboutYourDepartment: data.aboutYourDepartment,
+        hobbiesChk: data.hobbiesChk,
+        ageGroupLst: data.ageGroupLst,
+        message: data.message,
+        page: router.pathname,
+        pageTitle: { pageTitle },
+      };
 
-    // const submitURL = `/api/form-handler`;
-    // if (data) {
-    //   const webhookData = {
-    //     firstName: data.firstName,
-    //     lastName: data.lastName,
-    //     phone: data.phoneNumber,
-    //     email: data.emailAddress,
-    //     aboutYourDepartment: data.aboutYourDepartment,
-    //     hobbiesChk: data.hobbiesChk,
-    //     ageGroupLst: data.ageGroupLst,
-    //     message: data.message,
-    //     page: router.pathname,
-    //     pageTitle: { pageTitle },
-    //   };
+    router.push('/thank-you' + conversionPageUrl);
 
-    // router.push('/thank-you' + conversionPageUrl);
-
-    // axios
-    //     .post(submitURL, webhookData)
-    //     .then((res) => {
-    //       setContactFormOpen(false);
-    //       if (router.pathname.includes('/lp')) {
-    //         router.push(router.pathname + '/thank-you');
-    //       } else {
-    //         router.push('/thank-you');
-    //       }
-    //     })
-    //     .catch((err) => {
-    //       alert('There was an error submitting your form. Please try again.');
-    //     });
-    // }
+    axios
+        .post(submitURL, webhookData)
+        .then((res) => {
+          setContactFormOpen(false);
+          if (router.pathname.includes('/lp')) {
+            router.push(router.pathname + '/thank-you');
+          } else {
+            router.push('/thank-you');
+          }
+        })
+        .catch((err) => {
+          alert('There was an error submitting your form. Please try again.');
+        });
+    }
+    */
   };
   return (
     <div className='justify-center pt-20 lg:text-left'>

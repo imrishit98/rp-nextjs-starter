@@ -20,8 +20,10 @@ const Layout = ({
   const router = useRouter();
   const { contactFormOpen, setContactFormOpen } = useContext(ContactFormContext);
 
-  // Checks if the showForm query parameter is present in the URL when the router is
-  // mounted, and on every subsequent router.query change.
+  /*
+    The following lines make sure that we have a URL that directly opens the form modal. 
+    Use case: http://ion8.net/?showForm=true - this url can be used in an email notification, and when clicked it will redirect users to the website and directly to the form modal opened.
+  */
   useEffect(() => {
     if (router.isReady) {
       const { showForm } = router.query;

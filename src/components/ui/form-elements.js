@@ -6,11 +6,14 @@ import { useState } from 'react';
 
 /**
  *
+ * @component - A Label called from within the field
+ *
  * @param {string} label - label of the field
  * @param {string} name - name of the field used in htmlFor attribute to connect the label to the field that's used for
  * @param {boolean} isRequired - indicates whether a required field indicator such as an asterisk should be displayed or not
- * @param {string} className - extra TailwindCSS classes if needed
- * @returns
+ * @param {string} className - extra TailwindCSS classes if needed eg. className='text-black mt-10 text-right'
+ * @returns {JSX.Element} - a Label component for labeling fields
+ * @example - <Label label={label} name={name} isRequired={isRequired} />
  */
 export const Label = ({ label, name, isRequired, className }) => {
   return (
@@ -23,16 +26,17 @@ export const Label = ({ label, name, isRequired, className }) => {
 };
 
 /**
+ * @component - input field eg text, number, password or email
  *
  * @param {string} label - label of the field
- * @param {name} name - name of the field
- * @param {string} type - type of the field - possible values: text, number, password, email
+ * @param {string} name - name of the field
+ * @param {type} type - type of the field - possible values: text, number, password, email
  * @param {string} placeholder - text that would be displayed as the placeholder
  * @param {*} register - registers the field for Yup validation
  * @param {string} errorMessage - the error message that would be displayed if the field is required and fails the validation
  * @param {boolean} isRequired - just for UI purposes; if exists then it will be passed on to the Label component in order to display the asterisk
- * @param {string} className - extra TailwindCSS classes if needed
- * @returns
+ * @param {string} className - extra TailwindCSS classes if needed eg. className='text-black mt-10 text-right'
+ * @returns {JSX.Element} - an Input component for capturing input from the user
  */
 export const Input = ({
   label,
@@ -71,6 +75,7 @@ export const Input = ({
 };
 
 /**
+ * @component - textarea field for multiline user inputs usually messages or details
  *
  * @param {string} label - label of the field
  * @param {name} name - name of the field
@@ -78,8 +83,8 @@ export const Input = ({
  * @param {*} register - registers the field for Yup validation
  * @param {string} errorMessage - the error message that would be displayed if the field is required and fails the validation
  * @param {boolean} isRequired - just for UI purposes; if exists then it will be passed on to the Label component in order to display the asterisk
- * @param {string} className - extra TailwindCSS classes if needed
- * @returns
+ * @param {string} className - extra TailwindCSS classes if needed eg. className='text-black mt-10 text-right'
+ * @returns {JSX.Element} - a Textarea component
  */
 
 export const Textarea = ({
@@ -118,17 +123,18 @@ export const Textarea = ({
 };
 
 /**
+ * @component - a dropdown / select field
  *
  * @param {string} label - label of the field
  * @param {name} name - name of the field
  * @param {array} options - an array of values to fill in the select field as options
  * @param {event} onChange - if exists then it will replace the default handler with a custom one eg. if we have conditional fields. See form-with-conditional-fields.js
- * @param {string} value -
+ * @param {string} value - the selected value
  * @param {*} register - registers the field for Yup validation
  * @param {string} errorMessage - the error message that would be displayed if the field is required and fails the validation
  * @param {boolean} isRequired - just for UI purposes; if exists then it will be passed on to the Label component in order to display the asterisk
- * @param {string} className - extra TailwindCSS classes if needed
- * @returns
+ * @param {string} className - extra TailwindCSS classes if needed eg. className='text-black mt-10 text-right'
+ * @returns {JSX.Element} - a select component
  */
 
 export const Select = ({
@@ -184,9 +190,10 @@ export const Select = ({
   );
 };
 
-// todo: checkbox error message UI
+// todo: The checkbox if required, doesn't display the error message, which in fact should. This needs to be revisited.
 
 /**
+ * @component - a checkbox list
  *
  * @param {string} label - label of the field
  * @param {name} name - name of the field
@@ -195,8 +202,8 @@ export const Select = ({
  * @param {*} register - registers the field for Yup validation
  * @param {string} errorMessage - the error message that would be displayed if the field is required and fails the validation
  * @param {boolean} isRequired - just for UI purposes; if exists then it will be passed on to the Label component in order to display the asterisk
- * @param {string} className - extra TailwindCSS classes if needed
- * @returns
+ * @param {string} className - extra TailwindCSS classes if needed eg. className='text-black mt-10 text-right'
+ * @returns {JSX.Element} - a checkbox list component
  */
 export const CheckboxList = ({
   label,
@@ -253,9 +260,10 @@ export const CheckboxList = ({
   );
 };
 
-// todo: error message UI
+// todo: The radio buttons list by default should display the validation/error message if the user misses to select any and tries to submit the form. Currently, the error message is not displayed.
 
 /**
+ * @component - a radio buttons list
  *
  * @param {string} label - label of the field
  * @param {name} name - name of the field
@@ -264,8 +272,8 @@ export const CheckboxList = ({
  * @param {*} register - registers the field for Yup validation
  * @param {string} errorMessage - the error message that would be displayed if the field is required and fails the validation
  * @param {boolean} isRequired - just for UI purposes; if exists then it will be passed on to the Label component in order to display the asterisk
- * @param {string} className - extra TailwindCSS classes if needed
- * @returns
+ * @param {string} className - extra TailwindCSS classes if needed eg. className='text-black mt-10 text-right'
+ * @returns {JSX.Element} - a radio buttons list component
  */
 export const RadioButtonList = ({
   label,
