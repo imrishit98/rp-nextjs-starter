@@ -7,10 +7,10 @@ import {
   Select,
   Textarea,
 } from '@/ui/form-elements';
+import { FormProvider, useForm } from 'react-hook-form';
 
 import { Button } from '@/ui/buttons';
 import axios from 'axios';
-import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -118,35 +118,37 @@ export const FormWDynamicFields = ({ fields }) => {
   };
   return (
     <div className='justify-center pt-20 lg:text-left'>
-      <form
-        id='form'
-        className=''
-        onSubmit={handleSubmit(onSubmit)}>
-        <div className='grid grid-cols-1 gap-10 md:grid-cols-2'>
-          {fields.map((field, index) => (
-            <Field
-              key={index}
-              label={field.label}
-              type={field.type}
-              required={field.required}
-              validationMsg={field.validationMsg}
-              options={field.options}
-              className={field.className}
-              register={{ ...register(field.name) }}
-              errors={errors.register?.message} //  < this doesn't work - errors.firstName?.message - the field name should be dynamic but cannot get the field.name to work
-            />
-          ))}
-          {/* Submit Button */}
-          <div className='flex md:col-span-2 md:justify-end'>
-            <Button
-              className='px-10'
-              label={loading ? 'Submitting...' : 'Submit'}
-              variant='primary'
-              type='button'
-            />
+      <FormProvider>
+        <form
+          id='form'
+          className=''
+          onSubmit={handleSubmit(onSubmit)}>
+          <div className='grid grid-cols-1 gap-10 md:grid-cols-2'>
+            {fields.map((field, index) => (
+              <Field
+                key={index}
+                label={field.label}
+                type={field.type}
+                required={field.required}
+                validationMsg={field.validationMsg}
+                options={field.options}
+                className={field.className}
+                register={{ ...register(field.name) }}
+                errors={errors.field.name?.message} //  < this doesn't work - errors.firstName?.message - the field name should be dynamic but cannot get the field.name to work
+              />
+            ))}
+            {/* Submit Button */}
+            <div className='flex md:col-span-2 md:justify-end'>
+              <Button
+                className='px-10'
+                label={loading ? 'Submitting...' : 'Submit'}
+                variant='primary'
+                type='button'
+              />
+            </div>
           </div>
-        </div>
-      </form>
+        </form>
+      </FormProvider>
     </div>
   );
 };
