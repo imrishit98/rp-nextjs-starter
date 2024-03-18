@@ -96,6 +96,7 @@ const ListOfForms = () => {
             ]}> */}
           <FormWDynamicFields fields={dynamicFields} />
 
+          {/* couldn't get to work, plus the having the fields details defined in a const seems cleaner */}
           {/* <Field
               label='First name'
               type='text'
