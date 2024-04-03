@@ -10,6 +10,7 @@ import {
 import { FormProvider, useForm } from 'react-hook-form';
 
 import { Button } from '@/ui/buttons';
+import { ErrorMessage } from '@hookform/error-message';
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
@@ -26,7 +27,6 @@ export const Field = ({
   errors,
 }) => {
   // displays the name of each field
-  // console.log(register);
   console.log('errorMessage: ' + errors);
   return (
     <div>
@@ -36,9 +36,7 @@ export const Field = ({
           name={name}
           isRequired={required}
           options={options}
-          register={{ ...register }}
-          // errorMessage={errors ? validationMsg : null} // not working
-          errorMessage={errors}
+          register={register}
         />
       ) : (
         <Input
@@ -47,11 +45,14 @@ export const Field = ({
           type={type}
           placeholder={label}
           isRequired={required}
-          register={{ ...register }}
-          // errorMessage={errors ? validationMsg : null}  // not working
-          errorMessage={errors}
+          register={register}
         />
       )}
+      <ErrorMessage
+        errors={errors}
+        name={name}
+        render={({ message }) => <div>{message}</div>}
+      />
     </div>
   );
 };
@@ -62,59 +63,23 @@ export const FormWDynamicFields = ({ fields }) => {
   const [loading, setLoading] = useState(false);
 
   const validationSchema = Yup.object().shape({
-    // first_name: Yup.string().required(fields[0][3]),
     firstName: Yup.string().required(),
+    lastName: Yup.string().required(),
     emailAddress: Yup.string().required(),
     phoneNumber: Yup.string(),
     yourDepartment: Yup.array().required(),
-    // hobbiesChk: Yup.array(),
-    // ageGroupLst: Yup.string(),
-    // message: Yup.string().required('Please enter your message'),
   });
 
-  const { formState, register, handleSubmit } = useForm({
+  const {
+    formState: { errors },
+    register,
+    handleSubmit,
+  } = useForm({
     resolver: yupResolver(validationSchema),
   });
-  const { errors } = formState;
 
   const onSubmit = data => {
-    // the following console.log will print out all the data for debugging purposes.
     console.log(data);
-
-    // The following form submission code is a sample code that can be used and customized for real projects
-    /*
-    const submitURL = `/api/form-handler`;
-    if (data) {
-      const webhookData = {
-        firstName: data.firstName,
-        lastName: data.lastName,
-        phone: data.phoneNumber,
-        email: data.emailAddress,
-        aboutYourDepartment: data.aboutYourDepartment,
-        hobbiesChk: data.hobbiesChk,
-        ageGroupLst: data.ageGroupLst,
-        message: data.message,
-        page: router.pathname,
-        pageTitle: { pageTitle },
-      };
-
-    router.push('/thank-you' + conversionPageUrl);
-
-    axios
-        .post(submitURL, webhookData)
-        .then((res) => {
-          setContactFormOpen(false);
-          if (router.pathname.includes('/lp')) {
-            router.push(router.pathname + '/thank-you');
-          } else {
-            router.push('/thank-you');
-          }
-        })
-        .catch((err) => {
-          alert('There was an error submitting your form. Please try again.');
-        });
-    }
-    */
   };
   return (
     <div className='justify-center pt-20 lg:text-left'>
@@ -127,14 +92,15 @@ export const FormWDynamicFields = ({ fields }) => {
             {fields.map((field, index) => (
               <Field
                 key={index}
+                name={field.name}
                 label={field.label}
                 type={field.type}
                 required={field.required}
                 validationMsg={field.validationMsg}
                 options={field.options}
                 className={field.className}
-                register={{ ...register(field.name) }}
-                errors={errors.field.name?.message} //  < this doesn't work - errors.firstName?.message - the field name should be dynamic but cannot get the field.name to work
+                register={register}
+                errors={errors}
               />
             ))}
             {/* Submit Button */}

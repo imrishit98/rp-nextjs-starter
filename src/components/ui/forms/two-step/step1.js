@@ -20,7 +20,7 @@ export const Step1 = ({ handleNext, register, errors }) => {
           type='text'
           placeholder='First name'
           isRequired
-          register={{ ...register('firstName') }}
+          register={register}
           errorMessage={errors.firstName?.message}
         />
       </div>
@@ -32,7 +32,7 @@ export const Step1 = ({ handleNext, register, errors }) => {
           type='text'
           placeholder='Last name'
           isRequired
-          register={{ ...register('lastName') }}
+          register={register}
           errorMessage={errors.lastName?.message}
         />
       </div>

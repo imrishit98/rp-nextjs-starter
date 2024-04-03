@@ -12,6 +12,7 @@
     "codeceptjs:headless": "HEADLESS=true codeceptjs run --steps"
   },
   "dependencies": {
+    "@hookform/error-message": "^2.0.1",
     "@hookform/resolvers": "^3.3.2",
     "@next/codemod": "^14.0.2",
     "axios": "^1.6.0",
