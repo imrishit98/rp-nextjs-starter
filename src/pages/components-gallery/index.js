@@ -1,13 +1,13 @@
 import { Container, SectionHeader } from '@/ui/containers';
 import { GallerySlider, Testimonials } from '@/ui/sliders';
 
-import { Form } from '@/ui/form';
+import { GeneralForm } from '@/components/ui/forms/general-form';
 import { H4 } from '@/ui/typography';
 import Layout from '@/components/layout';
 import { useRouter } from 'next/router';
 
 /**
- * @description - This page is going to be a gallery of all the components available in the Starter template. The structure is yet to be determined.
+ * @description - Requires a redesign. This page is going to be a gallery of all the components available in the Starter template. The structure is yet to be determined.
  */
 const ComponentsGallery = () => {
   const router = useRouter();
@@ -56,7 +56,7 @@ const ComponentsGallery = () => {
           <H4>Contact Form</H4>
           <hr class='h-px my-8 bg-gray-200 border-0 dark:bg-gray-700' />
         </div>
-        <Form conversionPageUrl={pageUrl} />
+        <GeneralForm conversionPageUrl={pageUrl} />
       </Container>
     </Layout>
   );
