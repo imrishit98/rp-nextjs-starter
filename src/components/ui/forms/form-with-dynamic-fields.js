@@ -21,6 +21,7 @@ export const Field = ({
   type,
   name,
   required,
+  validationMsg,
   options,
   className,
   register,
@@ -51,7 +52,7 @@ export const Field = ({
       <ErrorMessage
         errors={errors}
         name={name}
-        render={({ message }) => <div>{message}</div>}
+        render={({ message }) => <div>{validationMsg}</div>}
       />
     </div>
   );
