@@ -60,8 +60,9 @@ const ListOfForms = () => {
   ];
   return (
     <Layout seoTitle='List of Forms'>
+      {/* Should be removed once the dynamic form is approved */}
       {/* The general form */}
-      <FullWidthContainer>
+      {/* <FullWidthContainer>
         <Container>
           <SectionHeader
             title='General form'
@@ -69,59 +70,16 @@ const ListOfForms = () => {
           />
           <GeneralForm />
         </Container>
-      </FullWidthContainer>
+      </FullWidthContainer> */}
 
-      {/* The general form */}
+      {/* The form with dynamic fields */}
       <FullWidthContainer>
         <Container>
           <SectionHeader
             title='Form with Dynamic Fields'
             subTitle='A simple generic form with optional and required fields.'
           />
-          {/* <FormWDynamicFields
-            // suggestion: fields component
-            // jsx object
-
-            fields={[
-              ['first name', 'text', 'isRequired', 'Enter your first name'],
-              ['phone number', 'tel', '', ''],
-              ['email address', 'email', 'isRequired', 'Enter your email address'],
-              [
-                'department',
-                'select',
-                'isRequired',
-                'Choose one of the options',
-                ['Software Engineering', 'Sales & Marketing', 'Design'],
-              ],
-            ]}> */}
           <FormWDynamicFields fields={dynamicFields} />
-
-          {/* couldn't get to work, plus the having the fields details defined in a const seems cleaner */}
-          {/* <Field
-              label='First name'
-              type='text'
-              required={true}
-              validationMessage='Enter your first name'
-            />
-            <Field
-              label='Phone number'
-              type='tel'
-              required={false}
-              validationMessage='Enter your phone number'
-            />
-            <Field
-              label='Email address'
-              type='email'
-              required={true}
-              validationMessage='Enter your email address'
-            />
-            <Field
-              label='Your department'
-              type='select'
-              required={false}
-              validationMessage='Choose an option'
-              options={['Software Engineering', 'Sales & Marketing', 'Design']}
-            /> */}
         </Container>
       </FullWidthContainer>
 

@@ -16,48 +16,21 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-export const Field = ({
-  label,
-  type,
-  name,
-  required,
-  validationMsg,
-  options,
-  className,
-  register,
-  errors,
-}) => {
-  // displays the name of each field
-  console.log('errorMessage: ' + errors);
-  return (
-    <div>
-      {type === 'select' ? (
-        <Select
-          label={label}
-          name={name}
-          isRequired={required}
-          options={options}
-          register={register}
-        />
-      ) : (
-        <Input
-          label={label}
-          name={name}
-          type={type}
-          placeholder={label}
-          isRequired={required}
-          register={register}
-        />
-      )}
-      <ErrorMessage
-        errors={errors}
-        name={name}
-        render={({ message }) => <div>{validationMsg}</div>}
-      />
-    </div>
-  );
-};
-
+/**
+ * Renders a form with dynamic fields based on the provided fields array.
+ *
+ * @param {Object} props - The component props.
+ * @param {Array} props.fields - An array of objects representing the fields to be rendered in the form.
+ *   Each object should have the following properties:
+ *   - name (string): The name of the field.
+ *   - label (string): The label of the field.
+ *   - type (string): The type of the field.
+ *   - required (boolean): Indicates if the field is required.
+ *   - validationMsg (string): The validation message to display if the field is invalid.
+ *   - options (Array): An array of options for the field (only applicable to select fields).
+ *   - className (string): The CSS class name for the field.
+ * @return {JSX.Element} The rendered form component.
+ */
 export const FormWDynamicFields = ({ fields }) => {
   const router = useRouter();
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -116,6 +89,61 @@ export const FormWDynamicFields = ({ fields }) => {
           </div>
         </form>
       </FormProvider>
+    </div>
+  );
+};
+
+/**
+ * Renders a form field component based on the provided props.
+ *
+ * @param {Object} props - The component props.
+ * @param {string} props.label - The label of the field.
+ * @param {string} props.type - The type of the field.
+ * @param {string} props.name - The name of the field.
+ * @param {boolean} props.required - Indicates if the field is required.
+ * @param {string} props.validationMsg - The validation message to display if the field is invalid.
+ * @param {Array} props.options - An array of options for the field (only applicable to select fields).
+ * @param {string} props.className - The CSS class name for the field.
+ * @param {function} register - The register function for form validation.
+ * @param {object} errors - The errors object for form validation.
+ * @return {JSX.Element} The rendered form field component.
+ */
+export const Field = ({
+  label,
+  type,
+  name,
+  required,
+  validationMsg,
+  options,
+  className,
+  register,
+  errors,
+}) => {
+  return (
+    <div>
+      {type === 'select' ? (
+        <Select
+          label={label}
+          name={name}
+          isRequired={required}
+          options={options}
+          register={register}
+        />
+      ) : (
+        <Input
+          label={label}
+          name={name}
+          type={type}
+          placeholder={label}
+          isRequired={required}
+          register={register}
+        />
+      )}
+      <ErrorMessage
+        errors={errors}
+        name={name}
+        render={({ message }) => <div>{validationMsg}</div>}
+      />
     </div>
   );
 };
