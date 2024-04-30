@@ -64,7 +64,7 @@ export const ImageModal = ({
 /**
  * @description - FormModal component is used to load the form in a popup modal usually from the navigation button or a button in a section. This example here specifically loads the form in a modal when the contact button in the navigation bar is clicked.
  * @param {string} pageTitle - used for page title tracking, could also be used for form title in some specific cases
- * @returns
+ * @returns {JSX.Element} - the form in a modal
  */
 
 export const FormModal = ({ pageTitle }) => {
