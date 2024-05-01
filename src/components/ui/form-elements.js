@@ -153,7 +153,7 @@ export const Select = ({
 
       <select
         name={name}
-        className={` ${fieldStyles} ${className}`}
+        className={`${fieldStyles} ${className}`}
         {...register}
         onChange={onChange ? onChange : e => handleSelectChange(e.target.value)}
         value={value}>
