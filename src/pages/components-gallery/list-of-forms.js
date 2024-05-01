@@ -3,61 +3,17 @@ import {
   FullWidthContainer,
   SectionHeader,
 } from '@/components/ui/containers';
-import {
-  Field,
-  FormWDynamicFields,
-} from '@/components/ui/forms/form-with-dynamic-fields';
 
 import { FormWConditionalFields } from '@/components/ui/forms/form-with-conditional-fields';
+import { FormWDynamicFields } from '@/components/ui/forms/form-with-dynamic-fields';
 import { GeneralForm } from '@/components/ui/forms/general-form';
 import Layout from '@/components/layout';
 import { NewsletterForm } from '@/components/ui/forms/newsletter-form';
 import { TwoStepForm } from '@/components/ui/forms/two-step';
+import { dynamicFields } from '@/utils/data/dynamic-fields';
 
 /** This page will list different variants of forms (simple contact form, two-step form, modal form and newsletter.). */
 const ListOfForms = () => {
-  const dynamicFields = [
-    {
-      type: 'text',
-      label: 'First Name',
-      name: 'firstName',
-      required: true,
-      className: '',
-      validationMsg: 'Enter your first name',
-    },
-    {
-      type: 'text',
-      label: 'Last Name',
-      name: 'lastName',
-      required: true,
-      className: '',
-      validationMsg: 'Enter your last name',
-    },
-    {
-      type: 'tel',
-      label: 'Phone Number',
-      name: 'phoneNumber',
-      required: false,
-      className: '',
-    },
-    {
-      type: 'email',
-      label: 'Email Address',
-      name: 'emailAddress',
-      required: true,
-      className: '',
-      validationMsg: 'Enter your email address',
-    },
-    {
-      type: 'select',
-      label: 'Select your department',
-      name: 'yourDepartment',
-      required: true,
-      options: ['Software Engineering', 'Sales & Marketing', 'Design'],
-      className: '',
-      validationMsg: 'Select your department',
-    },
-  ];
   return (
     <Layout seoTitle='List of Forms'>
       {/* Should be removed once the dynamic form is approved */}
@@ -79,6 +35,7 @@ const ListOfForms = () => {
             title='Form with Dynamic Fields'
             subTitle='A simple generic form with optional and required fields.'
           />
+          {/* dynamic fields are loaded from /utils/data/dynamic-fields */}
           <FormWDynamicFields fields={dynamicFields} />
         </Container>
       </FullWidthContainer>

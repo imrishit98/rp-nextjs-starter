@@ -2,10 +2,11 @@ import { BodyText, H5 } from '@/ui/typography';
 
 import { Bullet } from '@/ui/bullets';
 import { Tabs } from 'flowbite-react';
+import { poppins } from '@/utils/fonts';
 
 const customTabsTheme = {
   tablist: {
-    base: 'flex justify-center text-center font-poppins',
+    base: `flex justify-center text-center font-poppins ${poppins.className}`,
     styles: {
       horizontal:
         'mx-4 md:mx-16 lg:mx-0 mb-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8',
