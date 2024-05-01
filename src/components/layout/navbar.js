@@ -1,8 +1,8 @@
+import { Button, FormPopupBtn } from '@/ui/buttons';
 import { CloseIcon, HamburgerIcon } from '@/svgs/icons';
 import { H3, LgText, NavbarLink } from '@/ui/typography';
 import { useEffect, useState } from 'react';
 
-import { Button } from '@/ui/buttons';
 import { Container } from '@/ui/containers';
 import Link from 'next/link';
 
@@ -40,6 +40,10 @@ const Navbar = ({ conversionPageUrl }) => {
           name: 'accordions',
           href: '/components-gallery/list-of-accordions',
         },
+        {
+          name: 'forms',
+          href: '/components-gallery/list-of-forms',
+        },
       ],
     },
   ];
@@ -56,6 +60,7 @@ const Navbar = ({ conversionPageUrl }) => {
     <nav>
       <Container className='justify-between h-[72px] md:h-[94px] flex'>
         <div className='flex items-center flex-grow py-3 md:flex-none'>
+          {/* Logo here */}
           <Link
             href='/'
             className='font-bold text-cobalt'>
@@ -108,11 +113,9 @@ const Navbar = ({ conversionPageUrl }) => {
           )}
         </div>
         <div className='hidden md:block'>
-          <Button
-            link={'/contact-us' + '?conversionPageUrl=' + conversionPageUrl}
-            label='Contact Us'
-            variant='primary'
-            type='link'
+          <FormPopupBtn
+            className='h-12 w-[200px] hidden md:flex'
+            label='Contact us'
           />
         </div>
 
@@ -179,12 +182,12 @@ const Navbar = ({ conversionPageUrl }) => {
             )}{' '}
           </ul>{' '}
           {/* end of navigation.map ? */}
-          <div className='mt-5 md:hidden'>
-            <Button
-              link={'/contact-us' + '?conversionPageUrl=' + conversionPageUrl}
-              label='Contact Us'
-              variant='primary'
-              type='link'
+          <div
+            id='mobileBtn'
+            className='mt-5 md:hidden mx-auto'>
+            <FormPopupBtn
+              className='h-12 w-full md:hidden flex'
+              label='Contact us'
             />
           </div>
         </div>

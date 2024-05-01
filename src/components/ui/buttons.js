@@ -1,5 +1,28 @@
 import { BodyText } from '@/ui/typography';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+
+export const FormPopupBtn = ({ label, className, ...props }) => {
+  const router = useRouter();
+  const handleRoute = () => {
+    // Preserve existing query parameters and add showForm parameter
+    const newQuery = { ...router.query, showForm: true };
+    router.push({ pathname: router.pathname, query: newQuery }, undefined, {
+      shallow: true,
+    });
+  };
+  return (
+    <button
+      className={
+        `flex justify-center items-center py-[10px] rounded-[5px] text-white bg-cyan px-9 focus:outline-none focus:ring-none hover:bg-cobalt ` +
+        className
+      }
+      onClick={handleRoute}
+      {...props}>
+      {label ? <span>{label}</span> : <span>Request a quote</span>}
+    </button>
+  );
+};
 
 /**
  * @description - this component is particular to the footer section links
@@ -19,10 +42,9 @@ export const FooterLink = ({ link, conversionPageUrl, label, className = '' }) =
 };
 
 /**
- * @description - this is the primary button based on Figma styleguide definition
+ * @description - Submit or link button based on Figma styleguide definition
  * @param {url} link - url to the destination
  * @param {string} label - text to be displayed
-
  * @param {string} variant - possible values are primary or secondary and if not exists then it will be default(tertiary) based on Figma
  * @param {boolean} hasIcon - if an icon exists
  * @param {string} type - possible values are button or link
@@ -51,7 +73,9 @@ export const Button = ({
               ? 'text-white bg-cobalt hover:bg-cyan'
               : variant == 'secondary'
                 ? 'text-white bg-cyan hover:bg-cobalt'
-                : 'text-black bg-cool-grey hover:bg-cyan'
+                : variant == 'tertiary'
+                  ? 'text-black bg-cyan hover:bg-deep-blue'
+                  : null
           }`}>
           <span className={`mr-[10px] ml-0 ${!hasIcon ? 'hidden' : ''}`}>
             {children}
@@ -61,14 +85,19 @@ export const Button = ({
       ) : type == 'button' ? (
         // for a submit button
         <button
-          className={` inline-block w-full md:w-auto py-4 justify-center items-center rounded-[5px] px-5 focus:outline-none focus:ring-none font-bold mt-10 ${
+          className={` inline-block w-full md:w-auto py-4 justify-center items-center rounded-[5px] px-20 focus:outline-none focus:ring-none font-bold ${
             variant == 'primary'
               ? 'text-white bg-cobalt hover:bg-cyan'
               : variant == 'secondary'
                 ? 'text-white bg-cyan hover:bg-cobalt'
-                : 'text-black bg-cool-grey hover:bg-cyan'
+                : variant == 'tertiary'
+                  ? 'text-black bg-cyan hover:bg-light-blue'
+                  : null
           }`}
           type='submit'>
+          <span className={`mr-[10px] ml-0 ${!hasIcon ? 'hidden' : ''}`}>
+            {children}
+          </span>
           <span>{label}</span>
         </button>
       ) : null}
@@ -77,16 +106,21 @@ export const Button = ({
 };
 
 /**
- * @description - the submit button for a form
- * @param {*} param0
+ * @description - This button is used as a next/back button for the two-step-form.js
+ * @param {string} label - label of the button
+ * @param {string} className - extra TailwindCSS classes if needed
+ * @param {*} props - the onClick event handler
  * @returns
  */
-export const SubmitButton = ({ label, children, className = '', ...props }) => {
+export const ButtonNoLink = ({ label, className, ...props }) => {
   return (
-    <button
-      className={`block py-3 text-center text-white rounded-lg bg-cobalt md:inline-block hover:bg-cyan focus:outline-none focus:ring ${className}`}
-      type='submit'>
-      <span>{label}</span>
-    </button>
+    <div
+      className={
+        'inline-block py-[14px] justify-center items-center text-white rounded-[8px] px-6 focus:outline-none focus:ring-none bg-cyan hover:bg-teal disabled:bg-[#d1d5db] cursor-pointer ' +
+        className
+      }
+      {...props}>
+      <span className='text-base font-normal'>{label}</span>
+    </div>
   );
 };

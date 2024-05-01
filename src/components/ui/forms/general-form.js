@@ -1,26 +1,30 @@
 import * as Yup from 'yup';
 
-import { CheckboxList,RadioButtonList, Input, Select, Textarea } from '@/ui/form-elements';
+import {
+  CheckboxList,
+  Input,
+  RadioButtonList,
+  Select,
+  Textarea,
+} from '@/ui/form-elements';
 
-import { useForm } from 'react-hook-form';
-
-import { SubmitButton } from '@/ui/buttons';
+import { Button } from '@/ui/buttons';
 import axios from 'axios';
+import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-export const Form = ({ conversionPageUrl }) => {
+export const GeneralForm = ({ conversionPageUrl }) => {
   const router = useRouter();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const validationSchema = Yup.object().shape({
     firstName: Yup.string().required('Please enter your first name'),
-    lastName: Yup.string().required('Please enter your last name'),
     emailAddress: Yup.string().required('Please enter your email address'),
     phoneNumber: Yup.string(),
-    aboutYourDepartment: Yup.string().required('Please select one of the options'),
+    aboutYourDepartment: Yup.string().required('Please select your department'),
     hobbiesChk: Yup.array(),
     ageGroupLst: Yup.string(),
     message: Yup.string().required('Please enter your message'),
@@ -32,17 +36,51 @@ export const Form = ({ conversionPageUrl }) => {
   const { errors } = formState;
 
   const onSubmit = data => {
-    //console.log(data);
+    // the following console.log will print out all the data for debugging purposes.
+    console.log(data);
+
+    // The following form submission code is a sample code that can be used and customized for real projects
+    /*
+    const submitURL = `/api/form-handler`;
+    if (data) {
+      const webhookData = {
+        firstName: data.firstName,
+        lastName: data.lastName,
+        phone: data.phoneNumber,
+        email: data.emailAddress,
+        aboutYourDepartment: data.aboutYourDepartment,
+        hobbiesChk: data.hobbiesChk,
+        ageGroupLst: data.ageGroupLst,
+        message: data.message,
+        page: router.pathname,
+        pageTitle: { pageTitle },
+      };
+
     router.push('/thank-you' + conversionPageUrl);
 
+    axios
+        .post(submitURL, webhookData)
+        .then((res) => {
+          setContactFormOpen(false);
+          if (router.pathname.includes('/lp')) {
+            router.push(router.pathname + '/thank-you');
+          } else {
+            router.push('/thank-you');
+          }
+        })
+        .catch((err) => {
+          alert('There was an error submitting your form. Please try again.');
+        });
+    }
+    */
   };
   return (
-    <div className='justify-center py-20 lg:text-left'>
+    <div className='justify-center pt-20 lg:text-left'>
       <form
         id='form'
         className=''
         onSubmit={handleSubmit(onSubmit)}>
-        <div className='grid grid-cols-1 gap-10 lg:grid-cols-2'>
+        <div className='grid grid-cols-1 gap-10 md:grid-cols-2'>
           {/* First name - Required */}
           <div>
             <Input
@@ -52,38 +90,26 @@ export const Form = ({ conversionPageUrl }) => {
               type='text'
               placeholder='First name'
               isRequired
-              register={...register('firstName')}
+              register={{ ...register('firstName') }}
               errorMessage={errors.firstName?.message}
             />
           </div>
 
-          {/* Last name - Required */}
+          {/* Phone number - not required */}
           <div>
-            <Input
-              label='Last name'
-              name='lastName'
-              id='lastName'
-              type='text'
-              placeholder='Last name'
-              isRequired
-              register={ ...register('lastName') }
-              errorMessage={errors.lastName?.message}
-            />
-          </div>
-
-            {/* Phone number - Optional */}
-            <div> 
             <Input
               label='Phone number'
               name='phoneNumber'
               id='phoneNumber'
               type='tel'
               placeholder='Phone number'
-              register={...register('phoneNumber', {
-                required: false,
-              })}
+              register={{
+                ...register('phoneNumber', {
+                  required: false,
+                }),
+              }}
             />
-          </div> 
+          </div>
           {/* Email address - Required */}
           <div>
             <Input
@@ -93,64 +119,56 @@ export const Form = ({ conversionPageUrl }) => {
               type='email'
               placeholder='Email address'
               isRequired
-              register={...register('emailAddress')}
+              register={{ ...register('emailAddress') }}
               errorMessage={errors.emailAddress?.message}
             />
           </div>
-          
-        
 
           {/* Dropdown Field - Required */}
-          <div className='w-1/2 col-span-2'> 
+          <div>
             <Select
-              label='Tell us about your department'
+              label='Which department do you belong to?'
               name='aboutYourDepartment'
               isRequired
               options={['Software Engineering', 'Sales & Marketing', 'Design']}
-              register={...register('aboutYourDepartment')}
+              register={{ ...register('aboutYourDepartment') }}
               errorMessage={errors.aboutYourDepartment?.message}
-              
             />
           </div>
 
-          {/* Optional Checkbox list */}
-          <div className='w-1/2 col-span-2'> 
-          
-          <CheckboxList
+          {/* Checkbox list - not Required */}
+          <div>
+            <CheckboxList
               label='What are your hobbies'
               name='hobbiesChk'
-              isRequired
               options={['Books', 'Biking', 'Gardening']}
-              register={...register('hobbiesChk')}
-            />
-         </div>
-          {/* Optional Checkbox list */}
-          <div className='w-1/2 col-span-2'> 
-          <RadioButtonList
-              label='What is your age group'
-              name='ageGroupLst'
-              options={['2 - 12', '13 - 30', '31 - 45','46 - 65']}
-              register={...register('ageGroupLst')}
+              register={{
+                ...register('hobbiesChk', {
+                  required: false,
+                }),
+              }}
             />
           </div>
 
           {/* Textarea Field - Required */}
-          <div className='col-span-2'>
+          <div>
             <Textarea
               label='Your message'
               name='message'
               id='message'
               isRequired
-              register={...register('message')}
+              register={{ ...register('message') }}
               errorMessage={errors.message?.message}
             />
           </div>
 
           {/* Submit Button */}
-          <div className='flex mt-5 lg:col-span-2 md:justify-end'>
-            <SubmitButton
+          <div className='flex md:col-span-2 md:justify-end'>
+            <Button
               className='px-10'
               label={loading ? 'Submitting...' : 'Submit'}
+              variant='primary'
+              type='button'
             />
           </div>
         </div>

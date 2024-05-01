@@ -9,10 +9,9 @@ import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { Button } from '@/ui/buttons';
-import { CloseIcon } from '@/svgs/icons';
 import Image from 'next/image';
+import { ImageModal } from '@/ui/modals';
 import Link from 'next/link';
-import { Modal } from 'flowbite-react';
 import { register } from 'swiper/element/bundle';
 
 register();
@@ -179,7 +178,6 @@ export const GallerySlider = () => {
 /**
  * @description - This component is a slider component for the testimonials displaying two testimonials per slide. This component uses a child component for each of the testimonials.
  * @param - The potential prop for a real world project could be the data file that would be passed on from the page to this component.
- * @returns
  */
 
 export const Testimonials = () => {
@@ -299,7 +297,7 @@ export const TestimonialCard = ({
 
 /**
  * @description - This component is a thumbnail gallery. When a thumbnail is clicked, the slider will slide to the related slide. Also when clicked on the enlarged image, a modal will pop up to further enlarge the image. The ThumbnailGallerySlider is developed to display the following information: Title, details and a list of images.
- * @param - the potential prop for this component is the data that would be passed to it from a data file under utils/
+ * @param - the potential prop for this component is the data that would be passed to it from a data file under utils/ - the data const consists of title, details and a list of images (src, alt, width, height)
  */
 export const ThumbnailGallerySlider = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -453,62 +451,8 @@ export const ImageCanGoModal = ({ imgSrc, imgAlt, imgH, imgW }) => {
 };
 
 /**
- * @description - this component uses the Flowbite-react Modal component in order to load the image in its original size
- * @param {boolean} isModalOpen - state variable to determine whether the modal is open or close
- * @param {*} setIsModalOpen - the state function that sets the state variable when the modal is either open or close
- * @param {url} imgSrc - url of the image
- * @param {number} imgOW - the original width of the image
- * @param {number} imgOH - the original height of the image
- * @param {string} imgAlt - the alt text
- */
-export const ImageModal = ({
-  isModalOpen,
-  setIsModalOpen,
-  imgSrc,
-  imgOW,
-  imgOH,
-  imgAlt,
-}) => {
-  return (
-    <Modal
-      dismissible
-      show={isModalOpen}
-      onClose={() => setIsModalOpen(false)}
-      className='fixed left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto bg-gray-900 top-20 bg-opacity-80 pt-28 md:pt-0 h-[100vh]'>
-      <div className='relative h-full mx-auto md:h-auto py-10'>
-        <div className='relative shadow'>
-          {/* the modal close button */}
-          <button
-            type='button'
-            className='absolute z-10 top-4 right-5 bg-transparent p-1.5 ml-auto inline-flex items-center lg:-mr-[30%] md:-mr-[10%]'
-            data-modal-hide='popup-modal'
-            aria-label='Close'
-            onClick={() => setIsModalOpen(false)}>
-            <CloseIcon />
-            <span className='sr-only'>Close popup image</span>
-          </button>
-          <div className='grid grid-cols-1 text-center'>
-            <div className={`md:-ml-[30%] md:-mr-[30%] md:w-[${imgOW}px] relative`}>
-              {/* this the image loaded in its original width and height */}
-              <Image
-                src={imgSrc}
-                alt={imgAlt}
-                width={imgOW}
-                height={imgOH}
-                className='inline-block w-full'
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </Modal>
-);
-};
-
-
-/**
  * @description - This component displays a list of images that when clicked will control which slide should be displayed in the slider beneath it. The slider is a grid of two cols; image on the left and text information on the right.
- * @param - the potential prop can the data file
+ * @param - the potential prop can the data file in this order: imgSrc, imgAlt, imgW, imgH, title, desc, readMoreLink
  */
 
 export const ControlledSliderWImages = () => {
@@ -610,7 +554,7 @@ export const ControlledSliderWImages = () => {
 /**
  * @description - this component is a child component of the ControlledSliderWImages component. Lists a set of clickable images in a row. When one of the images is clicked, then the slider slides to the relevant index and displays the relevant information.
  * @param {state} controlledSwiper - the state variable that controls the index of the slide
- * @param {array} data - the information stored in data const
+ * @param {array} data - the information stored in data const in this order: imgSrc, imgAlt, imgW, imgH, title, desc, readMoreLink. In this particular component, we haven't used the title, desc and the readMoreLink.
  *
  */
 
@@ -636,6 +580,5 @@ const ClickableImages = ({ controlledSwiper, data }) => {
         </div>
       ))}
     </div>
-
   );
 };
