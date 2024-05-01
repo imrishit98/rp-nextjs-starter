@@ -1,7 +1,7 @@
 import { BodyText, H3 } from '@/ui/typography';
 
 import { CloseIcon } from '@/svgs/icons';
-import { GeneralForm } from '@/forms/general-form';
+import { FormWDynamicFields } from '@/ui/forms/form-with-dynamic-fields';
 import Image from 'next/image';
 import { Modal } from 'flowbite-react';
 import { useRouter } from 'next/router';
@@ -45,12 +45,13 @@ export const ImageModal = ({
           </button>
           <div className='grid grid-cols-1 text-center'>
             <div className={`md:-ml-[30%] md:-mr-[30%] md:w-[${imgOW}px] relative`}>
-              {/* this the image loaded in its original width and height */}
+              {/* this image loaded in its original width and height */}
               <Image
                 src={imgSrc}
                 alt={imgAlt}
                 width={imgOW}
                 height={imgOH}
+                sizes={'(max-width: 768px) 100vw, (max-width: 1280px) 75vw, 33vw'}
                 className='inline-block w-full'
               />
             </div>
@@ -99,7 +100,7 @@ export const FormModal = ({ pageTitle }) => {
               Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
               dolore eu fugiat nulla pariatur.
             </BodyText>
-            <GeneralForm pageTitle={pageTitle} />
+            <FormWDynamicFields pageTitle={pageTitle} />
           </div>
         </div>
       </div>

@@ -32,32 +32,33 @@ export const HeroWithSlider = () => {
       imgSrc: 'https://via.placeholder.com/600x400/00AEEF/ffffff',
       // alts to be added if not decorative
       imgAlt: '',
-      imgW: '1214',
-      imgH: '858',
+      imgW: 1214,
+      imgH: 858,
+      priority: true,
     },
     {
       title: 'Title 2',
       desc: 'If you are going to use a passage of Lorem Ipsum, you need to be sure there isnt anything embarrassing hidden in the middle of text.',
       imgSrc: 'https://via.placeholder.com/600x400/00EBF4/000000',
       imgAlt: '',
-      imgW: '1214',
-      imgH: '858',
+      imgW: 1214,
+      imgH: 858,
     },
     {
       title: 'Title 23',
       desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
       imgSrc: 'https://via.placeholder.com/600x400/00AEEF/ffffff',
       imgAlt: '',
-      imgW: '1214',
-      imgH: '858',
+      imgW: 1214,
+      imgH: 858,
     },
     {
       title: 'title 77',
       desc: 'Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
       imgSrc: 'https://via.placeholder.com/600x400/EBF3F9/000000',
       imgAlt: '',
-      imgW: '1214',
-      imgH: '858',
+      imgW: 1214,
+      imgH: 858,
     },
   ];
   return (
@@ -75,11 +76,15 @@ export const HeroWithSlider = () => {
           <Container className='my-20'>
             <div className='grid grid-cols-1 gap-8 lg:grid-cols-2'>
               <div className='lg:order-last'>
+                {/* adds priority for the image in the first slide, the rest will be loaded lazily */}
                 <Image
                   src={slide.imgSrc}
                   alt={slide.imgAlt}
                   width={slide.imgW}
                   height={slide.imgH}
+                  sizes={'(max-width: 768px) 100vw, (max-width: 1280px) 75vw, 33vw'}
+                  priority={slide.priority ? true : false}
+                  className='w-[400px] lg:w-[700px] mx-auto'
                 />
               </div>
               <div className='text-center lg:text-left'>
@@ -166,6 +171,7 @@ export const GallerySlider = () => {
               alt={image.imgAlt}
               width={556}
               height={192}
+              sizes={'(max-width: 768px) 100vw, (max-width: 1280px) 75vw, 33vw'}
               className='relative w-full px-4'
             />
           </SwiperSlide>
@@ -302,7 +308,7 @@ export const TestimonialCard = ({
 export const ThumbnailGallerySlider = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
-  // the data can be moved to and exported from a data file under utils/ to increase maintenance and organization
+  // the data can be moved to and be exported from a data file under utils/ to increase maintenance and organization
   const data = {
     title: 'Thumbnail Gallery One',
     details: (
@@ -364,6 +370,7 @@ export const ThumbnailGallerySlider = () => {
                 imgAlt={image.alt}
                 imgW={image.width}
                 imgH={image.height}
+                sizes={'(max-width: 768px) 100vw, (max-width: 1280px) 75vw, 33vw'}
                 className='object-contain rounded-[8px] '
               />
             </SwiperSlide>
@@ -395,6 +402,7 @@ export const ThumbnailGallerySlider = () => {
                   alt={image.alt}
                   width={image.width}
                   height={image.height}
+                  sizes={'(max-width: 768px) 100vw, (max-width: 1280px) 75vw, 33vw'}
                   className='w-full h-[98px] object-contain p-2'
                 />
               </div>
@@ -433,7 +441,7 @@ export const ImageCanGoModal = ({ imgSrc, imgAlt, imgH, imgW }) => {
           alt={imgAlt}
           width={imgW}
           height={imgH}
-          sizes={'(max-width: 766px) 100vw, (max-width: 1280px) 75vw'}
+          sizes={'(max-width: 768px) 100vw, (max-width: 1280px) 75vw, 33vw'}
           className='relative lg:h-full lg:w-full bg-white p-5 hover:cursor-pointer'
         />
       </div>
@@ -528,7 +536,7 @@ export const ControlledSliderWImages = () => {
                   alt={slide.imgAlt}
                   width={slide.imgW}
                   height={slide.imgH}
-                  sizes={'(max-width: 768px) 100vw, (max-width: 1280px) 75vw'}
+                  sizes={'(max-width: 768px) 100vw, (max-width: 1280px) 75vw, 33vw'}
                   className=' mx-auto'
                 />
               </div>
@@ -573,7 +581,7 @@ const ClickableImages = ({ controlledSwiper, data }) => {
               alt={image.imgAlt}
               width={image.imgW}
               height={image.imgH}
-              sizes={'(max-width: 768px) 100vw, (max-width: 1280px) 75vw'}
+              sizes={'(max-width: 768px) 100vw, (max-width: 1280px) 75vw, 33vw'}
               className='w-full'
             />
           </button>
