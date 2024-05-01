@@ -4,6 +4,7 @@ import { CloseIcon } from '@/svgs/icons';
 import { FormWDynamicFields } from '@/ui/forms/form-with-dynamic-fields';
 import Image from 'next/image';
 import { Modal } from 'flowbite-react';
+import { dynamicFields } from '@/utils/data/dynamic-fields';
 import { useRouter } from 'next/router';
 
 // WIP ImageModal is NOT ready for review yet.
@@ -78,6 +79,7 @@ export const FormModal = ({ pageTitle }) => {
       shallow: true,
     });
   };
+
   return (
     <>
       <div
@@ -100,7 +102,11 @@ export const FormModal = ({ pageTitle }) => {
               Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
               dolore eu fugiat nulla pariatur.
             </BodyText>
-            <FormWDynamicFields pageTitle={pageTitle} />
+            {/* dynamic fields are loaded from /utils/data/dynamic-fields */}
+            <FormWDynamicFields
+              fields={dynamicFields}
+              pageTitle={pageTitle}
+            />
           </div>
         </div>
       </div>
