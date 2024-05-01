@@ -104,7 +104,7 @@ export const Textarea = ({
       />
 
       <textarea
-        className={` h-28 ${fieldStyles} ${className}`}
+        className={`h-28 ${fieldStyles} ${className}`}
         name={name}
         placeholder={placeholder}
         {...register}
