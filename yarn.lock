@@ -577,10 +577,10 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
-"@next/codemod@^14.1.0":
-  version "14.1.0"
-  resolved "https://registry.yarnpkg.com/@next/codemod/-/codemod-14.1.0.tgz#165f4139967511c1c8cce21f4ef96e7efb4e4f92"
-  integrity sha512-077ew7daB6/PxnSsanNQQDiD0dvhMQYXtsCm9OTTltc18EaAU68qPxb9RSyMeaNEfBQS8cfoCqvbyVpy7PAXGg==
+"@next/codemod@^14.2.3":
+  version "14.2.3"
+  resolved "https://registry.yarnpkg.com/@next/codemod/-/codemod-14.2.3.tgz#862800527cc776e17008e4d84654fe87c8b0c2e5"
+  integrity sha512-5SC2ONsJToLgFnnGUto6DM9WaawYu/X6ZQMQJiHS0vqRVj7BVv83c0J1Vlb++LNzAZSj/iaQYcQwWobbl4WH/A==
   dependencies:
     cheerio "1.0.0-rc.9"
     execa "4.0.3"
