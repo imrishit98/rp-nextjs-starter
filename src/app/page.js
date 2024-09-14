@@ -1,5 +1,5 @@
+import { Container } from '@/components/ui/containers';
 import { H1 } from '@/components/ui/typography';
-import { Container } from '../components/ui/containers';
 
 const Home = () => {
   return (
