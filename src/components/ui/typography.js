@@ -12,3 +12,16 @@ export const H1 = ({ className, children, ...props }) => {
     </h1>
   );
 };
+
+export const H2 = ({ className, children, ...props }) => {
+  return (
+    <h2
+      className={cn(
+        'scroll-m-20 text-3xl font-bold tracking-tight lg:text-4xl',
+        className,
+      )}
+      {...props}>
+      {children}
+    </h2>
+  );
+};
