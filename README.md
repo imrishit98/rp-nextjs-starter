@@ -1,6 +1,6 @@
 # Rishit Patel's Default Next.js Starter
 
-This is a starter template for Next.js projects. It's a simple, clean, and modern starter template that includes Tailwind CSS, React GTM Module, and more. It's built with new app directory structure but it also includes the old pages directory structure for backwards compatibility. If you want to use only the old pages directory structure, then you can use the [rp-nextjs-starter-pages-dir](https://github.com/imrishit98/rp-nextjs-starter-pages-dir) starter template.
+This is a starter template for Next.js projects. It's a simple, clean, and modern starter template that includes Tailwind CSS, shadcn/ui, and more. It's built with new app directory structure but it also includes the old pages directory structure for backwards compatibility. If you want to use only the old pages directory structure, then you can use the [rp-nextjs-starter-pages-dir](https://github.com/imrishit98/rp-nextjs-starter-pages-dir) starter template.
 
 Popular Projects Built With This Starter Template:
 - [aitools.fyi - Find the best ai tools!](https://aitools.fyi)
@@ -66,4 +66,4 @@ If you want to contact me you can reach me at [rishitpatel.com/contact](https://
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs) - learn about Tailwind CSS features and API.
-- [React GTM Module Documentation](https://www.npmjs.com/package/react-gtm-module) - learn about React GTM Module features and API.
+- [shadcn/ui Documentation](https://ui.shadcn.com/docs) - learn about shadcn/ui.
