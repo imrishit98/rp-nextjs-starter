@@ -1,6 +1,7 @@
 import siteConfig from '../../site-config';
 import Layout from '../components/layout';
 import '../styles/main.scss';
+import { Gabarito } from 'next/font/google';
 
 export const metadata = {
   title: siteConfig.title,
@@ -36,9 +37,16 @@ export const viewport = {
   initialScale: 1,
 };
 
+const gabarito = Gabarito({
+  subsets: ['latin'],
+  display: 'swap',
+});
+
 export default function RootLayout({ children }) {
   return (
-    <html lang='en'>
+    <html
+      lang='en'
+      className={gabarito.className}>
       <body>
         <Layout>{children}</Layout>
       </body>
