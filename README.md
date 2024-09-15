@@ -47,6 +47,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `src/app/page.js`. The page auto-updates as you edit the file.
 
+If you want to use the old pages directory structure, then you can use the [rp-nextjs-starter-pages-dir](https://github.com/imrishit98/rp-nextjs-starter-pages-dir) starter template or just create pages directory manually and move the files to it.
+
 ## 📦 Deployment
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new) from the creators of Next.js.
