@@ -1,136 +1,98 @@
 import Link from 'next/link';
+import { poppins } from '@/utils/fonts';
 
-export const H1 = ({ className = '', children, ...props }) => {
+export const H1 = ({ className = '', children }) => {
   return (
     <h1
-      className={
-        'text-[38px] md:text-[50px] leading-[48px] md:leading-[60px] font-bold' +
-        ' ' +
-        className
-      }
-      {...props}>
+      className={`text-[38px] md:text-[50px] leading-[48px] md:leading-[60px] font-bold ${className} ${poppins.className}`}>
       {children}
     </h1>
   );
 };
 
-export const H2 = ({ className = '', children, ...props }) => {
+export const H2 = ({ className = '', children }) => {
   return (
     <h2
-      className={
-        'text-[35px] md:text-[50px] leading-[45px] md:leading-[60px] font-bold' +
-        ' ' +
-        className
-      }
-      {...props}>
+      className={`text-[35px] md:text-[50px] leading-[45px] md:leading-[60px] font-bold ${className} ${poppins.className}`}>
       {children}
     </h2>
   );
 };
-export const H3 = ({ className = '', children, ...props }) => {
+export const H3 = ({ className = '', children }) => {
   return (
     <h3
-      className={'text-[30px] leading-[38px] font-bold' + ' ' + className}
-      {...props}>
+      className={`text-[30px] leading-[38px] font-bold  ${className} ${poppins.className}`}>
       {children}
     </h3>
   );
 };
 
-export const H4 = ({ className = '', children, ...props }) => {
+export const H4 = ({ className = '', children }) => {
   return (
     <h4
-      className={'text-[25px] leading-[30px] font-bold' + ' ' + className}
-      {...props}>
+      className={`text-[25px] leading-[30px] font-bold ${className} ${poppins.className}`}>
       {children}
     </h4>
   );
 };
 
-// Used in Content Headings
-export const H5 = ({ className = '', children, ...props }) => {
+export const H5 = ({ className = '', children }) => {
   return (
-    <h4
-      className={'text-lg font-semibold leading-snug font-inter' + ' ' + className}
-      {...props}>
+    <h5
+      className={`text-[20px] font-semibold leading-snug ${className} ${poppins.className}`}>
       {children}
-    </h4>
+    </h5>
   );
 };
 
-// Used in Content Headings
-export const H6 = ({ className = '', children, ...props }) => {
+export const H6 = ({ className = '', children }) => {
   return (
     <h6
-      className={'text-2xl font-bold leading-loose font-inter' + ' ' + className}
-      {...props}>
+      className={`text-[12px] font-bold leading-loose ${className} ${poppins.className}`}>
       {children}
     </h6>
   );
 };
 
-export const BodyText = ({ className = '', children, ...props }) => {
+export const BodyText = ({ className = '', children }) => {
   return (
-    <div
-      className={'leading-normal text-base font-poppins' + ' ' + className}
-      {...props}>
+    <div className={`leading-normal text-base ${className} ${poppins.className}`}>
       {children}
     </div>
   );
 };
 
-export const LgText = ({ className = '', children, ...props }) => {
+export const LgText = ({ className = '', children }) => {
   return (
-    <p
-      className={'text-[18px] leading-[27px]' + ' ' + className}
-      {...props}>
+    <p className={`text-[18px] leading-[27px] ${className} ${poppins.className}`}>
       {children}
     </p>
   );
 };
 
-export const SmText = ({ className = '', children, ...props }) => {
+export const SmText = ({ className = '', children }) => {
   return (
-    <p
-      className={'text-[14px] leading-[24px]' + ' ' + className}
-      {...props}>
+    <p className={`text-[14px] leading-[24px] ${className} ${poppins.className}`}>
       {children}
     </p>
   );
 };
 
-export const XsText = ({ className = '', children, ...props }) => {
+export const XsText = ({ className = '', children }) => {
   return (
-    <p
-      className={'text-[12px] leading-[18px]' + ' ' + className}
-      {...props}>
+    <p className={`text-[12px] leading-[18px] ${className} ${poppins.className}`}>
       {children}
     </p>
   );
 };
 
-export const NavbarLink = ({ link, children, ...props }) => {
+export const NavbarLink = ({ link, className = '', children }) => {
   return (
     <Link
       href={link}
-      className='block md:inline-block md:px-4 xl:px-7 focus:outline-none focus:ring-0'
-      {...props}>
+      className={`block md:inline-block md:px-4 xl:px-7 focus:outline-none focus:ring-0 ${className} ${poppins.className}`}>
       {/* dropdown menu items */}
       {children}
     </Link>
-  );
-};
-
-export const FooterLabel = ({ className = '', children, ...props }) => {
-  return (
-    <p
-      className={
-        'text-sm leading-tight font-poppins text-white font-semibold uppercase' +
-        ' ' +
-        className
-      }
-      {...props}>
-      {children}
-    </p>
   );
 };

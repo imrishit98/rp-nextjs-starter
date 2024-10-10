@@ -2,7 +2,16 @@ import { Checkbox, Radio } from 'flowbite-react';
 import { SmText, XsText } from '@/ui/typography';
 import { useFieldArray, useForm } from 'react-hook-form';
 
+import { poppins } from '@/utils/fonts';
 import { useState } from 'react';
+
+//  TailwindCSS styles for different fields
+const fieldStyles = `px-4 py-3 text-sm font-normal rounded-lg bg-gray-50 border border-solid border-gray-300 w-full focus:border-gray-900 focus:ring-transparent focus:outline-none mt-2 ${poppins.className}`;
+
+const checkboxStyles = `focus:ring-2 focus:ring-green-500 text-green-500 w-4 h-4 p-2.5 bg-gray-50 rounded border border-gray-300 ${poppins.className}`;
+
+const radioStyles = `w-4 h-4 border border-gray-300 focus:ring-2 focus:ring-green-500 text-gray-50 bg-gray-50 rounded-3xl checked:border-green-500 checked:rounded-full checked:border-4 focus:border-green-500 focus:rounded-full focus:border-4
+${poppins.className}`;
 
 /**
  *
@@ -15,7 +24,7 @@ import { useState } from 'react';
  * @returns {JSX.Element} - a Label component for labeling fields
  * @example - <Label label={label} name={name} isRequired={isRequired} />
  */
-export const Label = ({ label, name, isRequired, className }) => {
+export const Label = ({ label, name, isRequired, className = '' }) => {
   return (
     <label htmlFor={name}>
       <SmText className={`font-medium ${className}`}>
@@ -33,7 +42,6 @@ export const Label = ({ label, name, isRequired, className }) => {
  * @param {type} type - type of the field - possible values: text, number, password, email
  * @param {string} placeholder - text that would be displayed as the placeholder
  * @param {*} register - registers the field for Yup validation
- * @param {string} errorMessage - the error message that would be displayed if the field is required and fails the validation
  * @param {boolean} isRequired - just for UI purposes; if exists then it will be passed on to the Label component in order to display the asterisk
  * @param {string} className - extra TailwindCSS classes if needed eg. className='text-black mt-10 text-right'
  * @returns {JSX.Element} - an Input component for capturing input from the user
@@ -44,9 +52,8 @@ export const Input = ({
   type,
   placeholder,
   register,
-  errorMessage,
   isRequired,
-  className,
+  className = '',
 }) => {
   return (
     <>
@@ -57,19 +64,13 @@ export const Input = ({
       />
 
       <input
-        className={
-          `${errorMessage ? 'border-red-500 text-red-500 ' : null}
-          px-4 py-3 text-sm font-inter font-normal rounded-lg bg-gray-50 border border-solid border-gray-300 w-full focus:border-gray-900 focus:ring-transparent focus:outline-none mt-2 ` +
-          className
-        }
+        className={`
+          ${fieldStyles} ${className}`}
         name={name}
         type={type}
         placeholder={placeholder}
         {...register}
       />
-      {errorMessage ? (
-        <XsText className='inline text-red-600'>{errorMessage}</XsText>
-      ) : null}
     </>
   );
 };
@@ -81,7 +82,6 @@ export const Input = ({
  * @param {name} name - name of the field
  * @param {string} placeholder - text that would be displayed as the placeholder
  * @param {*} register - registers the field for Yup validation
- * @param {string} errorMessage - the error message that would be displayed if the field is required and fails the validation
  * @param {boolean} isRequired - just for UI purposes; if exists then it will be passed on to the Label component in order to display the asterisk
  * @param {string} className - extra TailwindCSS classes if needed eg. className='text-black mt-10 text-right'
  * @returns {JSX.Element} - a Textarea component
@@ -92,9 +92,8 @@ export const Textarea = ({
   name,
   placeholder,
   register,
-  errorMessage,
   isRequired,
-  className,
+  className = '',
 }) => {
   return (
     <>
@@ -105,19 +104,11 @@ export const Textarea = ({
       />
 
       <textarea
-        className={
-          `${
-            errorMessage ? 'border-red-500 text-red-500 ' : null
-          } px-4 py-3 rounded-lg text-sm font-normal bg-gray-50 h-28 border border-solid border-gray-300 w-full focus:border-gray-900 focus:ring-transparent focus:outline-none mt-2 ` +
-          className
-        }
+        className={`h-28 ${fieldStyles} ${className}`}
         name={name}
         placeholder={placeholder}
         {...register}
       />
-      {errorMessage ? (
-        <XsText className='inline text-red-600'>{errorMessage}</XsText>
-      ) : null}
     </>
   );
 };
@@ -131,7 +122,6 @@ export const Textarea = ({
  * @param {event} onChange - if exists then it will replace the default handler with a custom one eg. if we have conditional fields. See form-with-conditional-fields.js
  * @param {string} value - the selected value
  * @param {*} register - registers the field for Yup validation
- * @param {string} errorMessage - the error message that would be displayed if the field is required and fails the validation
  * @param {boolean} isRequired - just for UI purposes; if exists then it will be passed on to the Label component in order to display the asterisk
  * @param {string} className - extra TailwindCSS classes if needed eg. className='text-black mt-10 text-right'
  * @returns {JSX.Element} - a select component
@@ -145,8 +135,7 @@ export const Select = ({
   value,
   register,
   isRequired,
-  errorMessage,
-  className,
+  className = '',
 }) => {
   const { setValue, control } = useForm();
 
@@ -164,12 +153,7 @@ export const Select = ({
 
       <select
         name={name}
-        className={
-          `${
-            errorMessage ? 'border-red-500 text-red-500 ' : null
-          } w-full px-4 py-3 text-sm font-inter font-normal rounded-lg bg-gray-50 border border-solid border-gray-300 focus:border-cyan focus:outline-none mt-2 ` +
-          className
-        }
+        className={`${fieldStyles} ${className}`}
         {...register}
         onChange={onChange ? onChange : e => handleSelectChange(e.target.value)}
         value={value}>
@@ -182,10 +166,6 @@ export const Select = ({
           </option>
         ))}
       </select>
-
-      {errorMessage ? (
-        <XsText className='inline text-red-600'>{errorMessage}</XsText>
-      ) : null}
     </>
   );
 };
@@ -200,7 +180,6 @@ export const Select = ({
  * @param {array} options - an array of values to fill in the checkboxes list field as options
  * @param {event} onChange - if exists then it will replace the default handler with a custom one eg. if we have conditional fields. See form-with-conditional-fields.js
  * @param {*} register - registers the field for Yup validation
- * @param {string} errorMessage - the error message that would be displayed if the field is required and fails the validation
  * @param {boolean} isRequired - just for UI purposes; if exists then it will be passed on to the Label component in order to display the asterisk
  * @param {string} className - extra TailwindCSS classes if needed eg. className='text-black mt-10 text-right'
  * @returns {JSX.Element} - a checkbox list component
@@ -212,8 +191,7 @@ export const CheckboxList = ({
   onChange,
   register,
   isRequired,
-  errorMessage,
-  className,
+  className = '',
   children,
   ...props
 }) => {
@@ -241,7 +219,7 @@ export const CheckboxList = ({
             <Checkbox
               name={name[index]}
               value={option}
-              className='focus:ring-2 focus:ring-green-500 text-green-500 w-4 h-4 p-2.5 bg-gray-50 rounded border border-gray-300'
+              className={`${checkboxStyles} ${className}`}
               {...register}
               onChange={onChange ? onChange : () => handleCheckboxChange(index)}
             />{' '}
@@ -253,9 +231,6 @@ export const CheckboxList = ({
           </div>
         ))}
       </div>
-      {errorMessage ? (
-        <XsText className='inline text-red-600'>{errorMessage}</XsText>
-      ) : null}
     </>
   );
 };
@@ -270,7 +245,6 @@ export const CheckboxList = ({
  * @param {array} options - an array of values to fill in the radio buttons list as options
  * @param {event} onChange - if exists then it will replace the default handler with a custom one eg. if we have conditional fields. See form-with-conditional-fields.js
  * @param {*} register - registers the field for Yup validation
- * @param {string} errorMessage - the error message that would be displayed if the field is required and fails the validation
  * @param {boolean} isRequired - just for UI purposes; if exists then it will be passed on to the Label component in order to display the asterisk
  * @param {string} className - extra TailwindCSS classes if needed eg. className='text-black mt-10 text-right'
  * @returns {JSX.Element} - a radio buttons list component
@@ -282,8 +256,7 @@ export const RadioButtonList = ({
   onChange,
   register,
   isRequired,
-  errorMessage,
-  className,
+  className = '',
   children,
   ...props
 }) => {
@@ -308,7 +281,7 @@ export const RadioButtonList = ({
             <Radio
               name={name[index]}
               value={option}
-              className='w-4 h-4 border border-gray-300 focus:ring-2 focus:ring-green-500 text-gray-50 bg-gray-50 rounded-3xl checked:border-green-500 checked:rounded-full checked:border-4 focus:border-green-500 focus:rounded-full focus:border-4'
+              className={`${radioStyles} ${className}`}
               {...register}
               onChange={onChange ? onChange : () => handleRadioChange(index)}
             />{' '}
@@ -320,9 +293,6 @@ export const RadioButtonList = ({
           </div>
         ))}
       </div>
-      {errorMessage ? (
-        <XsText className='inline text-red-600'>{errorMessage}</XsText>
-      ) : null}
     </>
   );
 };

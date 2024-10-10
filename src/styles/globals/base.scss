@@ -2,13 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: 'Inter', sans-serif;
 }
 
 .nav-subitem-content {
@@ -23,8 +20,7 @@ select {
   appearance: none;
 }
 
-
-.mySwiper{
+.mySwiper {
   padding-left: 15px !important;
   padding-right: 15px !important;
 }

@@ -11,6 +11,7 @@ import { FormProvider, useForm } from 'react-hook-form';
 
 import { Button } from '@/ui/buttons';
 import { ErrorMessage } from '@hookform/error-message';
+import { XsText } from '@/ui/typography';
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
@@ -53,7 +54,8 @@ export const FormWDynamicFields = ({ fields }) => {
   });
 
   const onSubmit = data => {
-    console.log(data);
+    // for testing purposes
+    //console.log(data);
   };
   return (
     <div className='justify-center pt-20 lg:text-left'>
@@ -71,7 +73,7 @@ export const FormWDynamicFields = ({ fields }) => {
                 type={field.type}
                 required={field.required}
                 validationMsg={field.validationMsg}
-                options={field.options}
+                options={field.options} // if it's a select or radio list or checkbox list
                 className={field.className}
                 register={register}
                 errors={errors}
@@ -115,7 +117,7 @@ export const Field = ({
   required,
   validationMsg,
   options,
-  className,
+  className = '',
   register,
   errors,
 }) => {
@@ -128,6 +130,7 @@ export const Field = ({
           isRequired={required}
           options={options}
           register={register}
+          className={className}
         />
       ) : (
         <Input
@@ -137,12 +140,17 @@ export const Field = ({
           placeholder={label}
           isRequired={required}
           register={register}
+          className={className}
         />
       )}
+
+      {/* validation doesn't work - todo */}
       <ErrorMessage
         errors={errors}
         name={name}
-        render={({ message }) => <div>{validationMsg}</div>}
+        render={({ message }) => (
+          <XsText className='inline text-red-600'>{validationMsg}</XsText>
+        )}
       />
     </div>
   );
