@@ -35,17 +35,21 @@ const StyleGuideNew = () => {
       <Container>
         <Display.Large>
           <h1 className='font-bold'>This is Display Extra Large as h1 bold</h1>
-          <br />
-          <p className='text-blue-600'>This is Display Extra Large as p in blue</p>
-          <br />
         </Display.Large>
+        <br />
+        <Display.Large>
+          <p className='text-blue-600'>This is Display Extra Large as p in blue</p>
+        </Display.Large>
+        <br />
 
         <Display.Medium>
           <h3>This is Display Medium as h3</h3>
-          <br />
-          <h3 className='font-bold'>This is Display Medium as h3 bold</h3>
-          <br />
         </Display.Medium>
+        <br />
+        <Display.Medium>
+          <h3 className='font-bold'>This is Display Medium as h3 bold</h3>
+        </Display.Medium>
+        <br />
       </Container>
     </Layout>
   );
