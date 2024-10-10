@@ -16,10 +16,13 @@ const Navbar = ({ conversionPageUrl }) => {
       name: 'Home',
       href: '/',
     },
-
     {
       name: 'Styleguide',
       href: '/styleguide',
+    },
+    {
+      name: 'Styleguide 2.0',
+      href: '/styleguide-new',
     },
     {
       name: 'Components',
