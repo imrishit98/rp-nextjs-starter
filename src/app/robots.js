@@ -1,6 +1,6 @@
 import siteConfig from '../../site-config';
 
-export default function robots() {
+const robots = () => {
   const { url } = siteConfig;
 
   return {
@@ -14,4 +14,6 @@ export default function robots() {
     sitemap: `${url}/sitemap.xml`,
     host: url,
   };
-}
+};
+
+export default robots;
