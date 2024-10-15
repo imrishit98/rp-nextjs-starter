@@ -16,6 +16,9 @@ Table of Contents:
   - [⚡️ Quick Start](#️-quick-start)
   - [🚀 Getting Started](#-getting-started)
   - [📦 Deployment](#-deployment)
+  - [🔍 SEO](#-seo)
+    - [robots.js](#robotsjs)
+    - [sitemap.js](#sitemapjs)
   - [📝 License](#-license)
   - [📧 Contact](#-contact)
   - [📚 Resources](#-resources)
@@ -54,6 +57,38 @@ If you want to use the old pages directory structure, then you can use the [rp-n
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## 🔍 SEO
+
+This starter template includes built-in SEO features to help improve your website's search engine visibility.
+
+### robots.js
+
+The `src/app/robots.js` file generates a robots.txt file for your website. It uses the `siteConfig` to set the host and sitemap URL. You can customize the rules to allow or disallow specific paths for web crawlers.
+
+To modify the robots.txt settings:
+
+1. Open `src/app/robots.js`
+2. Adjust the `rules` array to add or modify crawler instructions
+3. Update the `siteConfig` in `site-config.js` if needed
+
+### sitemap.js
+
+The `src/app/sitemap.js` file automatically generates a sitemap for your website based on the pages in your `src/app` directory. It helps search engines discover and index your pages more efficiently.
+
+Key features:
+- Recursively scans the `src/app` directory for pages
+- Excludes specified paths (e.g., API routes, private pages)
+- Handles dynamic routes and nested folders
+
+To customize the sitemap generation:
+
+1. Open `src/app/sitemap.js`
+2. Modify the `ignorePaths` array to exclude additional paths if needed
+3. Adjust the `changeFrequency` and `priority` values for pages as required
+4. Update the `siteConfig` in `site-config.js` to set the correct base URL
+
+Remember to update your `site-config.js` file with the correct URL for your website to ensure proper functionality of both the robots.txt and sitemap features.
 
 ## 📝 License
 
