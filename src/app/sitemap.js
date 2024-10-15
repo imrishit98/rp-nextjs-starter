@@ -59,7 +59,7 @@ const getPages = (dir, baseUrl, pages = []) => {
   return pages;
 };
 
-export default async function sitemap() {
+const sitemap = async () => {
   const baseUrl = url.replace('https:/', 'https://');
 
   // Get all pages from the app directory
@@ -71,4 +71,6 @@ export default async function sitemap() {
   });
 
   return pages;
-}
+};
+
+export default sitemap;
