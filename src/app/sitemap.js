@@ -4,7 +4,7 @@ import { url } from '../../site-config';
 
 const ignorePaths = ['api/*', 'sign-in'];
 
-function getPages(dir, baseUrl, pages = []) {
+const getPages = (dir, baseUrl, pages = []) => {
   const files = fs.readdirSync(dir);
 
   files.forEach(file => {
@@ -34,20 +34,20 @@ function getPages(dir, baseUrl, pages = []) {
       getPages(filePath, baseUrl, pages);
     } else if (file === 'page.js' || file === 'route.js') {
       let relativePath = path.relative('src/app', dir);
-      let url = path.join(baseUrl, relativePath).replace(/\\/g, '/');
+      let pageUrl = path.join(baseUrl, relativePath).replace(/\\/g, '/');
 
       // Remove 'page.js' or 'route.js' from the URL
-      url = url.replace(/\/(page|route)\.js$/, '');
+      pageUrl = pageUrl.replace(/\/(page|route)\.js$/, '');
 
       // Remove directories with parentheses from the URL
-      url = url.replace(/\([^()]+\)\//g, '');
+      pageUrl = pageUrl.replace(/\([^()]+\)\//g, '');
 
       // Avoid including URLs with [slug] in the sitemap
-      if (!/\[.*?\]/.test(url)) {
+      if (!/\[.*?\]/.test(pageUrl)) {
         // Avoid duplicate entries for index pages
-        if (!pages.some(page => page.url === url)) {
+        if (!pages.some(page => page.url === pageUrl)) {
           pages.push({
-            url: url,
+            url: pageUrl,
             changeFrequency: 'weekly',
             priority: 0.7,
           });
@@ -57,7 +57,7 @@ function getPages(dir, baseUrl, pages = []) {
   });
 
   return pages;
-}
+};
 
 export default async function sitemap() {
   const baseUrl = url.replace('https:/', 'https://');
