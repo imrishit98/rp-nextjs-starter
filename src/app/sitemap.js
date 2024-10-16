@@ -1,6 +1,7 @@
+import { url } from '@/../../site-config';
+
 import fs from 'fs';
 import path from 'path';
-import { url } from '../../site-config';
 
 const ignorePaths = ['api/*', 'sign-in'];
 
