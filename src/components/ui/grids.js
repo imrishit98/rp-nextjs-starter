@@ -26,6 +26,7 @@ export const TwoColsWImg = ({
   isHero,
   imgOnTheLeft,
   className,
+  children,
 }) => {
   return (
     <div className={`grid grid-cols-1 gap-10 lg:grid-cols-2 ${className} `}>
@@ -48,6 +49,7 @@ export const TwoColsWImg = ({
             <p className='overline-lg font-medium mb-6 text-purple-p700'>{subtitle}</p>
             <h3 className='headline-md text-purple-p900 mb-9 font-semibold'>{title}</h3>
             <p className='body-lg text-neutral-n600 font-normal'>{desc}</p>
+            {children}
           </>
         )}
       </div>

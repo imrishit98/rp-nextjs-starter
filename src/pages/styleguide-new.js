@@ -24,7 +24,7 @@ const StyleGuideNew = () => {
       conversionPageUrl={pageUrl}>
       {/* Typography */}
       <FullWidthContainer className='text-center bg-purple-50 py-10 lg:py-20'>
-        <Container className='py-10'>
+        <Container>
           <LabelBlock className='mb-10'>Duis ultricies eget nunc adipiscing</LabelBlock>
 
           <h1 className='display-lg font-semibold mb-4 text-neutral-n700'>
@@ -124,8 +124,15 @@ const StyleGuideNew = () => {
             imgSrc='/images/Pexels Photo by Kristina Paukshtite.png'
             imgAlt=''
             imgW={500}
-            imgH={500}
-          />
+            imgH={500}>
+            <Button
+              type='link'
+              link='/'
+              label='Get started now for FREE!'
+              variant='primary'
+              className='button-lg'
+            />
+          </TwoColsWImg>
 
           <TwoColsWImg
             title='Aliquam nisi id ut ac aliquam pellentesque dictumst'
@@ -136,8 +143,16 @@ const StyleGuideNew = () => {
             imgW={500}
             imgH={500}
             imgOnTheLeft
-            className='mt-28'
-          />
+            className='mt-28'>
+            {' '}
+            <Button
+              type='link'
+              link='/'
+              label='Get started now for FREE!'
+              variant='primary'
+              className='button-lg'
+            />
+          </TwoColsWImg>
         </Container>
       </FullWidthContainer>
 
