@@ -38,7 +38,7 @@ export const FullWidthContainer = ({ bgNoise, className = '', children }) => {
 export const Container = ({ align, className = '', children }) => {
   return (
     <div
-      className={`container max-w-screen-xl px-4 mx-auto xl:px-20 justify-center ${
+      className={`container max-w-screen-xl px-4 mx-auto xl:px-10 justify-center ${
         align == 'left' ? 'items-start' : align == 'right' ? 'items-end' : 'items-center'
       }
     } ${className} scroll-mt-32`}>

@@ -13,10 +13,6 @@ const Navbar = ({ conversionPageUrl }) => {
 
   const navigation = [
     {
-      name: 'Home',
-      href: '/',
-    },
-    {
       name: 'Styleguide',
       href: '/styleguide',
     },

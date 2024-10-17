@@ -1,6 +1,8 @@
 import { BodyText, H1, H3, H4, LgText } from '@/ui/typography';
 
+import Body from './typography/body';
 import { Button } from '@/ui/buttons';
+import Headline from './typography/headline';
 import Image from 'next/image';
 
 /**
@@ -17,6 +19,7 @@ import Image from 'next/image';
 
 export const TwoColsWImg = ({
   title,
+  subtitle,
   desc,
   imgSrc,
   imgAlt,
@@ -31,6 +34,7 @@ export const TwoColsWImg = ({
       <div className='my-auto text-center lg:text-left'>
         {isHero ? (
           <>
+            {/* this section not updated yet */}
             <H1 className='text-black mb-9'>{title}</H1>
             <LgText className='text-black'>{desc}</LgText>
             <Button
@@ -43,8 +47,9 @@ export const TwoColsWImg = ({
           </>
         ) : (
           <>
-            <H3 className='text-black mb-9'>{title}</H3>
-            <BodyText className='text-black'>{desc}</BodyText>
+            <p className='overline-lg font-medium mb-6 text-purple-p700'>{subtitle}</p>
+            <h3 className='headline-md text-purple-p900 mb-9 font-semibold'>{title}</h3>
+            <p className='body-lg text-neutral-n600 font-normal'>{desc}</p>
           </>
         )}
       </div>
@@ -90,7 +95,7 @@ export const RepeatableCols = ({ numberOfCols, align }) => {
   ];
 
   return (
-    <div className={`grid grid-cols-1 gap-5 lg:grid-cols-${numberOfCols}`}>
+    <div className={`grid grid-cols-1 gap-5 xl:grid-cols-${numberOfCols}`}>
       {data.map((col, index) => (
         <div
           key={index}
