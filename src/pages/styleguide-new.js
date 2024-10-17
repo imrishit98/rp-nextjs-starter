@@ -35,6 +35,22 @@ const StyleGuideNew = () => {
             Risus sed ac purus sed etiam. Donec commodo velit sed a luctus malesuada
             maecenas urna viverra dolor id tempus lorem quis.
           </h4>
+          <div className='flex gap-6 mt-10 justify-center flex-col sm:flex-row'>
+            <Button
+              type='link'
+              link='/'
+              label='Accumsan elementum'
+              variant='primary'
+              className='button-lg'
+            />
+            <Button
+              type='link'
+              link='/'
+              label='Consectetur bibendum'
+              variant='secondary'
+              className='button-lg'
+            />
+          </div>
         </Container>
       </FullWidthContainer>
 
@@ -54,7 +70,7 @@ const StyleGuideNew = () => {
           </p>
 
           <div className='grid grid-cols-1 gap-10 xl:grid-cols-3 my-20'>
-            <div className='bg-purple-50 rounded-lg px-5 py-8'>
+            <div className='bg-purple-50 rounded-lg px-5 py-12'>
               <LabelBlock className='mb-5'>Step 01</LabelBlock>
               <h5 className='title-md font-medium mb-5'>
                 Sagittis lacus vitae mus at aliquam lacus id ut sed nunc.
@@ -68,7 +84,7 @@ const StyleGuideNew = () => {
               </p>
             </div>
 
-            <div className='bg-purple-50 rounded-lg px-5 py-8'>
+            <div className='bg-purple-50 rounded-lg px-5 py-12'>
               <LabelBlock className='mb-5'>Step 02</LabelBlock>
               <h5 className='title-md font-medium mb-5'>
                 Sagittis lacus vitae mus at aliquam lacus id ut sed nunc.
@@ -82,7 +98,7 @@ const StyleGuideNew = () => {
               </p>
             </div>
 
-            <div className='bg-purple-50 rounded-lg px-5 py-8'>
+            <div className='bg-purple-50 rounded-lg px-5 py-12'>
               <LabelBlock className='mb-5'>Step 03</LabelBlock>
               <h5 className='title-md font-medium mb-5'>
                 Egestas sollicitudin nam orci leo integer justo in in egestas.

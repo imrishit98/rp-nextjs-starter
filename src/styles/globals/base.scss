@@ -125,20 +125,42 @@
   .label-lg{
     font-size: 0.875rem;
     line-height: 1rem;
-    letter-spacing: 0.09rem;
+    letter-spacing: 0.03rem;
   }
 
   .label-md{
     font-size: 0.75rem;
     line-height: 1rem;
-    letter-spacing: 0.09rem;
+    letter-spacing: 0.03rem;
   }
   .label-sm{
     font-size: 0.625rem;
     line-height: 0.875rem;
-    letter-spacing: 0.09rem;
+    letter-spacing: 0.03rem;
   }
 
+  // Button Text
+  // Text sizes used in buttons
+
+  .button-lg{
+    font-size: 1rem;
+    line-height: 1.25rem;
+    letter-spacing: 0.03rem;
+    font-weight: 500;
+  }
+
+  .button-md{
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    letter-spacing: 0.03rem;
+    font-weight: 500;
+  }
+  .button-sm{
+    font-size: 0.75rem;
+    line-height: 1rem;
+    letter-spacing: 0.02rem;
+    font-weight: 500;
+  }
 
   // Footnote Text
   // Used for footnotes, tooltips, additional information that are displayed often in small sizes
