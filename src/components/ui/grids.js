@@ -1,8 +1,6 @@
 import { BodyText, H1, H3, H4, LgText } from '@/ui/typography';
 
-import Body from './typography/body';
 import { Button } from '@/ui/buttons';
-import Headline from './typography/headline';
 import Image from 'next/image';
 
 /**
