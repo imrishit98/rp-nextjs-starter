@@ -1,3 +1,9 @@
+/**
+ * Hamburger menu icon component.
+ * Used for mobile navigation toggle button.
+ * @component
+ * @returns {JSX.Element} SVG hamburger menu icon
+ */
 export const MenuIcon = () => {
   return (
     <svg
@@ -14,6 +20,12 @@ export const MenuIcon = () => {
   );
 };
 
+/**
+ * Close (X) icon component.
+ * Used for closing mobile navigation menu.
+ * @component
+ * @returns {JSX.Element} SVG close icon
+ */
 export const CloseIcon = () => {
   return (
     <svg

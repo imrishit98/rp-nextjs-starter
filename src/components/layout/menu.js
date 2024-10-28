@@ -3,6 +3,12 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { CloseIcon, MenuIcon } from '../ui/icons/menus';
 
+/**
+ * Responsive navigation menu component with mobile toggle functionality.
+ * Displays horizontal menu on desktop and hamburger menu on mobile.
+ * @component
+ * @returns {JSX.Element} Navigation menu with responsive behavior
+ */
 const NavMenu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
