@@ -2,6 +2,12 @@ import Link from 'next/link';
 
 import { Container } from '@/components/ui/containers';
 
+/**
+ * Footer component that displays copyright information and a link.
+ * Renders at the bottom of every page with a top border.
+ * @component
+ * @returns {JSX.Element} Footer component with copyright text and link
+ */
 const Footer = () => {
   return (
     <footer className='py-2 border-t-2'>
