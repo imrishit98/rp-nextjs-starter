@@ -2,6 +2,12 @@ import { Container } from '@/components/ui/containers';
 import Link from 'next/link';
 import NavMenu from './menu';
 
+/**
+ * Navigation bar component that appears at the top of every page.
+ * Contains logo/brand link and navigation menu.
+ * @component
+ * @returns {JSX.Element} Navigation bar with logo and menu
+ */
 const Navbar = () => {
   return (
     <nav className='py-4 border-b-2'>
