@@ -1,6 +1,8 @@
+import { siteName } from '@/../site-config';
+import NavMenu from '@/components/layout/menu';
 import { Container } from '@/components/ui/containers';
+
 import Link from 'next/link';
-import NavMenu from './menu';
 
 /**
  * Navigation bar component that appears at the top of every page.
@@ -14,9 +16,8 @@ const Navbar = () => {
       <Container className='flex justify-between items-center'>
         <Link
           href='/'
-          className='text-2xl font-bold text-gray-800 hover:text-gray-700 dark:text-white dark:hover:text-gray-300 lg:text-3xl'
-        >
-          RP
+          className='text-2xl font-bold text-gray-800 hover:text-gray-700 dark:text-white dark:hover:text-gray-300 lg:text-3xl'>
+          {siteName}
         </Link>
         <NavMenu />
       </Container>

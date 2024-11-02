@@ -1,4 +1,5 @@
 const siteConfig = {
+  siteName: "Rishit's Next.js Starter",
   title: "Rishit's Default Next.js Starter",
   tagline:
     'This is a starter template for Next.js projects with Tailwind CSS, SEO, and more.',
