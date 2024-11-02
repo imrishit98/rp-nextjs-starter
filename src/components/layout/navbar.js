@@ -1,6 +1,7 @@
 import { siteName } from '@/../site-config';
 import NavMenu from '@/components/layout/menu';
 import { Container } from '@/components/ui/containers';
+
 import Link from 'next/link';
 
 /**
