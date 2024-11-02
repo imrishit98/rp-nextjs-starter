@@ -37,7 +37,6 @@ export default async function AboutPage() {
 
   return (
     <Container className='py-8'>
-      <H1 className='mb-4'>About {siteName}</H1>
       <article
         className='prose dark:prose-invert max-w-none'
         dangerouslySetInnerHTML={{ __html: readmeContent }}
