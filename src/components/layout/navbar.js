@@ -1,7 +1,7 @@
 import { Container } from '@/components/ui/containers';
 import Link from 'next/link';
 import NavMenu from './menu';
-import { siteName } from '../../../site-config';
+import { siteName } from '@/../site-config';
 
 /**
  * Navigation bar component that appears at the top of every page.
