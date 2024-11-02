@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import { Container } from '@/components/ui/containers';
-import { siteName } from '../../../site-config';
+import { siteName } from '@/../site-config';
 
 /**
  * Footer component that displays copyright information and a link.
