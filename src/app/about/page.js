@@ -3,6 +3,7 @@ import path from 'path';
 import { Container } from '@/components/ui/containers';
 import { H1 } from '@/components/ui/typography';
 import { siteName } from '../../../site-config';
+import { Markdown } from 'react-markdown';
 
 async function getReadmeContent() {
   const readmePath = path.join(process.cwd(), 'README.md');
@@ -17,7 +18,7 @@ export default async function AboutPage() {
     <Container className='py-8'>
       <H1 className='mb-4'>About {siteName}</H1>
       <article className='prose dark:prose-invert max-w-none'>
-        <div dangerouslySetInnerHTML={{ __html: readmeContent }} />
+        <Markdown>{readmeContent}</Markdown>
       </article>
     </Container>
   );
