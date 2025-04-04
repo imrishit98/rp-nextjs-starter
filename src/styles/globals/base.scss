@@ -3,19 +3,17 @@
 @tailwind utilities;
 
 // for performance purposes will have to revisit the way we optimize fonts for example: utils/fonts.js
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@400;500;600;700;&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600;700&display=swap');
 
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
 @layer components {
-  * {
-    font-family: 'Poppins', sans-serif;
-  }
 
   // Display Text
   // Used for hero sections or unique sections that needs larger texts
