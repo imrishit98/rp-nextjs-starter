@@ -1,14 +1,16 @@
-import siteConfig from 'site-config';
+const siteConfig = require('./site-config');
 
 /** @type {import('next-sitemap').IConfig} */
-export const siteUrl = siteConfig?.url;
-export const generateRobotsTxt = true;
-export const autoLastmod = false;
-export const robotsTxtOptions = {
-  policies: [
-    {
-      userAgent: '*',
-      allow: '/',
-    },
-  ],
+module.exports = {
+  siteUrl: siteConfig?.siteUrl,
+  generateRobotsTxt: true,
+  autoLastmod: false,
+  robotsTxtOptions: {
+    policies: [
+      {
+        userAgent: '*',
+        allow: '/',
+      },
+    ],
+  },
 };
