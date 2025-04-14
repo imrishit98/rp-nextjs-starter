@@ -6,14 +6,17 @@ module.exports = {
   changefreq: false,
   priority: false,
   trailingSlash: true,
+
   robotsTxtOptions: {
     policies: [
       {
         userAgent: '*',
         allow: '/',
+
         // disallow: ['/*feed/', '/downloads', '/clio-con-23/*', '/lp/*'],
       },
     ],
     // additionalSitemaps: [`https://ion8.net/post-sitemap.xml`],
+
   },
 };
