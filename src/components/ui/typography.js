@@ -1,6 +1,17 @@
 import Link from 'next/link';
 import { poppins } from '@/utils/fonts';
 
+// all the components related to typography
+
+export const LabelBlock = ({ className = '', children }) => {
+  return (
+    <div className={`bg-purple-p200 px-3 py-2 rounded-lg inline-block ${className}`}>
+      <p className='label-lg text-purple-p900'>{children}</p></div>
+  );
+};
+
+// all below are deprecated
+
 export const H1 = ({ className = '', children }) => {
   return (
     <h1

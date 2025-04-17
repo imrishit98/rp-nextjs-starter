@@ -2,11 +2,199 @@
 @tailwind components;
 @tailwind utilities;
 
+// for performance purposes will have to revisit the way we optimize fonts for example: utils/fonts.js
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600;700&display=swap');
+
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: 'Poppins', sans-serif;
 }
+
+@layer components {
+
+  // Display Text
+  // Used for hero sections or unique sections that needs larger texts
+  .display-lg {
+    font-size: 4rem;
+    font-size: clamp(3rem, 5vw, 4rem); 
+    line-height: clamp(4rem, 5vw, 5rem);
+  }
+  .display-md {
+    font-size: 3.25rem;
+    font-size: clamp(2.5rem, 5vw, 3.25rem); 
+    line-height: clamp(2.875rem, 5vw, 4rem);
+  }
+  .display-sm {
+    font-size: 2.75rem;
+    font-size: clamp(2rem, 5vw, 2.75rem); 
+    line-height: clamp(2.375rem, 5vw, 3.25rem);
+  }
+
+  // Headline Text
+  // Used for section headings
+  .headline-lg{
+    font-size: 2.375rem;
+    font-size: clamp(1.875rem, 5vw, 2.375rem); 
+    line-height: clamp(2.375rem, 5vw, 2.875rem);
+  }
+
+  .headline-md{
+    font-size: 2rem;
+    font-size: clamp(1.625rem, 5vw, 2rem); 
+    line-height: clamp(2rem, 5vw, 2.5rem);
+  }
+
+  .headline-sm{
+    font-size: 1.75rem;
+    font-size: clamp(1rem, 5vw, 1.75rem);
+    line-height: clamp(1.25rem, 5vw, 2.25rem); 
+  }
+
+  // Title Text
+  // Used for subheadings, subtitles, or small headline texts for unique sections
+
+  .title-lg{
+    font-size: 1.5rem;
+    font-size: clamp(1.25rem, 5vw, 1.5rem); 
+    line-height: clamp(1.625rem, 5vw, 2rem); 
+  }
+  .title-md{
+    font-size: 1.375rem;
+    font-size: clamp(1.125rem, 5vw, 1.375rem); 
+    line-height: clamp(1.625rem, 5vw, 2rem); 
+  }
+  .title.sm{
+    font-size: 1.25rem;
+    font-size: clamp(1rem, 5vw, 1.25rem); 
+    line-height: clamp(1.375rem, 5vw, 1.75rem); 
+  }
+
+  // Block Quote Text
+  // Used for block quotes, testimonials, texts that needs to be emphasized or styled
+
+  .blockquote-lg{
+    font-size: 1.25rem;
+    font-size: clamp(1rem, 5vw, 1.25rem); 
+    line-height: clamp(1.5rem, 5vw, 1.875rem); 
+    font-style: italic;
+  }
+  .blockquote-md{
+    font-size: 1.125rem;
+    font-size: clamp(1rem, 5vw, 1.125rem); 
+    line-height: clamp(1.375rem, 5vw, 1.625rem); 
+    font-style: italic;
+  }
+  .blockquote-sm{
+    font-size: 1rem;
+    font-size: clamp(0.875rem, 5vw, 1rem); 
+    line-height: clamp(1.25rem, 5vw, 1.5rem); 
+    font-style: italic;
+  }
+
+  // Body Text
+  // Used for content or areas that uses regular text sizes
+
+  .body-lg{
+    font-size: 1.125rem;
+    font-size: clamp(1rem, 5vw, 1.125rem); 
+    line-height: clamp(1.375rem, 5vw, 1.625rem); 
+  }
+  .body-md{
+    font-size: 1rem;
+    font-size: clamp(0.875rem, 5vw, 1rem); 
+    line-height: clamp(1.25rem, 5vw, 1.5rem); 
+  }
+  .body-sm{
+    font-size: 0.875rem;
+    font-size: clamp(0.75rem, 5vw, 0.875rem); 
+    line-height: clamp(1.125rem, 5vw, 1.25rem); 
+  }
+
+  // Button Text
+  // Text sizes used in buttons - no clamp size for any of the buttons
+
+  .button-lg{
+    font-size: 1rem;
+    line-height: 1.25rem;
+    letter-spacing: 0.03rem;
+    font-weight: 500;
+  }
+
+  .button-md{
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    letter-spacing: 0.03rem;
+    font-weight: 500;
+  }
+  .button-sm{
+    font-size: 0.75rem;
+    line-height: 1rem;
+    letter-spacing: 0.02rem;
+    font-weight: 500;
+  }
+
+  // Label Text
+  // Used for labels, captions, annotations, chips and areas that needed small text sizes - no clamp size for labels
+
+  .label-lg{
+    font-size: 0.875rem;
+    line-height: 1rem;
+    letter-spacing: 0.03rem;
+  }
+
+  .label-md{
+    font-size: 0.75rem;
+    line-height: 1rem;
+    letter-spacing: 0.03rem;
+  }
+  .label-sm{
+    font-size: 0.625rem;
+    line-height: 0.875rem;
+    letter-spacing: 0.03rem;
+  }
+
+  // Overline Text
+  // Used for subheadings, subtitles, or small headline texts for unique sections
+  .overline-lg{
+    font-size: 1rem;
+    letter-spacing: 0.09rem;
+    text-transform: uppercase;
+    font-size: clamp(0.875rem, 5vw, 1rem); 
+    line-height: clamp(0.875rem, 5vw, 1rem); 
+  }
+
+  .overline-md{
+    font-size: 0.875rem;
+    letter-spacing: 0.09rem;
+    text-transform: uppercase;
+    line-height: clamp(0.875rem, 5vw, 1rem); 
+  }
+
+  .overline-md{
+    font-size: 0.75rem;
+    letter-spacing: 0.09rem;
+    text-transform: uppercase;
+    line-height: clamp(0.875rem, 5vw, 1rem); 
+  }
+
+  // Footnote Text
+  // Used for footnotes, tooltips, additional information that are displayed often in small sizes
+  .footnote-lg{
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  .footnote-md{
+    font-size: 0.625rem;
+    line-height: 1rem;
+  }
+
+}
+
+// end of typography
 
 .nav-subitem-content {
   display: none;
