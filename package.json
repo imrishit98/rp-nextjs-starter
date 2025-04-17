@@ -14,7 +14,6 @@
   "dependencies": {
     "@hookform/error-message": "^2.0.1",
     "@hookform/resolvers": "^3.3.2",
-    "@next/codemod": "^14.0.2",
     "axios": "^1.8.2",
     "flowbite": "^2.2.0",
     "flowbite-react": "^0.7.0",
@@ -29,9 +28,7 @@
     "yup": "^1.2.0"
   },
   "devDependencies": {
-    "@codeceptjs/configure": "^0.10.0",
     "autoprefixer": "^10.4.13",
-    "codeceptjs": "^3.5.7",
     "dotenv": "^16.3.1",
     "eslint": "^8.56.0",
     "eslint-config-next": "^14.0.2",
