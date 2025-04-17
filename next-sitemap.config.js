@@ -1,16 +1,22 @@
-const siteConfig = require('./site-config');
-
 /** @type {import('next-sitemap').IConfig} */
+
 module.exports = {
-  siteUrl: siteConfig?.siteUrl,
+  siteUrl: process.env.SITE_URL || 'https://ion8.net',
   generateRobotsTxt: true,
-  autoLastmod: false,
+  changefreq: false,
+  priority: false,
+  trailingSlash: true,
+
   robotsTxtOptions: {
     policies: [
       {
         userAgent: '*',
         allow: '/',
+
+        // disallow: ['/*feed/', '/downloads', '/clio-con-23/*', '/lp/*'],
       },
     ],
+    // additionalSitemaps: [`https://ion8.net/post-sitemap.xml`],
+
   },
 };

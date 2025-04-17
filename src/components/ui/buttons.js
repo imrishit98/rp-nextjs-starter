@@ -68,11 +68,11 @@ export const Button = ({
         <Link
           id={id}
           href={link}
-          className={` inline-block w-full md:w-auto py-4 justify-center items-center rounded-[5px] px-5 focus:outline-none focus:ring-none font-bold mt-10 ${
+          className={` inline-block w-full md:w-auto py-5 justify-center items-center rounded-xl px-6 focus:outline-none focus:ring-none sm:mt-10 ${
             variant == 'primary'
-              ? 'text-white bg-cobalt hover:bg-cyan'
+              ? 'text-white bg-burnt-sienna-bs600 hover:bg-burnt-sienna-bs900'
               : variant == 'secondary'
-                ? 'text-white bg-cyan hover:bg-cobalt'
+                ? 'text-white bg-purple-p700 hover:bg-purple-p900'
                 : variant == 'tertiary'
                   ? 'text-black bg-cyan hover:bg-deep-blue'
                   : null
@@ -80,12 +80,12 @@ export const Button = ({
           <span className={`mr-[10px] ml-0 ${!hasIcon ? 'hidden' : ''}`}>
             {children}
           </span>
-          <span>{label}</span>
+          <span className={className}>{label}</span>
         </Link>
       ) : type == 'button' ? (
         // for a submit button
         <button
-          className={` inline-block w-full md:w-auto py-4 justify-center items-center rounded-[5px] px-20 focus:outline-none focus:ring-none font-bold ${
+          className={` inline-block w-full md:w-auto py-4 justify-center items-center rounded-xl px-20 focus:outline-none focus:ring-none font-bold ${
             variant == 'primary'
               ? 'text-white bg-cobalt hover:bg-cyan'
               : variant == 'secondary'
@@ -98,7 +98,7 @@ export const Button = ({
           <span className={`mr-[10px] ml-0 ${!hasIcon ? 'hidden' : ''}`}>
             {children}
           </span>
-          <span>{label}</span>
+          <span className={className}>{label}</span>
         </button>
       ) : null}
     </>
