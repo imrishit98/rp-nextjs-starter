@@ -616,10 +616,10 @@
     "@jridgewell/resolve-uri" "3.1.0"
     "@jridgewell/sourcemap-codec" "1.4.14"
 
-"@next/codemod@15.1.3":
-  version "15.1.3"
-  resolved "https://registry.yarnpkg.com/@next/codemod/-/codemod-15.1.3.tgz#965de3915e4ae33e5134429dafb2c130e60793b3"
-  integrity sha512-l1cKGqy9Yy9UiZB2d3uLmYoHtSrxC8rlcNT6+aHWdEPjqCYaD70N3N02TMJYFJJzAkhpPnsydmjQfRxjcUPKiQ==
+"@next/codemod@15.3.1":
+  version "15.3.1"
+  resolved "https://registry.yarnpkg.com/@next/codemod/-/codemod-15.3.1.tgz#ae51286de0102dda9f19e06dbd0c4b074b472055"
+  integrity sha512-x994H8Xu4NBJqCAVezJvUxKOJfGwQVo/h2m9LqOpk/7Qhozfp2YJZQGsuUB/U6gHpYLdhqOcCitQVQ0K/stXUg==
   dependencies:
     cheerio "1.0.0-rc.9"
     commander "12.1.0"
