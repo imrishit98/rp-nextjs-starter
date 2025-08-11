@@ -23,10 +23,10 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v3
 
-      - name: Set up Node.js 18.x with yarn cache
+      - name: Set up Node.js 22.x with yarn cache
         uses: actions/setup-node@v3
         with:
-          node-version: 18.x
+          node-version: 22.x
           cache: 'yarn'
 
       - name: Install yarn
